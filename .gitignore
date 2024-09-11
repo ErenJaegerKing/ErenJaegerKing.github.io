@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+.cache
+.temp
+.vp-cache
+.vp-temp
+.sum
+
+/data
+/logs

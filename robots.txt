@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://ErenJaegerKing.github.io/sitemap.xml

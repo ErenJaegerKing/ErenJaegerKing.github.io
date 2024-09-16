@@ -12,22 +12,16 @@ tag:
 ### 主从集群
 
 #### 集群结构
-
-![image-20240816143943996](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816143943996-1723790386811-1.png)
-
-如图所示，集群中有一个master节点、两个slave节点（现在叫replica）。当我们通过Redis的Java客户端访问主从集群时，应该做好路由：
+集群中有一个master节点、两个slave节点（现在叫replica）。当我们通过Redis的Java客户端访问主从集群时，应该做好路由：
 
 - 如果是写操作，应该访问master节点，master会自动将数据同步给两个slave节点
 - 如果是读操作，建议访问各个slave节点，从而分担并发压力
-
-
 
 建立集群的步骤
 
 第一步是启动多个Redis实例
 
 第二步 输入一下命令
-
 ```Bash
 # Redis5.0以前
 slaveof <masterip> <masterport>
@@ -47,8 +41,6 @@ info replication
 
 这个同步是如何完成的
 
-![image-20240816151823089](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816151823089-1723792705262-3.png)
-
 这里有一个问题，`master`如何得知`salve`是否是第一次来同步呢？？
 
 - **`Replication Id`**：简称`replid`，是数据集的标记，replid一致则是同一数据集。每个`master`都有唯一的`replid`，`slave`则会继承`master`节点的`replid`
@@ -59,8 +51,6 @@ info replication
 主从第一次建立连接时，会执行**全量同步**，将master节点的所有数据都拷贝给slave节点
 
 **master**判断一个节点是否是第一次同步的依据，就是看replid是否一致
-
-![image-20240816153540540](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816153540540-1723793742159-7-1723793743257-9-1723793744378-11.png)
 
 完整流程描述：
 
@@ -76,8 +66,6 @@ info replication
 全量同步需要先做RDB，然后将RDB文件通过网络传输个slave，成本太高了。因此除了第一次做全量同步，其它大多数时候slave与master都是做**增量同步**。
 
 什么是增量同步？就是只更新slave与master存在差异的部分数据。
-
-![image-20240816153700169](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816153700169.png)
 
 ##### repl_baklog原理
 
@@ -100,9 +88,7 @@ master怎么知道slave与自己的数据差异在哪里呢?
 - 适当提高`repl_baklog`的大小，发现slave宕机时尽快实现故障恢复，尽可能避免全量同步
 - 限制一个master上的slave节点数量，如果实在是太多slave，则可以采用`主-从-从`链式结构，减少master压力
 
-`主-从-从`架构图：
-
-![image-20240816152347936](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816152347936-1723793030616-5.png)
+`主-从-从`架构
 
 简述全量同步和增量同步区别？
 
@@ -126,13 +112,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 ##### 哨兵作用
 
-![image-20240816154521815](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816154521815-1723794323531-13-1723794324808-15.png)
-
 ##### 状态监控
-
-![image-20240816154851477](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816154851477-1723794532515-17.png)
-
-
 
 ##### 选举leader
 
@@ -158,11 +138,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 OK，`sentinel`找到`leader`以后，该如何完成`failover`呢？
 
-![image-20240816155455042](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816155455042.png)
-
 ##### 实现故障转移（failover）
-
-![image-20240816155722652](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816155722652.png)
 
 ##### 总结
 
@@ -245,13 +221,7 @@ public LettuceClientConfigurationBuilderCustomizer clientConfigurationBuilderCus
 
 ### 分片集群
 
-![image-20240816173158687](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816173158687.png)
-
 #### 散列插槽
-
-![image-20240816173943379](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816173943379.png)
-
-![image-20240816174009609](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816174009609-1723801211055-19.png)
 
 #### 故障转移
 
@@ -307,8 +277,6 @@ spring:
 
 ##### RedisObject
 
-![image-20240816174731974](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816174731974-1723801653615-21.png)
-
 可以看到整个结构体中并不包含真实的数据，仅仅是对象头信息，内存占用的大小为4+4+24+32+64 = 128bit
 
 也就是16字节，然后指针`ptr`指针指向的才是真实数据存储的内存地址。所以RedisObject的内存开销是很大的。
@@ -317,15 +285,9 @@ spring:
 
 ###### 编码方式
 
-![image-20240816175047028](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816175047028-1723801853959-23.png)
-
 ###### 数据结构
 
-![image-20240816175108015](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816175108015-1723801869416-25-1723801870850-27.png)
-
 ##### SkipList
-
-![image-20240816175733612](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816175733612-1723802257159-29.png)
 
 这种多级指针的查询方式就避免了传统链表的逐个遍历导致的查询效率下降问题。在对有序数据做随机查询和排序时效率非常高。
 
@@ -369,10 +331,6 @@ typedef struct zset {
 } zset;
 ```
 
-
-
-![image-20240816203006244](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203006244.png)
-
 ### 内存回收
 
 Redis之所以性能强，最主要的原因就是基于内存存储。然而单节点的Redis其内存大小不宜过大，会影响持久化或主从同步性能。
@@ -411,36 +369,15 @@ set num EX 20
 ```
 
 ##### 过期策略
-
-![image-20240816201905014](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816201905014-1723810747176-31-1723810748203-33.png)
-
-![image-20240816202215834](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816202215834-1723810937819-35.png)
-
 Redis的过期KEY删除策略有两种：
-
-![image-20240816202327069](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816202327069-1723811008387-37.png)
-
 #### 内存淘汰策略
 
-![image-20240816202622759](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816202622759.png)比较容易混淆的有两个算法：
+比较容易混淆的有两个算法：
 
 - **LRU**（**`L`**`east `**`R`**`ecently `**`U`**`sed`），最近最久未使用。用当前时间减去最后一次访问时间，这个值越大则淘汰优先级越高。
 - **LFU**（**`L`**`east `**`F`**`requently `**`U`**`sed`），最少频率使用。会统计每个key的访问频率，值越小淘汰优先级越高。
 
-![image-20240816203458140](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203458140.png)
-
 #### 总结
-
-![image-20240816203603907](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203603907.png)
-
-![image-20240816203609741](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203609741.png)
-
-![image-20240816203619364](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203619364.png)
-
-![image-20240816203625166](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203625166.png)
-
-![image-20240816203632181](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240816203632181.png)
-
 
 
 ### 缓存篇
@@ -449,14 +386,11 @@ Redis的过期KEY删除策略有两种：
 
 我们一般会采用Cache Aside 策略，中文是叫旁路缓存策略，然后采用先更新数据库，再删除缓存这个方案，可能也会出现数据不一致的问题，但在实际中，这个问题出现的概率并不高，因为缓存的写入通常要远远快于数据库的写入，所以实际上很难出现请求B已经更新了数据库并且删除了缓存，请求A才更新完缓存的情况，所以「先更新数据库 + 再删除缓存」的方案，是可以保证数据一致性的。但是为了确保万无一失，还是给缓存数据加上过期的时间，就算在这期间存在缓存数据不一致，有过期时间来兜底，这样也能达到最终一致。
 
-
-
 但是现在又有一个问题，就是自己明明更新了数据，但是数据要过一段时间才生效。
 
 上面这个问题的原因是：在删除缓存（第二个操作）的时候失败了，导致缓存中的数据是旧值。然后因为添加了过期时间作为保底，所以才会过一段时间才生效。
 
 如何保证「先更新数据库 ，再删除缓存」这两个操作能执行成功？
-
 
 
 ##### 缓存命中率有很高的要求
@@ -487,7 +421,6 @@ redis.delKey(X)
 
 ##### 如何保证「先更新数据库 ，再删除缓存」这两个操作能执行成功？
 
-![image-20240817225510181](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817225510181.png)
 
 ###### 消息队列重试机制
 
@@ -496,8 +429,6 @@ redis.delKey(X)
 - 如果应用**删除缓存失败**，可以从消息队列中重新读取数据，然后再次删除缓存，这个就是**重试机制**。当然，如果重试超过的一定次数，还是没有成功，我们就需要向业务层发送报错信息了。
 - 如果**删除缓存成功**，就要把数据从消息队列中移除，避免重复操作，否则就继续重试。
 
-![image-20240817225622549](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817225622549.png)
-
 ###### 订阅 MySQL binlog，再操作缓存
 
 「**先更新数据库，再删缓存**」的策略的第一步是更新数据库，那么更新数据库成功，就会产生一条变更日志，记录在 binlog 里。
@@ -505,10 +436,6 @@ redis.delKey(X)
 于是我们就可以通过订阅 binlog 日志，拿到具体要操作的数据，然后再执行缓存删除，阿里巴巴开源的 Canal 中间件就是基于这个实现的。
 
 Canal 模拟 MySQL 主从复制的交互协议，把自己伪装成一个 MySQL 的从节点，向 MySQL 主节点发送 dump 请求，MySQL 收到请求后，就会开始推送 Binlog 给 Canal，Canal 解析 Binlog 字节流之后，转换为便于读取的结构化数据，供下游程序订阅使用。
-
-![image-20240817225732556](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817225732556.png)
-
-
 
 前面我们说到直接用消息队列重试机制方案的话，会对代码造成入侵，那么 Canal 方案就能很好的规避这个问题，因为它是直接订阅 binlog 日志的，和业务代码没有藕合关系，因此我们可以通过 Canal+ 消息队列的方案来保证数据缓存的一致性。
 
@@ -531,10 +458,6 @@ Canal 模拟 MySQL 主从复制的交互协议，把自己伪装成一个 MySQL 
 
 系统设计中有一个思想叫 Lazy Loading，适用于那些加载代价大的操作，删除缓存而不是更新缓存，就是懒加载思想的一个应用。
 
-
-
-
-
 我们先看下目前企业用的最多的缓存模型。缓存的通用模型有三种：
 
 - `Cache Aside`旁路缓存：有缓存调用者自己维护数据库与缓存的一致性。即：
@@ -545,17 +468,9 @@ Canal 模拟 MySQL 主从复制的交互协议，把自己伪装成一个 MySQL 
   - 更新时：判断缓存是否存在，不存在直接更新数据库。存在则更新缓存，同步更新数据库
 - `Write Behind Cahing`写回缓存：读写操作都直接操作缓存，由线程异步的将缓存数据同步到数据库
 
-![image-20240817213931866](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817213931866-1723901976206-1.png)
-
-![image-20240817214812547](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817214812547-1723902495047-3.png)
-
-![image-20240817215601845](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817215601845.png)
-
 先删除缓存再更新数据库      由于更新数据库的操作本身比较耗时，在期间有线程来查询数据库并更新缓存的概率非常高。因此不推荐这种方案。
 
 先更新数据库再删除缓存      可以发现，异常状态发生的概率极为苛刻，线程1必须是查询数据库已经完成，但是缓存尚未写入之前。线程2要完成更新数据库同时删除缓存的两个操作。要知道线程1执行写缓存的速度在毫秒之间，速度非常快，在这么短的时间要完成数据库和缓存的操作，概率非常之低。
-
-![image-20240817220213380](C:\Users\Jaeger_Eren\Desktop\misc\demo_learn\Eren's Note\Note\assets\image-20240817220213380.png)
 
 #### 缓存穿透
 

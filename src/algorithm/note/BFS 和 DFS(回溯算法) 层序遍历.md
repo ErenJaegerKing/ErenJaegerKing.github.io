@@ -100,4 +100,3 @@ void levelTraverse(TreeNode root) {
     }
 }
 ```
-![[Pasted image 20240723205118.png]]

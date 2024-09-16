@@ -1,6 +1,6 @@
 ---
-title: "前端"
-icon: "qianduan"
+title: "微服务"
+icon: "weifuwu"
 date: 2024-09-16
 # index: true
 # timeline: false
@@ -8,7 +8,7 @@ date: 2024-09-16
 ---
 
 :::info
-这里是我学习数据库的一些笔记和感悟
+这里是我学习微服务的笔记
 :::
 
 ---

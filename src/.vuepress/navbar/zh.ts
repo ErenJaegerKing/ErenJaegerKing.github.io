@@ -18,7 +18,7 @@ export const zhNavbar = navbar([
   {
     text: "Java",
     icon: "java",
-    link: "/java/",
+    link: "/Java/",
   },
   {
     text: "前端",
@@ -34,6 +34,11 @@ export const zhNavbar = navbar([
     text: "数据库",
     icon: "shujuku",
     link: "/database/",
+  },
+  {
+    text: "数据库",
+    icon: "weifuwu",
+    link: "/microservices/",
   },
   {
     text: "运维",

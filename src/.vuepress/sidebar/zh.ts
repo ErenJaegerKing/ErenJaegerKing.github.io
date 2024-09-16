@@ -13,8 +13,8 @@ export const zhSidebar = sidebar({
     {
       text: "Java",
       icon: "java",
-      prefix: "/java/",
-      link: "/java/",
+      prefix: "/Java/",
+      link: "/Java/",
     },
     {
       text: "前端",
@@ -35,6 +35,12 @@ export const zhSidebar = sidebar({
       link: "/database/",
     },
     {
+      text: "微服务",
+      icon: "weifuwu",
+      prefix: "/microservices/",
+      link: "/microservices/",
+    },
+    {
       text: "运维",
       icon: "yunwei",
       prefix: "/devops/",
@@ -52,9 +58,11 @@ export const zhSidebar = sidebar({
       link: "/about",
     },
   ],
+  "/Java/": "structure",
   "/frontend/": "structure",
   "/algorithm/": "structure",
   "/database/": "structure",
+  "/microservices/": "structure",
   "/devops/": "structure",
   "/insights/": "structure",
 });

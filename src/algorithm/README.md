@@ -1,6 +1,6 @@
 ---
-title: "数据结构与算法"
-icon: ""
+title: "算法"
+icon: "leetcode"
 date: 2024-09-15
 # index: true
 # timeline: false

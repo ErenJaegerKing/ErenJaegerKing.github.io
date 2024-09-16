@@ -4,7 +4,7 @@ cover: /assets/images/cover1.jpg
 date: 2024-09-15
 sidebar: false
 category:
- - About
+ - 关于
 tag:
  - intro
 ---

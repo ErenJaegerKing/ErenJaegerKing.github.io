@@ -1,6 +1,6 @@
 ---
-title: "数据库原理"
-icon: ""
+title: "数据库"
+icon: "shujuku"
 date: 2024-09-16
 # index: true
 # timeline: false

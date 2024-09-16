@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: zhuye
 title: 主页
-# heroImage: /logo.png
+heroImage: /logo.png
 bgImage: /assets/images/bgImage.jpg
 heroText: 鹤九's blog
 heroFullScreen: true

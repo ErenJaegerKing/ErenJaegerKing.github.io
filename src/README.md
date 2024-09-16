@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: zhuye
 title: 主页
 # heroImage: /logo.png
 bgImage: /assets/images/bgImage.jpg

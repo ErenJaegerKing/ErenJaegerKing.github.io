@@ -3,54 +3,51 @@ import { navbar } from "vuepress-theme-hope";
 export const zhNavbar = navbar([
   "/",
   {
-    text: "导航", icon: "", link: "/demo/"
+    text: "导航", icon: "daohang", link: "/demo/"
   },
   {
-    text: "分类",
-    icon: "",
+    text: "博文",
+    icon: "boke",
     children: [
-      { text: "全部", icon: "", link: "/article/" },
-      { text: "分类", icon: "", link: "/category/" },
-      { text: "标签", icon: "", link: "/tag/" },
-      { text: "时间轴", icon: "", link: "/timeline/" },
+      { text: "全部", icon: "quanbu", link: "/article/" },
+      { text: "分类", icon: "fenlei", link: "/category/" },
+      { text: "标签", icon: "biaoqian", link: "/tag/" },
+      { text: "时间轴", icon: "timeAxis", link: "/timeline/" },
     ],
   },
   {
     text: "Java",
-    icon: "",
+    icon: "java",
     link: "/java/",
   },
   {
     text: "前端",
-    icon: "",
+    icon: "qianduan",
     link: "/frontend/",
   },
   {
     text: "算法",
-    icon: "",
+    icon: "leetcode",
     link: "/algorithm/",
   },
   {
     text: "数据库",
-    icon: "",
+    icon: "shujuku",
     link: "/database/",
   },
   {
     text: "运维",
-    icon: "",
+    icon: "yunwei",
     link: "/devops/",
   },
   {
     text: "感悟",
-    icon: "",
+    icon: "ganwuxianxing",
     link: "/insights/",
   },
   {
     text: "关于",
-    icon: "",
-    children:[
-      { text: "关于我", icon: "", link: "/intro" },
-      { text: "关于本站", icon: "", link: "/about" },
-    ]
+    icon: "guanyu",
+    link: "/intro",
   },
 ]);

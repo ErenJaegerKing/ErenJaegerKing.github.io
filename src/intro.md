@@ -7,7 +7,6 @@ category:
  - About
 tag:
  - intro
-comment: false
 ---
 
 :::: info
@@ -16,6 +15,9 @@ comment: false
 
 ## 关于我
 我是一个追求软件技术开发的程序员
+
+## 追求
+追求现实，不喜欢虚幻的东西
 
 ## 一定要静下心来学习
 你我都要加油啊

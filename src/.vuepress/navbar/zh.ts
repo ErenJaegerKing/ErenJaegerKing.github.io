@@ -23,11 +23,7 @@ export const zhNavbar = navbar([
   {
     text: "前端",
     icon: "",
-    prefix: "/frontend/",
-    children: [
-      {text: "Vue2",icon:"", link: "/vue2/"},
-      {text: "Vue3",icon:"", link: "/vue3/"},
-    ],
+    link: "/frontend/",
   },
   {
     text: "算法",
@@ -56,42 +52,5 @@ export const zhNavbar = navbar([
       { text: "关于我", icon: "", link: "/intro" },
       { text: "关于本站", icon: "", link: "/about" },
     ]
-  },
-  {
-    text: "博文",
-    icon: "",
-    prefix: "/posts/",
-    children: [
-      {
-        text: "苹果",
-        icon: "pen-to-square",
-        prefix: "apple/",
-        children: [
-          { text: "苹果1", icon: "pen-to-square", link: "1" },
-          { text: "苹果2", icon: "pen-to-square", link: "2" },
-        ],
-      },
-      {
-        text: "香蕉",
-        icon: "pen-to-square",
-        prefix: "banana/",
-        children: [
-          {
-            text: "香蕉 1",
-            icon: "pen-to-square",
-            link: "1",
-          },
-          {
-            text: "香蕉 2",
-            icon: "pen-to-square",
-            link: "2",
-          },
-        ],
-      },
-      { text: "樱桃", icon: "pen-to-square", link: "cherry" },
-      { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
-    ],
   },
 ]);

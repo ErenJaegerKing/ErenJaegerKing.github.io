@@ -1,9 +1,8 @@
 ---
 icon: ""
 description: ""
-title: "Redis的学习"
+title: "Redis的深入学习"
 date: 2024-09-15
-order: 1
 category:
   - 数据库
 tag:

@@ -11,12 +11,6 @@ export const zhSidebar = sidebar({
       children: "structure",
     },
     {
-      text: "文章",
-      icon: "book",
-      prefix: "posts/",
-      children: "structure",
-    },
-    {
       text: "Java",
       icon: "",
       prefix: "/java/",
@@ -26,10 +20,7 @@ export const zhSidebar = sidebar({
       text: "前端",
       icon: "",
       prefix: "/frontend/",
-      children: [
-        { text: "vue2", icon: "", prefix: "/vue2/", link: "/vue2/"},
-        { text: "vue3", icon: "", prefix: "/vue3/", link: "/vue3/"},
-      ],
+      link: "/frontend/",
     },
     {
       text: "算法",
@@ -64,10 +55,9 @@ export const zhSidebar = sidebar({
       ]
     },
   ],
-  "/frontend/vue2/": "structure",
-  "/frontend/vue3/": "structure",
+  "/frontend/": "structure",
   "/algorithm/": "structure",
   "/database/": "structure",
-  "/devops": "structure",
-  "/insights": "structure",
+  "/devops/": "structure",
+  "/insights/": "structure",
 });

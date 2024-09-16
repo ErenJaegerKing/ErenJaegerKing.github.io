@@ -19,18 +19,13 @@ projects:
 
   - icon: 
     name: 前端
-    desc: vue2
+    desc: Vue2、Uni-App
     link: /frontend/
 
   - icon: 
     name: 算法
     desc: 学习算法的笔记和感悟
     link: /algorithm/
-
-  - icon: 
-    name: 前端
-    desc: vue2
-    link: /frontend/
 
   - icon: 
     name: 数据库

@@ -3,8 +3,8 @@ home: true
 layout: BlogHome
 icon: zhuye
 title: 主页
-heroImage: /logo.png
-bgImage: /assets/images/bgImage.jpg
+heroImage: /logo1.png
+bgImage: /assets/images/bgImage1.jpg
 heroText: 鹤九's blog
 heroFullScreen: true
 tagline: 遇事不觉,可问春风。春风不语,即随本心

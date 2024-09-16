@@ -20,7 +20,7 @@ export default hopeTheme({
   // pure: true,
 
   iconAssets: "//at.alicdn.com/t/c/font_4672488_lhu44p37o3m.css",
-  logo: "/logo.png",
+  logo: "/logo1.png",
   docsDir: "src",
   repo: "https://github.com/ErenJaegerKing",
 
@@ -75,7 +75,7 @@ export default hopeTheme({
 
       blog: {
         name: "鹤九",
-        avatar: "/logo.png",
+        avatar: "/logo1.png",
         description: "程序员",
         intro: "/intro.html",
       },

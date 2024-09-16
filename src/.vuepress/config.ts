@@ -9,11 +9,11 @@ export default defineUserConfig({
       title: "ErenJaeger",
       description: "my blog",
     },
-    "/en/": {
-      lang: "en-US",
-      title: "Blog Demo",
-      description: "A blog demo for vuepress-theme-hope",
-    },
+    // "/en/": {
+    //   lang: "en-US",
+    //   title: "Blog Demo",
+    //   description: "A blog demo for vuepress-theme-hope",
+    // },
   },
 
   theme,

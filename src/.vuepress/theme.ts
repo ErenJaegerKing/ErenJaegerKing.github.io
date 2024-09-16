@@ -1,17 +1,18 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
-import { zhNavbar, enNavbar } from "./navbar/index.js";
-import { zhSidebar, enSidebar } from "./sidebar/index.js";
+import { zhNavbar } from "./navbar/index.js";
+import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
+
   hostname: "https://ErenJaegerKing.github.io",
+  
   author: {
-    // 会影响页脚
     name: "ErenJaegerKing",
     url: "https://ErenJaegerKing.github.io",
     email: "1252505184@qq.com",
   },
-  // darkmode: "toggle",
+  darkmode: "toggle",
   editLink: false,
   fullscreen: true,
   navbarAutoHide: "always",
@@ -75,7 +76,7 @@ export default hopeTheme({
       blog: {
         name: "鹤九",
         avatar: "/logo.png",
-        description: "全栈开发工程师",
+        description: "程序员",
         intro: "/intro.html",
       },
 
@@ -85,33 +86,28 @@ export default hopeTheme({
       },
     },
 
-    "/en/": {
-      navbar: enNavbar,
-      sidebar: enSidebar,
-      displayFooter: true,
+    // "/en/": {
+    //   navbar: enNavbar,
+    //   sidebar: enSidebar,
+    //   displayFooter: true,
 
-      blog: {
-        description: "A FrontEnd programmer",
-        intro: "/en/intro.html",
-      },
+    //   blog: {
+    //     description: "A FrontEnd programmer",
+    //     intro: "/en/intro.html",
+    //   },
 
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
-      },
-    },
+    //   metaLocales: {
+    //     editLink: "Edit this page on GitHub",
+    //   },
+    // },
   },
 
   // 加密配置
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
-      "/en/demo/encrypt.html": ["1234"],
+      // "/en/demo/encrypt.html": ["1234"],
     },
-  },
-
-  // 多语言配置
-  metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
   },
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响

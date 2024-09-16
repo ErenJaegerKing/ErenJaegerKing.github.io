@@ -1,6 +1,6 @@
 {
-  "name": "my blog",
-  "description": "A project of blog",
+  "name": "myBlog",
+  "description": "A project of my blog",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",

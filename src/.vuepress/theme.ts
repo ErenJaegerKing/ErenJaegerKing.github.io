@@ -12,6 +12,8 @@ export default hopeTheme({
     url: "https://ErenJaegerKing.github.io",
     email: "1252505184@qq.com",
   },
+  // license: "",
+  favicon: "/favicon1.ico",
   darkmode: "toggle",
   editLink: false,
   fullscreen: true,

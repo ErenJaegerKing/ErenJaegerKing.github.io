@@ -44,8 +44,8 @@ TodoList：
 ### **2.实现一个图床**[教程转载](https://www.fomal.cc/posts/d7fb1ba1.html#)
 如何实现一个又快又稳且免费的图床，[GitHub](https://github.com/)作为图片库，但是网络访问速度不稳定，jsDeliver免费的CDN服务作为一层转发，[Molunerfinn/PicGo](https://github.com/Molunerfinn/PicGo)作为一个客户端，实现快速上传图片。
 
-eg:![CDN例子图片](https://cdn.jsdelivr.net/gh/ErenJaegerKing/DrawingBed@main/myblog/202409171731126.jpg)
-
+eg:
+![图片](https://drawingbed-686.pages.dev/myblog/202409171934072.jpg)
 注意：Watt Toolkit会导致网络连接失败，会导致无法上传图片到github图床上
 #### **2.1优缺点**[转载](https://www.fomal.cc/posts/d7fb1ba1.html)
 优点：
@@ -59,7 +59,7 @@ eg:![CDN例子图片](https://cdn.jsdelivr.net/gh/ErenJaegerKing/DrawingBed@main
 1. 每个仓库限制1G，超过要新建另一个仓库
 2. git管理可能偶尔会遇到网络和公钥失效问题
 
-#### **2.什么是CDN？CDN能为我们做什么？我们为什么要了解他？?**[bilibili](https://www.bilibili.com/video/BV1jS4y197zi/?spm_id_from=333.788&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+#### **2.2.什么是CDN？CDN能为我们做什么？我们为什么要了解他？?**[bilibili](https://www.bilibili.com/video/BV1jS4y197zi/?spm_id_from=333.788&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 **CDN**的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。
 
 **基本原理**:用户访问相对集中的地区和网络设置一些缓存服务器。当用户访问网站时，利用全局的负载均衡技术将用户的访问指向距离最近的缓存服务器，由缓存服务器代替源站响应用户的访问请求。这样一方面减轻了源站服务器的工作压力，另一方面使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。

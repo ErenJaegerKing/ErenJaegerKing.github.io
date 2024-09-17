@@ -1,5 +1,5 @@
 ---
-title: "第九艺术_1"
+title: "第九艺术"
 description: ""
 icon: ""
 date: 2024-09-16

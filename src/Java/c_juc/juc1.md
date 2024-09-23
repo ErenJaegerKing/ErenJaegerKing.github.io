@@ -2,11 +2,11 @@
 icon: ""
 description: ""
 title: "并发编程"
-date: 2024-09-16
+date: 2024-09-23
 category:
   - Java
 tag:
-  - 并发编程
+  - JavaJUC
 ---
 
 ## 并发编程

@@ -2,11 +2,11 @@
 icon: ""
 description: ""
 title: "Java基础"
-date: 2024-09-16
+date: 2024-09-23
 category:
   - Java
 tag:
-  - Java基础
+  - JavaBase
 ---
 
 ## java基础

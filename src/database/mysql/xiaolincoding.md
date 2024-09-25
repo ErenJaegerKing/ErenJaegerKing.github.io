@@ -1,7 +1,7 @@
 ---
 icon: ""
 description: ""
-title: "读小林coding后的笔记"
+title: "转载：读小林coding后的笔记"
 date: 2024-09-23
 category:
   - 数据库
@@ -13,7 +13,7 @@ tag:
 我的MySQL深入学习路径，以下内容是我自学的笔记，我是搬运工，此篇是学习小林coding博客的笔记。
 :::
 
-[小林coding](https://xiaolincoding.com/mysql/)
+[转载：小林coding](https://xiaolincoding.com/mysql/)
 # 基础篇
 ## MySQL 执行一条 select 查询语句，在 MySQL 中期间发生了什么？
 连接器：建立连接，管理连接，校验用户身份
@@ -608,18 +608,112 @@ Insert 语句在正常执行时是不会生成锁结构的，它是靠聚簇索�
 # 日志篇
 ## MySQL 日志：undo log、redo log、binlog 有什么用？
 更新语句流程会涉及三种日志：
-- undo log 原子性  事务回滚和MVCC
-- redo log 持久性  用于掉电等故障恢复
-- binlog 用于数据备份和主从复制
+- undo log（回滚日志） 原子性  事务回滚和MVCC
+- redo log（重做日志） 持久性  用于掉电等故障恢复
+- binlog（归档日志） 用于数据备份和主从复制
 
 ### 为什么需要 undo log？
-保证事务的ACID特性中的原子性
+- 回滚日志，保证事务ACID特性中的原子性（atomicity）
+- 通过ReadView + undo log 实现MVCC（多版本并发控制）
 
-更新操作会有一个roll_pointer指针和一个trx_id事务id
+- 读提交隔离级别在每一个 select都会生成一个新的Read View，也就意味着，事务期间的多次读取同一条数据，前后两次读的数据可能会出现不一致
+- 可重复读隔离级别是启动事务时生成一个Read View，然后整个事务期间都在用这个Read View，保证事务期间读到的数据都是事务启动前的记录
 
-通过ReadView + undo log 实现MVCC（多版本并发控制）
+> undo log是如何持久化到磁盘的？
+ 
+undo log和数据页的刷盘策略是一样的，都需要通过redo log保证持久化
 
-两大作用
-- 事务回滚，保证事务原子性
-- 实现MVCC
+buffer pool中由undo页，对undo页的修改也会记录到redo log。redo log会每秒刷盘，提交事务时也会刷盘，数据页和undo页都是靠这个机制保证持久化的
+
 ### 为什么需要 Buffer Pool？
+Innodb 存储引擎设计了一个缓冲池（Buffer Pool），来提高数据库的读写性能。
+
+- 读取，有，在Buffer Pool中取
+- 修改，有，在Buffer Pook中直接修改，后续由后台线程选择一个合适的时机将脏页写入磁盘
+
+#### Buffer Pool 缓存什么？
+InnoDB将数据划分未若干页，以页作为磁盘和内存交互的基本单位，一个页的默认大小为16KB
+
+InnoDB 会为 Buffer Pool 申请一片连续的内存空间，然后按照默认的16KB的大小划分出一个个的页， Buffer Pool 中的页就叫做缓存页。
+
+Buffer Pool 除了缓存「索引页」和「数据页」，还包括了 Undo 页，插入缓存、自适应哈希索引、锁信息等等。
+
+> Undo 页是记录什么？
+开始事务 => 更新记录前，InnoDB层记录相应的undo log / 更新操作的话，需要把被更新的列的旧值记下来 => 生成一条undo log => 会写入Buffer Pool中的Undo页面
+
+> 查询一条记录，就只需要缓冲一条记录吗？
+不，查询一条记录时，InnoDB将整个页的数据加载到Buffer Pool中，通过页里的页目录去定位到某条具体的记录
+
+### 为什么需要 redo log ？
+WAL（Write-Ahead Logging）技术：MySQL的写操作并不是立刻写到磁盘上，而上先写日志，然后在合适的时间再写到磁盘上
+
+> 什么是 redo log？
+
+redo log是物理日志，记录了某个数据页做了什么修改，比如对XXX表空间中YYY数据页ZZZ偏移量的地方做了AAA更新
+
+事务提交后，redo log就会被持久化到磁盘中，可以不需要将缓存在Buffer Pool里的脏页数据持久化到磁盘
+
+MySQL重启后，可以根据redo log的内容，将所有数据恢复到最新状态
+
+> 被修改 Undo 页面，需要记录对应 redo log 吗？
+
+需要的。
+
+在内存修改Undo页面后，需要记录对应的redo log
+
+- 开启事务后，InnoDB 层更新记录前，首先要记录相应的 undo log
+- 如果是更新操作，需要把被更新的列的旧值记下来，也就是要生成一条 undo log，undo log 会写入 Buffer Pool 中的 Undo 页面。
+
+> redo log 和 undo log 区别在哪？
+- redo log记录了此次事务 完成后 的数据状态，记录的是更新之后的值
+- undo log记录了此次事务 开始前 的数据状态，记录的是更新之前的值
+
+事务提交前后所需要的日志
+
+- 事务提交之前的崩溃，重启后通过undo log回滚事务
+- 事务提交之后的崩溃，重启后会通过redo log恢复事务
+
+crash-safe（崩溃恢复）：redo log + WAL =>保证已提交的记录不会丢失。redo log保证了事务四大特性中的持久性。
+
+> redo log 要写到磁盘，数据也要写磁盘，为什么要多此一举？
+
+- redo log使用了追加操作，所以磁盘操作是顺序写
+- 写入数据需要找到写入位置，找到写入位置，然后才写到磁盘，所以磁盘操作是随机写
+
+磁盘的顺序写比随机写高效的多，因此redo log写入磁盘的开销更小
+
+WAL技术的另外一个优点：MySQL的写操作从磁盘随机写变成了顺序写
+
+为什么需要redo log？
+- 实现事务的持久新，让MySQL有crash-safe的能力
+- 将写操作从随机写变成了顺序写，提升MySQL写入磁盘的性能
+
+> 产生的redo log是直接写入磁盘的吗？
+
+不是，redo log也有自己的缓存redo log buffer
+
+每产生一条redo log时，就会先写入到redo log buffer，然后再持久化到磁盘
+
+#### redo log 什么时候刷盘？
+待看
+#### redo log 文件写满了怎么办？
+待看
+### 为什么需要 binlog ？
+四个区别
+1. 使用对象不同
+- binlog是MySQL的Server层实现的日志，所有存储引擎都可以使用
+- redo log是InnoDB存储引擎实现的日志
+2. 文件格式不同
+binlog
+- STATEMENT（默认格式）：每一条修改的SQL都会被记录到binlog中
+- ROW：记录行数据最终被修改成什么样子了
+- MIXED ：statement + row
+redolog是物理日志，记录的是在某个数据页做了什么修改，比如对XXX表空间中的YYY数据页ZZZ偏移量的地方做了AAA更新
+3. 写入方式不同
+- binlog是追加写，写满一个文件，就创建一个新的文件继续写，不会覆盖以前的日志，保存的是全量的日志
+- redo log是循环写，日志空间大小是固定，全部写满就从头开始，保存未被刷入磁盘的脏页日志
+4. 用途不同
+- binlog 用于备份恢复、主从复制
+- redo log 用于掉电等故障恢复
+
+> 如果不小心整个数据库的数据被删除了，能使用 redo log 文件恢复数据吗？

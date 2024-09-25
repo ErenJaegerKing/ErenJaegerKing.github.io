@@ -1,7 +1,7 @@
 ---
 icon: ""
 description: ""
-title: "转载：读小林coding后的笔记"
+title: "转载：小林coding的MySQL"
 date: 2024-09-23
 category:
   - 数据库
@@ -10,7 +10,7 @@ tag:
 ---
 
 :::info
-我的MySQL深入学习路径，以下内容是我自学的笔记，我是搬运工，此篇是学习小林coding博客的笔记。
+我是按着小林coding学习后的笔记，我记录一下学习的笔记。
 :::
 
 [转载：小林coding](https://xiaolincoding.com/mysql/)

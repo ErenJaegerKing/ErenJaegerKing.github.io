@@ -21,7 +21,7 @@ export default hopeTheme({
 
   // pure: true,
 
-  iconAssets: "//at.alicdn.com/t/c/font_4672488_lhu44p37o3m.css",
+  iconAssets: "//at.alicdn.com/t/c/font_4672488_kgcxsp6vfu9.css",
   logo: "/logo1.png",
   docsDir: "src",
   repo: "https://github.com/ErenJaegerKing",

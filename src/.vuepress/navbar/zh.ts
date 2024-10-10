@@ -15,35 +15,40 @@ export const zhNavbar = navbar([
       { text: "时间轴", icon: "timeAxis", link: "/timeline/" },
     ],
   },
+  // {
+  //   text: "Java",
+  //   icon: "java",
+  //   link: "/Java/",
+  // },
+  // {
+  //   text: "前端",
+  //   icon: "qianduan",
+  //   link: "/frontend/",
+  // },
+  // {
+  //   text: "算法",
+  //   icon: "leetcode",
+  //   link: "/algorithm/",
+  // },
+  // {
+  //   text: "数据库",
+  //   icon: "shujuku",
+  //   link: "/database/",
+  // },
+  // {
+  //   text: "数据库",
+  //   icon: "weifuwu",
+  //   link: "/microservices/",
+  // },
+  // {
+  //   text: "运维",
+  //   icon: "yunwei",
+  //   link: "/devops/",
+  // },
   {
-    text: "Java",
-    icon: "java",
-    link: "/Java/",
-  },
-  {
-    text: "前端",
-    icon: "qianduan",
-    link: "/frontend/",
-  },
-  {
-    text: "算法",
-    icon: "leetcode",
-    link: "/algorithm/",
-  },
-  {
-    text: "数据库",
-    icon: "shujuku",
-    link: "/database/",
-  },
-  {
-    text: "数据库",
-    icon: "weifuwu",
-    link: "/microservices/",
-  },
-  {
-    text: "运维",
-    icon: "yunwei",
-    link: "/devops/",
+    text: "笔记",
+    icon: "jibiji",
+    link: "/notes/",
   },
   {
     text: "感悟",

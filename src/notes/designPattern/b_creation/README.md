@@ -1,8 +1,8 @@
 ---
-title: 设计模式
+title: 创建型模式
 index: false
 dir:
-  order: 6
+  order: 2
 ---
 
 <Catalog />

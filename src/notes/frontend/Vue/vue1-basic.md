@@ -7,6 +7,7 @@ category:
   - 前端
 tag:
   - Vue2
+order: 1
 ---
 :::info
 本笔记记录自己初步学习vue2的笔记

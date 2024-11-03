@@ -10,7 +10,7 @@ export default hopeTheme({
   author: {
     name: "ErenJaegerKing",
     url: "https://ErenJaegerKing.github.io",
-    email: "1252505184@qq.com",
+    email: "erenjaegerking@qq.com",
   },
   // license: "",
   favicon: "/favicon1.ico",
@@ -21,7 +21,7 @@ export default hopeTheme({
 
   // pure: true,
 
-  iconAssets: "//at.alicdn.com/t/c/font_4672488_kgcxsp6vfu9.css",
+  iconAssets: "//at.alicdn.com/t/c/font_4672488_ke0mgubmz0k.css",
   logo: "/logo1.png",
   docsDir: "src",
   repo: "https://github.com/ErenJaegerKing",
@@ -118,8 +118,12 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
     blog: true,
-    photoSwipe: false,
-
+    photoSwipe: {
+      download:false,
+      fullscreen:false,
+      scrollToClose:false,
+    },
+  
     // 启用之前需安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
     // comment: {

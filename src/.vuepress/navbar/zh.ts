@@ -6,8 +6,8 @@ export const zhNavbar = navbar([
     text: "导航", icon: "daohang", link: "/demo/"
   },
   {
-    text: "博文",
-    icon: "boke",
+    text: "总览",
+    icon: "zonglan01",
     children: [
       { text: "全部", icon: "quanbu", link: "/article/" },
       { text: "分类", icon: "fenlei", link: "/category/" },
@@ -47,7 +47,7 @@ export const zhNavbar = navbar([
   // },
   {
     text: "笔记",
-    icon: "jibiji",
+    icon: "bijijilu",
     link: "/notes/",
   },
   {

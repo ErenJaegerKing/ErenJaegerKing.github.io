@@ -1,6 +1,6 @@
 ---
 title: "笔记"
-icon: "jibiji"
+icon: "bijijilu"
 date: 2024-09-16
 index: true
 timeline: false

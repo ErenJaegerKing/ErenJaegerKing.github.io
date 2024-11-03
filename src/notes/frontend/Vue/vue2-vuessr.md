@@ -7,6 +7,7 @@ category:
   - 前端
 tag:
   - Vue SSR
+order: 2
 ---
 :::info
 关于Vue SSR Nuxt的笔记，根据阅读官方文档进行学习

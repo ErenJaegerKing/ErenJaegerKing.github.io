@@ -42,7 +42,7 @@ projects:
   #   desc: jenkins、linux、elk stack、docker等
   #   link: /microservices/
 
-  - icon: jibiji
+  - icon: bijijilu
     name: 笔记
     desc: 学东西记录
     link: /notes/

@@ -11,7 +11,7 @@ tag:
 
 ---
 :::info
-jvm 基础知识
+jvm 基础知识 [转载：黑马程序员JVM视频](https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 :::
 ---
 

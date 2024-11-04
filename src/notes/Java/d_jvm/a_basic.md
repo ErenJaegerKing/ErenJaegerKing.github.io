@@ -1,17 +1,18 @@
 ---
 icon: ""
 description: ""
-title: "jvm基础知识"
+title: "JVM基础"
 date: 2024-10-27
 category:
   - JVM
 tag:
-  - 基础知识
+  - JVM基础
+order: 1
 ---
 
 ---
 :::info
-jvm 基础知识 [转载：黑马程序员JVM视频](https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+JVM基础 学习黑马课程的笔记[转载：黑马程序员JVM视频](https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 :::
 ---
 

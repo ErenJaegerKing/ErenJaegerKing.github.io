@@ -1,19 +1,20 @@
 ---
 icon: ""
 description: ""
-title: "啊实打实的"
-date: 2024-11-03
+title: "代理模式"
+date: 2024-11-04
 category:
   - 设计模式
 tag:
-  - design
+  - 结构性模式
+  - 代理模式
 order: 1
 ---
 
 ---
 
 :::info
-设计模式
+设计模式-结构性模式-代理模式
 :::
 
 ---

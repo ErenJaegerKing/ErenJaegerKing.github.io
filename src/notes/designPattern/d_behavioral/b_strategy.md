@@ -35,7 +35,7 @@ order: 2
 
 策略模式的主要角色如下：
 
-- **抽象策略（Strategy）类：**这是一个抽象角色，通常由一个接口或抽象类实现。此角色给出所有的具体策略类所需的接口。
+- **抽象策略（Strategy）类：**:这是一个抽象角色，通常由一个接口或抽象类实现。此角色给出所有的具体策略类所需的接口。
 - **具体策略（Concrete Strategy）类**：实现了抽象策略定义的接口，提供具体的算法实现或行为。
 - **环境（Context）类**：持有一个策略类的引用，最终给客户端调用。
 
@@ -89,9 +89,16 @@ order: 2
 
 ### **JDK源码解析**
 
+#### Arrays.sort()
+
 `Comparator` 中的策略模式。在Arrays类中有一个 `sort()` 方法
 
 ![](https://drawingbed-686.pages.dev/myblog/202411042233518.png)
 
 Arrays就是一个环境角色类，这个sort方法可以传一个新策略让Arrays根据这个策略来进行排序。Comparator充当的是抽象策略角色，而具体的子实现类充当的是具体策略角色。环境角色类（Arrays）应该持有抽象策略的引用来调用。
+
 ![](https://drawingbed-686.pages.dev/myblog/202411042235012.png)
+
+####Java.util.List
+
+Java.util.List 就是定义了⼀个增（（set）、查（add ）、删（remove ）、改indexOf ）策略，⾄于实现这个策略的 ArrayList 、LinkedList 等类，只是在具体实现时采⽤了不同的算法。但因为它们策略⼀样，不考虑速度的情况下，使⽤时完全可以互相替换使⽤。

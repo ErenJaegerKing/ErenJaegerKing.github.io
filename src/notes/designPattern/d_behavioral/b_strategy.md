@@ -99,6 +99,6 @@ Arrays就是一个环境角色类，这个sort方法可以传一个新策略让A
 
 ![](https://drawingbed-686.pages.dev/myblog/202411042235012.png)
 
-####Java.util.List
+#### Java.util.List
 
 Java.util.List 就是定义了⼀个增（（set）、查（add ）、删（remove ）、改indexOf ）策略，⾄于实现这个策略的 ArrayList 、LinkedList 等类，只是在具体实现时采⽤了不同的算法。但因为它们策略⼀样，不考虑速度的情况下，使⽤时完全可以互相替换使⽤。

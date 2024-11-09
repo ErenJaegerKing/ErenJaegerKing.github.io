@@ -2,7 +2,7 @@
 icon: ""
 description: ""
 title: "装饰器模式"
-date: 2024-11-05
+date: 2024-11-10
 category:
   - 设计模式
 tag:

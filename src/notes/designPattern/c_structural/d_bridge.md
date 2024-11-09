@@ -8,7 +8,7 @@ category:
 tag:
   - 结构性模式
   - 桥接模式
-order: 1
+order: 4
 ---
 
 ---

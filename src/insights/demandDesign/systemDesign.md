@@ -1,0 +1,29 @@
+---
+title: "系统设计"
+description: ""
+icon: ""
+date: 2024-09-18
+category:
+  - 需求设计
+tag:
+  - 业务系统设计功能
+order: 1
+---
+
+:::info
+这里是我想要实现的需求所阅读的文章
+:::
+
+---
+### 超时订单自动取消
+
+[程序员大彬](https://topjavaer.cn/advance/system-design/2-order-timeout-auto-cancel.html)
+- 方案 1：数据库轮询
+- 方案 2：JDK 的延迟队列
+- 方案 3：时间轮算法
+- 方案 4：redis 缓存
+- 方案 5：使用消息队列
+- 
+[JavaGuide定时任务](https://javaguide.cn/system-design/schedule-task.html)
+
+[博客](https://www.cnblogs.com/dx-2021/p/14845934.html)

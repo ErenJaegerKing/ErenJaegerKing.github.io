@@ -2,9 +2,9 @@
 title: "感悟"
 icon: "ganwuxianxing"
 date: 2024-09-16
-# index: true
-# timeline: false
-# article: false
+index: true
+timeline: false
+article: false
 ---
 
 :::info

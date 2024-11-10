@@ -2,7 +2,7 @@
 icon: ""
 description: ""
 title: "工厂方法模式"
-date: 2024-11-05
+date: 2024-11-14
 category:
   - 设计模式
 tag: 

@@ -31,8 +31,11 @@ order: 2
 
 ### UML
 
+![](https://drawingbed-686.pages.dev/myblog/202411122235793.png)
+
 ### 案例
 
+![](https://drawingbed-686.pages.dev/myblog/202411122236209.png)
 
 ### 优缺点
 

@@ -32,7 +32,7 @@ order: 4
 化错误。 
 
 说明：在本文MySQL规约中的建表约定第一条，表达是与否的变量采用is_xxx的命名方式，所以，需要
-在<resultMap>设置从is_xxx 到xxx 的映射关系。 
+在 resultMap 设置从is_xxx 到xxx 的映射关系。 
 
 反例：定义为基本数据类型Boolean isDeleted的属性，它的方法也是isDeleted()，框架在反向解析的时
 候，“误以为”对应的属性名称是deleted，导致属性获取不到，进而抛出异常。

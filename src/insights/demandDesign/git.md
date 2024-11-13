@@ -2,9 +2,9 @@
 title: "Git"
 description: ""
 icon: ""
-date: 2024-09-16
+date: 2024-11-13
 category:
-  - Git
+  - Tool
 tag:
   - Git
 order: 3
@@ -18,9 +18,7 @@ order: 3
 
 [Commit message 和 Change log 编写指南 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
-https://mp.weixin.qq.com/s/iJuAWqBVX_Dxk4G2krRKEA
-
-[Git Commit message 编写指南 - Gitee.com](https://gitee.com/help/articles/4231#article-header0)
+[小傅哥的Git](https://mp.weixin.qq.com/s/iJuAWqBVX_Dxk4G2krRKEA)
 
 ### **一、分支命名**
 
@@ -37,6 +35,17 @@ https://mp.weixin.qq.com/s/iJuAWqBVX_Dxk4G2krRKEA
 提交规范：`type:【需求名】desc #id` 如：`feat:【抽奖算法】O1、Ologn 时间复杂度算法实现 #需求id（github pr/行云等会有自动关联）` *参考Commit message 规范*
 
 ```java
+阮一峰
+
+feat：新功能（feature）
+fix：修补bug
+docs：文档（documentation）
+style： 格式（不影响代码运行的变动）
+refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+test：增加测试
+chore：构建过程或辅助工具的变动
+
+
 # 主要type
 feat:     增加新功能
 fix:      修复bug

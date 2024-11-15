@@ -7,6 +7,7 @@ category:
   - 数据库
 tag:
   - Redis
+order: 1
 ---
 
 ### 主从集群

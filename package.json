@@ -7,7 +7,9 @@
   "scripts": {
     "build": "vuepress-vite build src",
     "dev": "vuepress-vite dev src --clean-cache",
-    "update-package": "pnpm dlx vp-update"
+    "update-package": "pnpm dlx vp-update pnpm build &&",
+    "push": "git add . && git commit -m \"feat:deploy blog server success\" && git push",
+    "deploy": "pnpm run build && ssh root@47.96.108.118 rm -rf /root/blog/* && scp -r ./src/.vuepress/dist/* root@47.96.108.118:/root/blog/*"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.15",

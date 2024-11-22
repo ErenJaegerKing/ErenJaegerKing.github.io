@@ -5,11 +5,11 @@ import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
 
-  hostname: "https://ErenJaegerKing.github.io",
+  hostname: "https://he9.xin",
   
   author: {
     name: "ErenJaegerKing",
-    url: "https://ErenJaegerKing.github.io",
+    url: "https://he9.xin",
     email: "erenjaegerking@qq.com",
   },
   // license: "",

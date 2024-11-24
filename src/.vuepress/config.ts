@@ -5,8 +5,8 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "ErenJaeger",
-      description: "my blog",
+      title: "春风不语即随本心",
+      description: "Love",
     },
     // "/en/": {
     //   lang: "en-US",

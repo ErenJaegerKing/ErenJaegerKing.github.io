@@ -3,10 +3,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
-export default hopeTheme({
+const footerICP_HTML = 
+`<span><img src="/assets/images/head-logo.png" width="20"/><a href="https://beian.mps.gov.cn/#/query/webSearch?code=" target="_blank">XXXXXXXXXXX</a>&nbsp&nbsp&nbsp&nbsp<a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2024136138号-1</a></span>`
 
+export default hopeTheme({
   hostname: "https://he9.xin",
-  
+
   author: {
     name: "ErenJaegerKing",
     url: "https://he9.xin",
@@ -67,7 +69,7 @@ export default hopeTheme({
     },
   },
 
-  footer: "Powered by VuePress | Theme Hope",
+  // footer: footerICP_HTML,
 
   locales: {
     "/": {
@@ -119,11 +121,11 @@ export default hopeTheme({
   plugins: {
     blog: true,
     photoSwipe: {
-      download:false,
-      fullscreen:false,
-      scrollToClose:false,
+      download: false,
+      fullscreen: false,
+      scrollToClose: false,
     },
-  
+
     // 启用之前需安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
     // comment: {
@@ -134,10 +136,7 @@ export default hopeTheme({
     // },
 
     components: {
-      components: [
-        "Badge", 
-        "VPCard"
-      ],
+      components: ["Badge", "VPCard"],
     },
 
     copyright: false,

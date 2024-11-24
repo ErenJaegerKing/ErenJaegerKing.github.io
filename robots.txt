@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://ErenJaegerKing.github.io/sitemap.xml
+Sitemap: https://he9.xin/sitemap.xml

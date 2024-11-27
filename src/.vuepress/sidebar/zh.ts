@@ -48,7 +48,7 @@ export const zhSidebar = sidebar({
     // },
     {
       text: "笔记",
-      icon: "jibiji",
+      icon: "bijijilu",
       prefix: "/notes/",
       link: "/notes/",
     },

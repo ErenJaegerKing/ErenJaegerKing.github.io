@@ -1,5 +1,5 @@
 ---
-title: "Git"
+title: "Git规范"
 description: ""
 icon: ""
 date: 2024-11-13
@@ -7,7 +7,6 @@ category:
   - Tool
 tag:
   - Git
-order: 3
 ---
 
 :::info

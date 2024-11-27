@@ -1,5 +1,5 @@
 ---
-title: "阿里巴巴崇山版手册"
+title: "阿里巴巴规范手册"
 description: ""
 icon: ""
 date: 2024-11-13
@@ -7,7 +7,6 @@ category:
   - 开发规范
 tag:
   - 阿里规范
-order: 4
 
 ---
 

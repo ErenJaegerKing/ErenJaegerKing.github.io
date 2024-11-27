@@ -11,7 +11,7 @@ tag:
 
 ## 磁盘管理
 
-```
+```shell
 磁盘管理
 	查看磁盘设备
 		fdisk -l
@@ -63,7 +63,7 @@ tag:
 					/dev/cdrom      /mnt    iso9660 defaults        0 0
 ```
 ## LVM逻辑卷
-```
+```shell
 	创建物理卷PV
 		划分分区
 			命令(输入 m 获取帮助)：p

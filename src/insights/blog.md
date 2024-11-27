@@ -17,10 +17,13 @@ order: 4
 :::
 
 ---
+## 安装Nginx
 
 [安装Nginx环境](https://blog.csdn.net/weixin_65644655/article/details/142861486)
 
-```SHELL
+### 编译及配置Nginx
+
+```shell
 ./configure --prefix=/usr/local/nginx --with-http_v2_module --with-http_ssl_module \
 --pid-path=/var/run/nginx/nginx.pid \
 --lock-path=/var/lock/nginx.lock --error-log-path=/var/log/nginx/error.log \
@@ -180,13 +183,25 @@ http {
 
 [安装Node.JS环境](https://help.aliyun.com/zh/ecs/use-cases/deploy-a-node-js-environment-on-a-centos-7-instance?spm=a2c4g.11186623.help-menu-)
 
+## 编写博客推送GitHub远程仓库和远程云服务器
+
 [编写推送脚本](https://blog.mo7.cc/)
 
+## 备案
+
 [备案](https://zhuanlan.zhihu.com/p/371579941)
+
+## 域名解析、SSL加密认证（Nginx相关配置）
 
 [域名解析、SSL证书的配置](https://www.bilibili.com/video/BV1E7411S75M/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 [Nginx安装SSL模块](https://www.cnblogs.com/ambition26/p/14077773.html)
+
+## 安装Docker
+
+[安装Docker](https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b11Pt8clX)
+
+## Docker部署Minio对象存储系统
 
 [Nginx-Minio反向代理+负载均衡](https://github.com/minio/minio/blob/master/docs/orchestration/docker-compose/nginx.conf)
 
@@ -196,8 +211,7 @@ http {
 
 [minio 高可用 （原理+秒懂+史上最全）_minio原理-CSDN博客](https://blog.csdn.net/crazymakercircle/article/details/120855464)
 
-[安装Docker](https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b11Pt8clX)
-
+单机Minio部署的Docker指令
 ``` SHELL
 docker run --net=host \
 --name minio -d --restart=always \

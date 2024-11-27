@@ -1,5 +1,5 @@
 ---
-title: "笔记"
+title: "labuladong笔记"
 icon: ""
 date: 2024-09-15
 timeline: false
@@ -10,7 +10,7 @@ dir:
 ---
 
 :::info
-这里放置note相关的内容
+我学习算法时候的笔记，是labuladong的算法笔记
 :::
 
 --- 

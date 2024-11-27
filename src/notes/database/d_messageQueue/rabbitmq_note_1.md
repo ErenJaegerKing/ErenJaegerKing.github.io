@@ -1,10 +1,10 @@
 ---
 icon: ""
 description: ""
-title: "消息队列"
+title: "RabbitMQ"
 date: 2024-09-16
 category:
-  - 数据库
+  - 消息中间间
 tag:
   - RabbitMQ
 ---

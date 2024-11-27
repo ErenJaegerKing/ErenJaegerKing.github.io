@@ -1,5 +1,5 @@
 ---
-title: "MySQL部署"
+title: "MySQL"
 description: ""
 icon: ""
 date: 2024-09-21
@@ -9,8 +9,9 @@ tag:
   - MySQL
 ---
 
-### MySQL部署
-```
+### MySQL 部署
+
+```shell
 MySQL数据库
 	结构
 		数据->表->数据库
@@ -115,8 +116,9 @@ source /etc/profile
 			mysqladmin -u root -p password "abc123"
 ```
 
-### MySQL主从复制+读写分离
-```
+### MySQL 主从复制+读写分离
+
+```shell
 	主从复制
 		环境准备
 			关闭防火墙和增强性安全功能
@@ -186,8 +188,10 @@ source /etc/profile
 		在客户端写入数据验证是否在master上插入
 		在slave1和slave2节点上添加在数据，并在客户端上读取到
 ```
-### LNMP架构
-```
+
+### LNMP 架构
+
+```shell
 LNMP架构
 	yum仓库检查
 		yum clean all 清空yum缓存
@@ -452,7 +456,7 @@ libmemcached-devel
             fastcgi_index  index.php;
             fastcgi_param  SCRIPT_FILENAME  /usr/local/nginx/html$fastcgi_script_name;
             include        fastcgi_params;
-        }   
+        }
 
 			网站站点创建php首页
 				/usr/local/nginx/html

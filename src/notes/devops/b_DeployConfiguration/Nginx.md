@@ -10,7 +10,7 @@ tag:
 ---
 ## 1.Nginx部署
 ### Nginx部署
-```
+```shell
 	1：环境准备
 		pcre-devel，C语言库
 		zlib-devel，支持图文压缩，便于传输
@@ -91,7 +91,7 @@ tag:
 				deny 192.168.100.132;allow all;
 ```
 ### DNS服务
-```
+```shell
 	安装软件包bind
 		yum install bind -y
 	配置
@@ -112,7 +112,7 @@ tag:
 ```
 
 ### nginx虚拟主机
-```
+```shell
 	修改配置文件
 		server {server_name  www.jky.com;location / {root   /var/www/jky;index  index.html index.php;}}
 	创建网站站点
@@ -138,7 +138,7 @@ tag:
 		重启nginx服务
 ```
 ## 2.Nginx+Tomcat动静分离
-```
+```shell
 	nginx部署
 		nginx安装部署
 			环境部署需要安装pcre，zlib，gcc，gcc-c++
@@ -215,7 +215,7 @@ tag:
 			重启Tomcat服务器
 ```
 ## 3.Nginx负载均衡
-```
+```shell
 nginx负载均衡
 	部署Tomcat01
 		防火墙规则清空
@@ -272,7 +272,7 @@ nginx负载均衡
 		启动nginx服务
 ```
 ## 4.论坛部署
-```
+```shell
 论坛部署
 	数据库
 		进入数据库

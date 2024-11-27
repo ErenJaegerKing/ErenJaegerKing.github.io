@@ -1,5 +1,5 @@
 ---
-title: 监控、日志
+title: MongoDB
 index: false
 dir:
   order: 3

@@ -10,7 +10,7 @@ tag:
 ---
 
 ### NFS共享存储
-```
+```shell
 	NFS存储服务端
 		软件包安装
 			nfs-utils
@@ -74,7 +74,7 @@ tag:
 				rsync -az --delete --password-file=/etc/server.pass rsync://backuper@192.168.100.128/wwwroot /var/www/html/
 ```
 ### GFS分布式文件系统
-```
+```shell
 GFS分布式文件系统
 	节点命名
 		hostnamectl set-hostname node1

@@ -1,7 +1,7 @@
 ---
 icon: ""
 description: ""
-title: "Vue2学习笔记"
+title: "Vue2"
 date: 2024-09-25
 category:
   - 前端

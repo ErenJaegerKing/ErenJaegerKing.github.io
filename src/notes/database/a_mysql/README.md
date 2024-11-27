@@ -1,8 +1,8 @@
 ---
-title: VUE入门知识
+title: MySQL
 index: false
 dir:
-  order: 2
+  order: 1
 ---
 
 <Catalog />

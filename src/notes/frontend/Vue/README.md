@@ -1,5 +1,5 @@
 ---
-title: VUE入门知识
+title: VUE
 index: false
 dir:
   order: 1

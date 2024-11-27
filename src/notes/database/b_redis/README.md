@@ -1,8 +1,8 @@
 ---
-title: 部署、配置
+title: Redis
 index: false
 dir:
-  order: 1
+  order: 2
 ---
 
 <Catalog />

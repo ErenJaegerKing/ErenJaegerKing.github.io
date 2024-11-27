@@ -1,8 +1,8 @@
 ---
-title: 服务器管理
+title: MessageQueue
 index: false
 dir:
-  order: 2
+  order: 4
 ---
 
 <Catalog />

@@ -1,12 +1,12 @@
 ---
-title: "Linux"
+title: "Linux磁盘"
 description: ""
 icon: ""
 date: 2024-09-21
 category:
   - 运维
 tag:
-  - Linux
+  - Linux磁盘
 ---
 
 ## 磁盘管理

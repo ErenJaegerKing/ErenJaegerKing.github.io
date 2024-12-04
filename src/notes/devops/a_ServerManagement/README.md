@@ -1,5 +1,5 @@
 ---
-title: Linux服务器
+title: 服务器（Linux）
 index: false
 dir:
   order: 1

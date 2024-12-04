@@ -112,7 +112,9 @@ projects:
 
 # link: https://你的自定义链接
 
-footer: <span><img src="/assets/images/head-logo.png" width="20"/><a href="https://beian.mps.gov.cn/#/query/webSearch?code=" target="_blank">XXXXXXXXXXX</a>&nbsp&nbsp&nbsp&nbsp<a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2024136138号-1</a></span>
+# <img src="/assets/images/head-logo.png" width="20"/><a href="https://beian.mps.gov.cn/#/query/webSearch?code=" target="_blank">XXXXXXXXXXX</a>&nbsp&nbsp&nbsp&nbsp
+
+footer: <span><a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2024136138号-1</a></span>
 footerHtml: true
 
-copyright: 点击之后就可以全复制，请自行跳转到备案网站进行检查，谢谢 <br/> Copyright © 2024 ErenJaegerKing
+copyright: Copyright © 2024 ErenJaegerKing

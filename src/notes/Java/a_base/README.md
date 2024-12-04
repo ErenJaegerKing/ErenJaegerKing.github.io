@@ -1,14 +1,6 @@
 ---
-title: Java 基础
+title: Java面向对象与基础
 index: false
 dir:
-  text:
-  icon:
-  collapsible:
-  expanded:
-  link:
-  index:
   order: 1
 ---
-
-<Catalog />

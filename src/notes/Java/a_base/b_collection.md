@@ -1,12 +1,12 @@
 ---
 icon: ""
 description: ""
-title: "Java进阶"
+title: "集合框架"
 date: 2024-09-23
 category:
   - Java
 tag:
-  - JavaAdvance
+  - 集合框架
 ---
 
-## java进阶
+## 集合框架

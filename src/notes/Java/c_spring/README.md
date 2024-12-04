@@ -1,8 +1,8 @@
 ---
-title: JVM
+title: Spring
 index: false
 dir:
-  order: 4
+  order: 3
 ---
 
 <Catalog />

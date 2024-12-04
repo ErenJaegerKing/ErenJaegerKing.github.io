@@ -4,7 +4,7 @@ description: ""
 title: "RabbitMQ"
 date: 2024-09-16
 category:
-  - 消息中间间
+  - 消息中间件
 tag:
   - RabbitMQ
 ---

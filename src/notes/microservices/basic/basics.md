@@ -1,7 +1,7 @@
 ---
 icon: ""
 description: ""
-title: "微服务系统笔记-基础"
+title: "微服务系统笔记"
 date: 2024-09-15
 category:
   - 微服务

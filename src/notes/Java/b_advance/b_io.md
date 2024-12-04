@@ -1,12 +1,12 @@
 ---
 icon: ""
 description: ""
-title: "Spring Boot"
+title: "IO框架"
 date: 2024-09-23
 category:
   - Java
 tag:
-  - Spring Boot
+  - IO框架
 ---
 
-## Spring Boot
+## IO框架

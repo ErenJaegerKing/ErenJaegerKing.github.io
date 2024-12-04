@@ -1,12 +1,12 @@
 ---
 icon: ""
 description: ""
-title: "JVM基础"
+title: "JVM相关"
 date: 2024-10-27
 category:
   - JVM
 tag:
-  - JVM基础
+  - JVM相关
 order: 1
 ---
 

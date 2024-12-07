@@ -10,14 +10,10 @@ tag:
 ---
 
 :::info
-看过的Git教程和规范
+Git的规范
 :::
 
 ---
-
-[Commit message 和 Change log 编写指南 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
-
-[小傅哥的Git](https://mp.weixin.qq.com/s/iJuAWqBVX_Dxk4G2krRKEA)
 
 ### **一、分支命名**
 
@@ -33,18 +29,7 @@ tag:
 
 提交规范：`type:【需求名】desc #id` 如：`feat:【抽奖算法】O1、Ologn 时间复杂度算法实现 #需求id（github pr/行云等会有自动关联）` *参考Commit message 规范*
 
-```java
-阮一峰
-
-feat：新功能（feature）
-fix：修补bug
-docs：文档（documentation）
-style： 格式（不影响代码运行的变动）
-refactor：重构（即不是新增功能，也不是修改bug的代码变动）
-test：增加测试
-chore：构建过程或辅助工具的变动
-
-
+```shell
 # 主要type
 feat:     增加新功能
 fix:      修复bug
@@ -81,3 +66,10 @@ chore:    不修改src或者test的其余修改，例如构建过程或辅助工
 3. 回滚后，你会看到代码只剩下从回滚往下的提交内容了。
 4. 回滚后，你不能直接 push 提交了，这个之后会报错；`fast-forward` 因为此时本地分支落后于远程分支。
 5. 所以要通过 `git push origin HEAD --force` 进行强制提交。或者你可以把 test 的远程分支删掉，之后在提交。
+
+
+参考文献
+
+[Commit message 和 Change log 编写指南 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+[小傅哥的Git](https://mp.weixin.qq.com/s/iJuAWqBVX_Dxk4G2krRKEA)

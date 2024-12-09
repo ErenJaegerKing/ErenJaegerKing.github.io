@@ -10,11 +10,7 @@ tag:
 order: 4
 ---
 :::info
-本笔记参考[黑马程序员设计模式视频](https://www.bilibili.com/video/BV1Np4y1z7BU?vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2&spm_id_from=333.788.videopod.episodes)  
-[LoveLion博客](https://blog.csdn.net/lovelion/article/details/17517213) 
-[Rrefactoringguru](https://refactoringguru.cn/) 
-[chenssy博客](https://www.cnblogs.com/chenssy/p/3357683.html) 
-[程序员鱼皮路线](http://www.techzhang.cn/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/)
+
 :::
 
 优先：
@@ -80,3 +76,28 @@ order: 4
     - 迭代器模式：PropertyTokenizer 利用迭代器模式实现属性解析器
     - 适配器模式：Log 适配不同的日志框架
 - Tomcat
+
+- [Spring Security](https://blog.csdn.net/u012702547/article/details/107682069)
+  - 模板方法模式：
+  - 责任链模式：spring security过滤链
+  - 策略模式：SecurityContextHolder中定义登录用户信息存储的方法，三种不同策略
+  - 代理模式：将spring security过滤链连入WebFilter的过程，使用了Spring提供的DelegatingFilterProxy
+  - 适配器模式：WebSecurityConfigurerAdapter让不相关的WebSecurity和HttpSecurity能够一起工作
+  - 建造者模式： AuthenticationManagerBuilder，它想要建造的对象是 AuthenticationManager，对应的建造方法则是 build。一般建造者模式中建造者类命名以 builder 结尾，而建造方法命名为 build()。
+  - 观察者模式：具体到 Spring Security 中，如登录成功事件发布，session 销毁事件等等，都算是观察者模式。例如 AbstractAuthenticationProcessingFilter#successfulAuthentication 方法
+  - 装饰模式：不停的变，不停调整它的功能
+
+
+
+
+参考资料
+
+本笔记参考[黑马程序员设计模式视频](https://www.bilibili.com/video/BV1Np4y1z7BU?vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2&spm_id_from=333.788.videopod.episodes)  
+
+[LoveLion博客](https://blog.csdn.net/lovelion/article/details/17517213) 
+
+[Rrefactoringguru](https://refactoringguru.cn/) 
+
+[chenssy博客](https://www.cnblogs.com/chenssy/p/3357683.html) 
+
+[程序员鱼皮路线](http://www.techzhang.cn/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-by-%E7%A8%8B%E5%BA%8F%E5%91%98%E9%B1%BC%E7%9A%AE/)

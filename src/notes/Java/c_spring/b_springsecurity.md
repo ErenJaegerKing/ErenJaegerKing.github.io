@@ -91,6 +91,13 @@ AuthenticationException 。
 
 所以如果我们需要自定义异常处理，我们只需要自定义AuthenticationEntryPoint和AccessDeniedHandler然后配置SpringSecurity即可。
 
+## 认证架构
+
+![](https://drawingbed-686.pages.dev/myblog/202412091531833.png)
+
+https://springdoc.cn/spring-security/servlet/authentication/architecture.html 文档中文网
+
+
 ## 授权 （RBAC基于角色的权限控制）
 
 在SpringSecurity中，会使用默认的FilterSecurityInterceptor来进行权限校验。在
@@ -177,4 +184,37 @@ SpringSecurity去防止CSRF攻击的方式就是通过csrf_token。后端会生�
 
 以，所以CSRF攻击也就不用担心了。
 
-参考资料：[三更学堂（springsecurity）](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+## 原理（看图）
+
+时序图
+
+![](https://drawingbed-686.pages.dev/myblog/202412091712835.png)
+
+认证流程
+
+![](https://drawingbed-686.pages.dev/myblog/202412091733739.png)
+
+通俗易懂
+
+![](https://drawingbed-686.pages.dev/myblog/202412091735295.png)
+
+过滤链
+
+![](https://drawingbed-686.pages.dev/myblog/202412091737692.png)
+
+通俗易懂2
+
+![](https://drawingbed-686.pages.dev/myblog/202412091740565.png)
+
+
+参考资料：
+
+1、[三更学堂（springsecurity）](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+2、[SpringSecurity中文文档](https://springdoc.cn/spring-security/servlet/authentication/architecture.html)
+
+3、http://niocoder.com/2018/01/02/Spring-Security源码分析一-Spring-Security认证过程/ 「龙飞」
+
+4、通俗易懂 https://www.cnblogs.com/qiantao/p/14605154.html
+
+5、通俗易懂2 https://www.cnblogs.com/CF1314/p/14766623.html

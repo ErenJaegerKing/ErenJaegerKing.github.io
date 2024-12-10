@@ -10,6 +10,8 @@ tag:
 order: 4
 
 star: true
+
+cover: /assets/images/bgImage1.jpg
 ---
 
 :::info

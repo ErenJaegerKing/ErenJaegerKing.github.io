@@ -89,4 +89,4 @@ order: 4
 
 在javaWeb应用开发中，FilterChain是职责链（过滤器）模式的典型应用
 
-- [ ]  模拟SpringBoot的过滤器
+Spring Security的过滤链也是一种责任链

@@ -8,14 +8,15 @@
   "scripts": {
     "build": "vuepress-vite build src",
     "dev": "vuepress-vite dev src --clean-cache",
-    "update-package": "pnpm dlx vp-update pnpm build &&",
-    "init":"bash ./.github/_shell/init.sh",
-    "sync":"bash ./.github/_shell/git-sync.sh",
+    "update": "dlx vp-update",
+    "init": "bash ./.github/_shell/init.sh",
+    "sync": "bash ./.github/_shell/git-sync.sh",
     "deploy": "bash ./.github/_shell/deploy.sh"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.15",
-    "vue": "^3.5.6",
+    "@vuepress/plugin-baidu-analytics": "2.0.0-rc.65",
+    "vue": "^3.5.13",
     "vuepress": "2.0.0-rc.15",
     "vuepress-theme-hope": "2.0.0-rc.52"
   }

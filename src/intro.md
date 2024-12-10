@@ -7,7 +7,6 @@ category:
  - 关于
 tag:
  - intro
-star: true
 ---
 
 :::: info

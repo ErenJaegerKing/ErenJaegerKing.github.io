@@ -8,6 +8,8 @@ category:
 tag:
   - 设计模式总结
 order: 4
+
+star: true
 ---
 
 :::info

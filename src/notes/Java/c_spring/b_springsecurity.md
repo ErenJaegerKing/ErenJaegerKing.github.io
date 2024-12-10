@@ -206,6 +206,12 @@ SpringSecurity去防止CSRF攻击的方式就是通过csrf_token。后端会生�
 
 ![](https://drawingbed-686.pages.dev/myblog/202412091740565.png)
 
+## 认证流程及鉴权流程（以后深入学习的时候再去了解）
+
+https://blog.csdn.net/qq_60264381/article/details/123071739
+
+
+
 
 参考资料：
 
@@ -218,3 +224,5 @@ SpringSecurity去防止CSRF攻击的方式就是通过csrf_token。后端会生�
 4、通俗易懂 https://www.cnblogs.com/qiantao/p/14605154.html
 
 5、通俗易懂2 https://www.cnblogs.com/CF1314/p/14766623.html
+
+6、认证流程及鉴权流程 https://blog.csdn.net/qq_60264381/article/details/123071739

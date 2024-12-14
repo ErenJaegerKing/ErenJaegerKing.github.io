@@ -311,5 +311,3 @@ month 取值在0-11之间。
 
 正例： Calendar.JANUARY，Calendar.FEBRUARY，Calendar.MARCH 等来指代相应月份来进行传参或
 比较。
-
-## (六) 集合处理

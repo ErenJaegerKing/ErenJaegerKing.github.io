@@ -68,6 +68,8 @@ tag:
 
 eudic（配备一本学习词典（英英、英汉），一本母语词典，一本同义词词典（Thesaurus.com）和一本搭配词典。）
 
+截至24-12-16:查找单词148 生词99
+
 ## 计划与目标（实时修改）
 
 目标是：可以无障碍的观看官方文档以及英文视频、脱离中文文档（使用英英字典）
@@ -76,8 +78,11 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 目标：过六级
 
 听：englishpod（24-11-14）、泛听
+
 说：englishpod（24-11-14）
+
 读：暂时不用
+
 写：五步提高写作法
 
 ## 精听精读五步法
@@ -141,17 +146,7 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
 ## [English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)听-说
 
-### 1 Difficult Customer
-
-A: Good evening. My name is Fabio, I'll be your waiter for tonight. May I take your order? B: No, I'm still working on it. This menu is not even in English. What's good here?
-
-A: For you sir, I would recommend spaghetti and meatballs. B: Does it come with coke and fries?
-
-A:It comes with either soup or salad and a complimentary glass of wine, Sir. B: I'll go with the spaghetti and meatballs, salad and the wine.
-
-A: Excellent choice, your order will be ready soon. B: How soon is soon?
-
-A: Twenty minutes? B: You know what? I'll just go grab a burger across the street.
+### 1 Elementary - Difficult Customer
 
 There are two individuals. One is a customer and the other is a waitress. The customer rejected the waitress's offer
 due to the long waiting time for the order
@@ -164,22 +159,14 @@ There are two individual. One is a customer and the other is a waitress. The
 customer declined the waitress's recommendation because of the long waiting time
 for the order to be ready
 
-### 2 Calling in Sick
-
-A: Hello, Daniel speaking, how may I help you? B: Hi, Daniel, Julie here.
-
-A: Hi, Julie, how are you? B: Actually, I’m feeling quite ill today.
-
-A: I’m sorry to hear that. What’s wrong? B: I think I’m coming down with the flu. I have a headache, a sore throat a runny nose and I’m feeling slightly feverish.
-
-A: I see... so you’re calling in sick? B: Yes, I was hoping to take the day off to recover.
-
-A: OK, then. Try and get some rest.
+### 2 Elementary - Calling in Sick
 
 Julice calls Daniel and tells him that she's feeling quite ill. She suspects she's coming down with the flu as she has a headache, a sore throat, a runny nose, and is slightly feverish. 
 She's calling in sick and hopes to take the day off to recover. Danieli tells her to try to get some rest.
 
-### 3
+### 3 Daily - Hotel Upgrade
+
+
 
 ## ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2) 写
 
@@ -187,13 +174,15 @@ She's calling in sick and hopes to take the day off to recover. Danieli tells he
 
 刻意练习：过几天开始一个新的范文，强行使用之前学习范文例子
 
-评论区里面的例子：
+评论区的笔记：
 
 ![](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
 ## 泛听 听
 
 摩根家庭（欣赏，听不懂能看懂也行）
+
+磨耳朵
 
 ## 参考资料：
 

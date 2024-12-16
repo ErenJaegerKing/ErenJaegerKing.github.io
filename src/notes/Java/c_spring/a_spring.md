@@ -63,7 +63,10 @@ order: 1
   - AOP是什么
   - AOP术语
     - 8
-    - 通知类型（4）
+    - 通知类型（5）
+
+![](https://drawingbed-686.pages.dev/myblog/202412162152105.png)
+
   - Spring AOP和AspectJ是什么关系
 - AOP的配置方式
   - XML配置方法
@@ -78,10 +81,19 @@ order: 1
 
 ### SpringMVC请求流程和案例
 
+什么是MVC?
+什么是Spring MVC?
+Spring MVC的请求流程？
+Spring MVC案例你写过吗？
+
+### Spring IOC实现原理详解之IOC体系结构设计
+
+
+
 ## 参考资料
 
 padi 哥 https://pdai.tech/md/spring/spring.html
 
 spring 官方文档 https://spring.io/projects/spring-framework
 
-到时候复习的时候还是会看padi哥的大纲，现在改变记笔记的方式，要学会自己总结，即便很垃圾
+到时候复习的时候还是会看padi哥的大纲，现在改变记笔记的方式，要学会自己总结，即便很垃圾M，要用自己的话去总结

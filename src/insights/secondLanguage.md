@@ -58,29 +58,58 @@ tag:
 10. **柯林斯 COBUILD 高阶英汉双解学习词典 (Collins COBUILD Advanced Learner's English-Chinese Dictionary)**
     - **背景**：继承了 COBUILD 系列一贯的高质量标准，特别为中文读者定制，通过增加汉语解释来辅助英语学习。该词典强调实际语言应用，帮助学习者更加自然地运用英语。
 
-## 欧路词典（Rita）
+## 欧路词典（Rita Up推荐）
 
-24-25-26 年用的词典：朗文当代 5 双解（重点）、牛津高阶 9 双解（重点）(牛津高阶 8 双解：雪藏)、The Little Dict 词频字典
+在用的词典：朗文当代 5 双解（重点）、牛津高阶 9 双解（重点）(牛津高阶 8 双解：雪藏)、The Little Dict 词频字典
 
-以后打算用的字典：Thesaurus.com 近义反义词词典、剑桥高阶双解第四版、Vocabulary.com（背单词小故事）
+以后计划用的字典：Thesaurus.com 近义反义词词典、剑桥高阶双解第四版、Vocabulary.com（背单词小故事）
 
 字典只是工具，对于我这种英语小虾米来说，更重要的是持续学习下去，还不是在想最好用的字典是哪个，只有最适合自己的字典
 
 eudic（配备一本学习词典（英英、英汉），一本母语词典，一本同义词词典（Thesaurus.com）和一本搭配词典。）
 
-## 学习方法
+## 计划与目标（实时修改）
 
 目标是：可以无障碍的观看官方文档以及英文视频、脱离中文文档（使用英英字典）
 
-计划 25 年 7 月 1 号毕业之后执行该计划
+### 24-12-13 至今
+目标：过六级
 
-现在是 24-12-13，25 年目标：过六级
+听：englishpod（24-11-14）、泛听
+说：englishpod（24-11-14）
+读：暂时不用
+写：五步提高写作法
 
-## ZoeLanguages UP 主
+## 精听精读五步法
 
-[🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+第一步，盲听材料：大概记关键词、猜测大概意思
 
-对博主视频进行总结 https://mubu.com/doc/3wGHFiwDTUG
+第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
+
+第三步，逐句跟读，加深理解，训练语感。
+
+第四步，影子跟读。
+
+第五步，原速听（可选）识别新学单词与语法。
+
+影子跟读法：
+- 模仿，跟读，像影子一样
+- 跟读材料要适合自己的难度
+- 跟读材料的长度 3-4 个单词
+- shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
+
+## [🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+⚠️ 注意，这些坏习惯正在危害大脑健康！
+
+1. 吃高糖高热量零食
+2. 刷手机成瘾
+3. 缺乏兴趣爱好
+4. 久坐不动
+5. 自我 PUA，消极自我对话
+6. 睡眠质量差，睡眠不足
+
+[评论区中对博主视频进行总结](https://mubu.com/doc/3wGHFiwDTUG)
 
 中级进阶：大量的输入和输出练习
 
@@ -110,16 +139,7 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
 计划二：月份 1（核心资料学习+背单词+泛听 ）月份二（在计划一中穿插口语课）
 
-⚠️ 注意，这些坏习惯正在危害大脑健康！
-
-1. 吃高糖高热量零食
-2. 刷手机成瘾
-3. 缺乏兴趣爱好
-4. 久坐不动
-5. 自我 PUA，消极自我对话
-6. 睡眠质量差，睡眠不足
-
-## [English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+## [English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)听-说
 
 ### 1 Difficult Customer
 
@@ -159,28 +179,21 @@ A: OK, then. Try and get some rest.
 Julice calls Daniel and tells him that she's feeling quite ill. She suspects she's coming down with the flu as she has a headache, a sore throat, a runny nose, and is slightly feverish. 
 She's calling in sick and hopes to take the day off to recover. Danieli tells her to try to get some rest.
 
+### 3
 
-## 精听精读五步法
+## ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2) 写
 
-第一步，盲听材料：大概记关键词、猜测大概意思
+可以拿四六级的范文进行练习，建议使用在纸上写，因为这样修改也方便，记下好用的生词、例句、词语
 
-第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
+刻意练习：过几天开始一个新的范文，强行使用之前学习范文例子
 
-第三步，逐句跟读，加深理解，训练语感。
+评论区里面的例子：
 
-第四步，影子跟读。
+![](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
-第五步，原速听（可选）识别新学单词与语法。
+## 泛听 听
 
-## 影子跟读法
-
-模仿，跟读，像影子一样
-
-跟读材料要适合自己的难度
-
-跟读材料的长度 3-4 个单词
-
-shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
+摩根家庭（欣赏，听不懂能看懂也行）
 
 ## 参考资料：
 

@@ -4,7 +4,7 @@ description: ""
 title: "Spring"
 date: 2024-12-13
 category:
-  - Java
+  - Spring
 tag:
   - Spring
 order: 1
@@ -88,7 +88,7 @@ Spring MVC案例你写过吗？
 
 ### Spring IOC实现原理详解之IOC体系结构设计
 
-
+![](https://drawingbed-686.pages.dev/myblog/202412172123876.png)
 
 ## 参考资料
 

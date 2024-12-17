@@ -166,7 +166,9 @@ She's calling in sick and hopes to take the day off to recover. Danieli tells he
 
 ### 3 Daily - Hotel Upgrade
 
+### 4 The Office - I need an assistant
 
+### 5 Daily Life - Cut in Line
 
 ## ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2) 写
 

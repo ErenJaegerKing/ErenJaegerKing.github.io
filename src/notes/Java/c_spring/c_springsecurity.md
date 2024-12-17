@@ -4,10 +4,10 @@ description: ""
 title: "SpringSecurity"
 date: 2024-12-05
 category:
-  - Java
+  - Spring
 tag:
   - SpringSecurity
-order: 2
+order: 3
 ---
 
 ## 简介

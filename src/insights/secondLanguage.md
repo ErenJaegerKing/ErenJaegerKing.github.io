@@ -15,76 +15,17 @@ tag:
 
 ---
 
-## 欧路词典（B站 Rita UP）
-
-在用的词典：朗文当代 5 双解（重点）、牛津高阶 9 双解（重点）(牛津高阶 8 双解：雪藏)、The Little Dict 词频字典
-
-以后计划用的字典：Thesaurus.com 近义反义词词典、剑桥高阶双解第四版、Vocabulary.com（背单词小故事）
-
-字典只是工具，对于我这种英语小虾米来说，更重要的是持续学习下去，还不是在想最好用的字典是哪个，只有最适合自己的字典
-
-eudic（配备一本学习词典（英英、英汉），一本母语词典，一本同义词词典（Thesaurus.com）和一本搭配词典。）
-
-截至24-12-16:查找单词148 生词99
-
 ## 计划与目标（实时修改）
 
-目标是：可以无障碍的观看官方文档以及英文视频、脱离中文文档（使用英英字典）
+长远目标是：可以无障碍的观看官方文档以及英文视频、脱离中文文档（使用英英字典）
 
-### 24-12-13 至今
-目标：过六级
+25年目标：过英语六级，要考到500分以上
 
-听：englishpod（24-11-14）、泛听
+现在的目标：精听精读，积累单词
 
-说：englishpod（24-11-14）
+## 现阶段学习方法
 
-读：暂时不用
-
-写：五步提高写作法
-
-## 精听的方法（找到适合自己的方法）
-
-### [超详细！几分钟就学会的英语精听方法！考试高分不是梦！](https://www.bilibili.com/video/BV1xb411v7Xq/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-评论区对 关于精听，听力听写 的总结
-
-- 1.准备文具。ps.可以是软件，例如ABOBOO
-- 2.选择听力材料
-   - ①难度适中，至少懂70%。（悄咪咪：俊是m！！！！）
-   - ②应试听力精听真题。（例如四六级，高考）
-   - ③听一句写一句。
-- 3.听力注意事项
-   - ①听力以句为单位听写，先集中整体句意，听一个词想一个词的意思，容易分散理解词义
-   - ②大意没有理解，可以反复听几次。
-   - ③听懂了，写不出来，不是记忆力的问题，是你假性理解。
-   - ④大意理解不了，可以把会的先写出来。
-   - ⑤生词听了几遍听不出来，可以放弃。
-- 4.英文稿改正自己的听写
-- 5.思考错误原因，并进行改正
-   - ①词汇量不足。
-      - 多背单词增强词汇量。
-   - ②背过的单词，发音不正确。
-      - 模仿正确发音。
-   - ③特殊发音现象，例如连读，弱读，音调变化。
-      - 跟读总结规律。
-   - ③重视介词和冠词，容易连读忽略。
-      - 根据自身情况，添加练习。
-- 后面一些问题零零散散做了总结。
-   - ①要坚持精读一到两个月。
-   - ②介意边听边写。
-
-### 精听精读五步法
-- 第一步，盲听材料：大概记关键词、猜测大概意思
-- 第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
-- 第三步，逐句跟读，加深理解，训练语感。
-- 第四步，影子跟读。
-  - 模仿，跟读，像影子一样
-  - 跟读材料要适合自己的难度-
-  - 跟读材料的长度 3-4 个单词
-  - shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
-- 第五步，原速听（可选）识别新学单词与语法。
-
-
-## [🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+[🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 ⚠️ 注意，这些坏习惯正在危害大脑健康！
 
@@ -125,33 +66,49 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
 计划二：月份 1（核心资料学习+背单词+泛听 ）月份二（在计划一中穿插口语课）
 
-## [English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)听-说
+## 精听的方法（找到适合自己的方法）
 
-1、Elementary - Difficult Customer
+### [超详细！几分钟就学会的英语精听方法！考试高分不是梦！](https://www.bilibili.com/video/BV1xb411v7Xq/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+评论区对 关于精听，听力听写 的总结
 
-There are two individuals. One is a customer and the other is a waitress. The customer rejected the waitress's offer
-due to the long waiting time for the order
+- 1.准备文具。ps.可以是软件，例如ABOBOO
+- 2.选择听力材料
+   - ①难度适中，至少懂70%。（悄咪咪：俊是m！！！！）
+   - ②应试听力精听真题。（例如四六级，高考）
+   - ③听一句写一句。
+- 3.听力注意事项
+   - ①听力以句为单位听写，先集中整体句意，听一个词想一个词的意思，容易分散理解词义
+   - ②大意没有理解，可以反复听几次。
+   - ③听懂了，写不出来，不是记忆力的问题，是你假性理解。
+   - ④大意理解不了，可以把会的先写出来。
+   - ⑤生词听了几遍听不出来，可以放弃。
+- 4.英文稿改正自己的听写
+- 5.思考错误原因，并进行改正
+   - ①词汇量不足。
+      - 多背单词增强词汇量。
+   - ②背过的单词，发音不正确。
+      - 模仿正确发音。
+   - ③特殊发音现象，例如连读，弱读，音调变化。
+      - 跟读总结规律。
+   - ③重视介词和冠词，容易连读忽略。
+      - 根据自身情况，添加练习。
+- 后面一些问题零零散散做了总结。
+   - ①要坚持精读一到两个月。
+   - ②介意边听边写。
+### 精听精读五步法
+- 第一步，盲听材料：大概记关键词、猜测大概意思
+- 第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
+- 第三步，逐句跟读，加深理解，训练语感。
+- 第四步，影子跟读。
+  - 模仿，跟读，像影子一样
+  - 跟读材料要适合自己的难度-
+  - 跟读材料的长度 3-4 个单词
+  - shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
+- 第五步，原速听（可选）识别新学单词与语法。
 
-ai1: timi 帮我用美式英文总结一下，要求是非常的言简意赅
+##  写
 
-ai2: timi 我写的这段话在上面的语境里面，我需要怎么进行修改呢
-
-There are two individual. One is a customer and the other is a waitress. The
-customer declined the waitress's recommendation because of the long waiting time
-for the order to be ready
-
-2、Elementary - Calling in Sick
-
-Julice calls Daniel and tells him that she's feeling quite ill. She suspects she's coming down with the flu as she has a headache, a sore throat, a runny nose, and is slightly feverish. 
-She's calling in sick and hopes to take the day off to recover. Danieli tells her to try to get some rest.
-
-3、Daily - Hotel Upgrade
-
-4、The Office - I need an assistant
-
-5、Daily Life - Cut in Line
-
-## ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2) 写
+["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 可以拿四六级的范文进行练习，建议使用在纸上写，因为这样修改也方便，记下好用的生词、例句、词语
 
@@ -161,13 +118,33 @@ She's calling in sick and hopes to take the day off to recover. Danieli tells he
 
 ![](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
-## 泛听 听
+## 听 + 说（部分）
 
-摩根家庭（欣赏，听不懂能看懂也行）、老友记
+[English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+摩根家庭（欣赏，听不懂能看懂也行）
 
 磨耳朵
 
-听歌学英语
+## 学习资源
+
+###  外刊网站
+
+[这个方法读外刊，英语进步翻一番！外刊网站丨电子笔记丨精读方法](https://www.bilibili.com/video/BV1g5411h7Vw/?spm_id_from=333.788.comment.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+## 欧路词典（B站 Rita UP）
+
+在用的词典：朗文当代 5 双解（重点）、牛津高阶 9 双解（重点）(牛津高阶 8 双解：雪藏)、The Little Dict 词频字典
+
+以后计划用的字典：Thesaurus.com 近义反义词词典、剑桥高阶双解第四版、Vocabulary.com（背单词小故事）
+
+字典只是工具，对于我这种英语小虾米来说，更重要的是持续学习下去，还不是在想最好用的字典是哪个，只有最适合自己的字典
+
+eudic（配备一本学习词典（英英、英汉），一本母语词典，一本同义词词典（Thesaurus.com）和一本搭配词典。）
+
+截至24-12-16：词典单词：99
+
+截至24-12-18：词典单词：136
 
 ## 十大权威英语词典
 

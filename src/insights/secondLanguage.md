@@ -10,55 +10,12 @@ tag:
 ---
 
 :::info
-第二语言的学习：英语
+学好英语三R原则: Routine Repetition Review 定下目标后坚持不懈 + 正确的方法，并善于从失败中吸取经验教训
 :::
 
 ---
 
-## 词典
-
-# 十大权威英语词典
-
-1. **牛津高阶英语词典 (Oxford Advanced Learner's Dictionary)**
-
-   - **背景**：由牛津大学出版社出版，自问世以来深受广大英语学习者和教师的喜爱。它是一部针对“母语非英语的英语学习者”专门打造的权威英语词典，被誉为“开辟英语学习型词典之先河”。商务印书馆影印该词典的英文原版以填补英汉双解版尚未出版的空缺。
-
-2. **柯林斯 COBUILD 高阶英语学习词典 (Collins COBUILD Advanced Learner's English Dictionary)**
-
-   - **背景**：依托规模达 45 亿词的 Collins Corpus 编写而成，每条释义、用法、例证均源于真实语境。特设同义词、词缀、搭配等专栏，强化学习功能，是备受信赖的英语词典之一。
-
-3. **朗文当代高级英语辞典 (Longman Dictionary of Contemporary English)**
-
-   - **背景**：由培生教育出版亚洲有限公司出版，自 1978 年首次出版以来深受全球英语学习者的喜爱，是一部适合中国英语学习者的英英词典和双解词典。提供阅读、交流、写作、翻译全面解决方案。
-
-4. **韦氏高阶英语学习词典 (Merriam-Webster's Advanced Learner's English Dictionary)**
-
-   - **背景**：专为中高级英语学习者设计，涵盖美式英语，其权威性和准确性受到广泛认可。它不仅是一本学习工具，也是研究美式英语的重要参考。
-
-5. **剑桥高阶英语学习词典 (Cambridge Advanced Learner's Dictionary)**
-
-   - **背景**：由剑桥大学出版社出版，以其清晰的解释和丰富的例句著称，适用于中学到大学阶段的学习者。此书对词汇的理解与使用提供了重要的帮助。
-
-6. **牛津高阶英汉双解词典 (Oxford Advanced Learner's Chinese-English Dictionary)**
-
-   - **背景**：专门为中文读者编写的英汉双解词典，有助于提高中国学生在学习英语时的理解能力。同样由牛津大学出版社出版，保证了其专业性和权威性。
-
-7. **韦氏高阶英汉双解词典 (Merriam-Webster's Advanced Learner's English-Chinese Dictionary)**
-
-   - **背景**：结合了美国传统词典的优点，同时加入了汉语翻译，方便中文读者更好地理解和掌握英语单词及表达方式。
-
-8. **麦克米伦高阶英汉双解词典 (Macmillan English-Chinese Dictionary for Advanced Learners)**
-
-   - **背景**：麦克米伦词典注重实用性和现代感，旨在满足不同层次英语学习者的需求。此版本特别为中文使用者定制，增加了汉语解释部分。
-
-9. **剑桥高阶英汉双解词典 (Cambridge Advanced Learner's English-Chinese Dictionary)**
-
-   - **背景**：剑桥大学出版社推出的英汉双解版本，既保留了原版词典的特点，又添加了中文翻译，使得中国的英语学习者能够更轻松地理解复杂的英语概念。
-
-10. **柯林斯 COBUILD 高阶英汉双解学习词典 (Collins COBUILD Advanced Learner's English-Chinese Dictionary)**
-    - **背景**：继承了 COBUILD 系列一贯的高质量标准，特别为中文读者定制，通过增加汉语解释来辅助英语学习。该词典强调实际语言应用，帮助学习者更加自然地运用英语。
-
-## 欧路词典（Rita Up推荐）
+## 欧路词典（B站 Rita UP）
 
 在用的词典：朗文当代 5 双解（重点）、牛津高阶 9 双解（重点）(牛津高阶 8 双解：雪藏)、The Little Dict 词频字典
 
@@ -85,23 +42,47 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
 写：五步提高写作法
 
-## 精听精读五步法
+## 精听的方法（找到适合自己的方法）
 
-第一步，盲听材料：大概记关键词、猜测大概意思
+### [超详细！几分钟就学会的英语精听方法！考试高分不是梦！](https://www.bilibili.com/video/BV1xb411v7Xq/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+评论区对 关于精听，听力听写 的总结
 
-第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
+- 1.准备文具。ps.可以是软件，例如ABOBOO
+- 2.选择听力材料
+   - ①难度适中，至少懂70%。（悄咪咪：俊是m！！！！）
+   - ②应试听力精听真题。（例如四六级，高考）
+   - ③听一句写一句。
+- 3.听力注意事项
+   - ①听力以句为单位听写，先集中整体句意，听一个词想一个词的意思，容易分散理解词义
+   - ②大意没有理解，可以反复听几次。
+   - ③听懂了，写不出来，不是记忆力的问题，是你假性理解。
+   - ④大意理解不了，可以把会的先写出来。
+   - ⑤生词听了几遍听不出来，可以放弃。
+- 4.英文稿改正自己的听写
+- 5.思考错误原因，并进行改正
+   - ①词汇量不足。
+      - 多背单词增强词汇量。
+   - ②背过的单词，发音不正确。
+      - 模仿正确发音。
+   - ③特殊发音现象，例如连读，弱读，音调变化。
+      - 跟读总结规律。
+   - ③重视介词和冠词，容易连读忽略。
+      - 根据自身情况，添加练习。
+- 后面一些问题零零散散做了总结。
+   - ①要坚持精读一到两个月。
+   - ②介意边听边写。
 
-第三步，逐句跟读，加深理解，训练语感。
+### 精听精读五步法
+- 第一步，盲听材料：大概记关键词、猜测大概意思
+- 第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
+- 第三步，逐句跟读，加深理解，训练语感。
+- 第四步，影子跟读。
+  - 模仿，跟读，像影子一样
+  - 跟读材料要适合自己的难度-
+  - 跟读材料的长度 3-4 个单词
+  - shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
+- 第五步，原速听（可选）识别新学单词与语法。
 
-第四步，影子跟读。
-
-第五步，原速听（可选）识别新学单词与语法。
-
-影子跟读法：
-- 模仿，跟读，像影子一样
-- 跟读材料要适合自己的难度
-- 跟读材料的长度 3-4 个单词
-- shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
 
 ## [🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
@@ -146,7 +127,7 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
 ## [English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)听-说
 
-### 1 Elementary - Difficult Customer
+1、Elementary - Difficult Customer
 
 There are two individuals. One is a customer and the other is a waitress. The customer rejected the waitress's offer
 due to the long waiting time for the order
@@ -159,16 +140,16 @@ There are two individual. One is a customer and the other is a waitress. The
 customer declined the waitress's recommendation because of the long waiting time
 for the order to be ready
 
-### 2 Elementary - Calling in Sick
+2、Elementary - Calling in Sick
 
 Julice calls Daniel and tells him that she's feeling quite ill. She suspects she's coming down with the flu as she has a headache, a sore throat, a runny nose, and is slightly feverish. 
 She's calling in sick and hopes to take the day off to recover. Danieli tells her to try to get some rest.
 
-### 3 Daily - Hotel Upgrade
+3、Daily - Hotel Upgrade
 
-### 4 The Office - I need an assistant
+4、The Office - I need an assistant
 
-### 5 Daily Life - Cut in Line
+5、Daily Life - Cut in Line
 
 ## ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2) 写
 
@@ -182,9 +163,53 @@ She's calling in sick and hopes to take the day off to recover. Danieli tells he
 
 ## 泛听 听
 
-摩根家庭（欣赏，听不懂能看懂也行）
+摩根家庭（欣赏，听不懂能看懂也行）、老友记
 
 磨耳朵
+
+听歌学英语
+
+## 十大权威英语词典
+
+1. **牛津高阶英语词典 (Oxford Advanced Learner's Dictionary)**
+
+   - **背景**：由牛津大学出版社出版，自问世以来深受广大英语学习者和教师的喜爱。它是一部针对“母语非英语的英语学习者”专门打造的权威英语词典，被誉为“开辟英语学习型词典之先河”。商务印书馆影印该词典的英文原版以填补英汉双解版尚未出版的空缺。
+
+2. **柯林斯 COBUILD 高阶英语学习词典 (Collins COBUILD Advanced Learner's English Dictionary)**
+
+   - **背景**：依托规模达 45 亿词的 Collins Corpus 编写而成，每条释义、用法、例证均源于真实语境。特设同义词、词缀、搭配等专栏，强化学习功能，是备受信赖的英语词典之一。
+
+3. **朗文当代高级英语辞典 (Longman Dictionary of Contemporary English)**
+
+   - **背景**：由培生教育出版亚洲有限公司出版，自 1978 年首次出版以来深受全球英语学习者的喜爱，是一部适合中国英语学习者的英英词典和双解词典。提供阅读、交流、写作、翻译全面解决方案。
+
+4. **韦氏高阶英语学习词典 (Merriam-Webster's Advanced Learner's English Dictionary)**
+
+   - **背景**：专为中高级英语学习者设计，涵盖美式英语，其权威性和准确性受到广泛认可。它不仅是一本学习工具，也是研究美式英语的重要参考。
+
+5. **剑桥高阶英语学习词典 (Cambridge Advanced Learner's Dictionary)**
+
+   - **背景**：由剑桥大学出版社出版，以其清晰的解释和丰富的例句著称，适用于中学到大学阶段的学习者。此书对词汇的理解与使用提供了重要的帮助。
+
+6. **牛津高阶英汉双解词典 (Oxford Advanced Learner's Chinese-English Dictionary)**
+
+   - **背景**：专门为中文读者编写的英汉双解词典，有助于提高中国学生在学习英语时的理解能力。同样由牛津大学出版社出版，保证了其专业性和权威性。
+
+7. **韦氏高阶英汉双解词典 (Merriam-Webster's Advanced Learner's English-Chinese Dictionary)**
+
+   - **背景**：结合了美国传统词典的优点，同时加入了汉语翻译，方便中文读者更好地理解和掌握英语单词及表达方式。
+
+8. **麦克米伦高阶英汉双解词典 (Macmillan English-Chinese Dictionary for Advanced Learners)**
+
+   - **背景**：麦克米伦词典注重实用性和现代感，旨在满足不同层次英语学习者的需求。此版本特别为中文使用者定制，增加了汉语解释部分。
+
+9. **剑桥高阶英汉双解词典 (Cambridge Advanced Learner's English-Chinese Dictionary)**
+
+   - **背景**：剑桥大学出版社推出的英汉双解版本，既保留了原版词典的特点，又添加了中文翻译，使得中国的英语学习者能够更轻松地理解复杂的英语概念。
+
+10. **柯林斯 COBUILD 高阶英汉双解学习词典 (Collins COBUILD Advanced Learner's English-Chinese Dictionary)**
+    - **背景**：继承了 COBUILD 系列一贯的高质量标准，特别为中文读者定制，通过增加汉语解释来辅助英语学习。该词典强调实际语言应用，帮助学习者更加自然地运用英语。
+
 
 ## 参考资料：
 

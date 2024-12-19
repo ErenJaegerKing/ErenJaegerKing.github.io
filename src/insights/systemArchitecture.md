@@ -1,14 +1,17 @@
 ---
-title: "系统设计"
+title: "系统架构"
 description: ""
 icon: ""
 date: 2024-12-11
 category:
-  - 系统设计
+  - 系统架构
 tag:
-  - 系统设计
+  - 系统架构
 
 ---
+## 架构
+
+
 
 ## 定时任务
 
@@ -46,9 +49,10 @@ tag:
 
 定时任务总结：单机中最常用也比较推荐的是时间轮。
 
-
 ## 参考资料
 
 guide哥 https://javaguide.cn/
 
 XXL-JOB官方文档 https://www.xuxueli.com/xxl-job/
+
+小傅哥 https://mp.weixin.qq.com/s/MOYLEuKtpxk36Zi_dMr7hA

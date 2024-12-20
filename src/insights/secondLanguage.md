@@ -48,19 +48,19 @@ tag:
 
 ✅ 播客：English Pod、ESL Pod、 BBC Learning English （每日英语听力）
 
-✅《小王子》 (中英对照)https://www.bilibili.com/video/BV1H64y1f73s?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅《小王子》 (中英对照)](https://www.bilibili.com/video/BV1H64y1f73s?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
-✅《相约星期二》(中英对照)https://www.bilibili.com/video/BV1k64y1f7hD/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅《相约星期二》(中英对照)](https://www.bilibili.com/video/BV1k64y1f7hD/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
-✅ 夏洛特的网 Leo 老师讲解版https://www.bilibili.com/video/BV1mA4y1U765?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅ 夏洛特的网 Leo 老师讲解版](https://www.bilibili.com/video/BV1mA4y1U765?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
 顶配版本：大量的泛读
 
-✅【30 本英文原著】https://www.bilibili.com/video/BV1354y1m77H/?spm_id_from=333.999.0.0&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅【30 本英文原著】](https://www.bilibili.com/video/BV1354y1m77H/?spm_id_from=333.999.0.0&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
-✅Ali Abdaal（B 站中英对照版）https://www.bilibili.com/video/BV1aS4y1U7JQ/?spm_id_from=333.788.recommend_more_video.3&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅Ali Abdaal（B 站中英对照版）](https://www.bilibili.com/video/BV1aS4y1U7JQ/?spm_id_from=333.788.recommend_more_video.3&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
-✅TED Talk （墙裂推荐！）https://www.bilibili.com/video/BV1Dk4y1q781/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3
+[✅TED Talk （墙裂推荐！）](https://www.bilibili.com/video/BV1Dk4y1q781/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
 
 计划一：上班党混合学习法:星期一到星期五背单词+泛听、星期六星期天核心资料学习+背单词+泛听
 
@@ -116,7 +116,7 @@ tag:
 
 评论区的笔记：
 
-![](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
+![评论区中的总结笔记](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
 ## 听 + 说（部分）
 
@@ -156,7 +156,7 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 
    - **背景**：依托规模达 45 亿词的 Collins Corpus 编写而成，每条释义、用法、例证均源于真实语境。特设同义词、词缀、搭配等专栏，强化学习功能，是备受信赖的英语词典之一。
 
-3. **朗文当代高级英语辞典 (Longman Dictionary of Contemporary English)**
+3. **朗文当代高级英语词典 (Longman Dictionary of Contemporary English)**
 
    - **背景**：由培生教育出版亚洲有限公司出版，自 1978 年首次出版以来深受全球英语学习者的喜爱，是一部适合中国英语学习者的英英词典和双解词典。提供阅读、交流、写作、翻译全面解决方案。
 

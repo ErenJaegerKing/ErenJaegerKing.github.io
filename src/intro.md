@@ -23,3 +23,4 @@ tag:
 
 “如果我看得更远，那是因为我站在巨人的肩膀上”。（If I have seen further it is by standing on ye shoulder of Giants.）(Newtown,I. 1676)
 
+我希望多年之后，我可以问自己，你的优点是什么，你之前的目标实现了吗，你过上你想要的生活了吗，你成为你自己心目中想成为的人了吗。

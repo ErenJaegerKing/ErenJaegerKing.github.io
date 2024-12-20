@@ -107,13 +107,55 @@ tag:
 
 ![评论区中的总结笔记](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
-## 学习资源
-
-### 英语外刊
-
-[这个方法读外刊，英语进步翻一番！外刊网站丨电子笔记丨精读方法](https://www.bilibili.com/video/BV1g5411h7Vw/?spm_id_from=333.788.comment.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+## 如何精读英语外刊
 
 
+主推三个网站：
+- 🌟[China daily 《中国日报》](https://chinadaily.com.cn)
+- 🌟[magazinelib杂志博物馆](https://magazinelib.com)（听说是最大的杂志期刊下载网站了）
+- 🌟[经济学人](https://economist.com)（不是哥们，真的有这么牛逼吗）
+
+1. China daily 《中国日报》适合英语段位较低的童鞋
+2. Nature 《自然》科学界普遍关注的、国际性、跨学科的周刊类科学杂志，历史悠久，最有名望。
+3. Discover《发现》科学技术类杂志，世界领先的科普杂志
+4. National Geographic USA《美国国家地理》杂志中对自然环境、污染治理和濒临物种的讨论是考试中常见的话题。
+5. The Econimist⛄《经济学人》(雪人) 国内众多考试的重点题源，很多英语学习博主和老师都非常推崇，也是英文外刊学习的宠儿和网红，经久不衰。
+6. Time《时代周刊》深受高考、四六级、考研等英语类考试命题人的青睐
+7. Havard Business Review 《哈佛商业评论》内容主要针对管理事务，深受产业领袖、学者、高阶管理者和管理顾问的喜爱。
+8. NewScientist《新科学家》是雅思阅读的题源，10篇雅思阅读就有2-3篇出自这个杂志。
+9. 《Frankie》主要涉及艺术和创意，文章常常充满智慧和幽默，是一本小清新十足的时尚杂志
+
+1. [杂志博物馆，可下载→精读](https://magazinelib.com/) 
+2. [做各种事儿的指南](https://www.wikihow.com/)
+3. [职场人课程，有计划，有课件，有练习](https://www.coursera.org/)
+4. [不翻梯，ipad下载逐字稿](https://www.ted.com/)
+5. [书多，小说多，推荐绘本分区](https://booksvooks.com/)
+6. [网络小说](https://www.obooko.com/)
+7. [古典文学，免费阅读、下载](https://www.planetebook.com/)
+8. [公版书→免费商用、老书](https://www.gutenberg.org/)
+9. [不翻梯、数据量大](http://scholar.scqylaw.com/)
+10. [论文多，免费下载](https://www.oalib.com/)
+11. [名人名言](https://www.brainyquote.com/)
+
+[精读外刊的方法](https://www.bilibili.com/video/BV1Le41117CK?spm_id_from=333.788.videopod.sections&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+4 strands理论是什么？
+
+尚雯婕外语学习法 + 外刊文章材料（推荐有讲义的外刊文档） + 刻意写作练习
+- 第一步：听力听写（精听）
+- 第二步：学习语言知识点（精读）
+- 第三步：朗读并背诵熟练
+- 第四步：刻意写作练习
+
+## 四六级专精：我是瑞斯拜UP（四级：471，六级：？）
+
+六级听力
+
+六级阅读
+
+六级翻译
+
+六级写作
 
 ## 欧路词典（B站 Rita UP）
 
@@ -132,44 +174,25 @@ eudic（配备一本学习词典（英英、英汉），一本母语词典，一
 ## 十大权威英语词典
 
 1. **牛津高阶英语词典 (Oxford Advanced Learner's Dictionary)**
-
    - **背景**：由牛津大学出版社出版，自问世以来深受广大英语学习者和教师的喜爱。它是一部针对“母语非英语的英语学习者”专门打造的权威英语词典，被誉为“开辟英语学习型词典之先河”。商务印书馆影印该词典的英文原版以填补英汉双解版尚未出版的空缺。
-
 2. **柯林斯 COBUILD 高阶英语学习词典 (Collins COBUILD Advanced Learner's English Dictionary)**
-
    - **背景**：依托规模达 45 亿词的 Collins Corpus 编写而成，每条释义、用法、例证均源于真实语境。特设同义词、词缀、搭配等专栏，强化学习功能，是备受信赖的英语词典之一。
-
 3. **朗文当代高级英语词典 (Longman Dictionary of Contemporary English)**
-
    - **背景**：由培生教育出版亚洲有限公司出版，自 1978 年首次出版以来深受全球英语学习者的喜爱，是一部适合中国英语学习者的英英词典和双解词典。提供阅读、交流、写作、翻译全面解决方案。
-
 4. **韦氏高阶英语学习词典 (Merriam-Webster's Advanced Learner's English Dictionary)**
-
    - **背景**：专为中高级英语学习者设计，涵盖美式英语，其权威性和准确性受到广泛认可。它不仅是一本学习工具，也是研究美式英语的重要参考。
-
 5. **剑桥高阶英语学习词典 (Cambridge Advanced Learner's Dictionary)**
-
    - **背景**：由剑桥大学出版社出版，以其清晰的解释和丰富的例句著称，适用于中学到大学阶段的学习者。此书对词汇的理解与使用提供了重要的帮助。
-
 6. **牛津高阶英汉双解词典 (Oxford Advanced Learner's Chinese-English Dictionary)**
-
    - **背景**：专门为中文读者编写的英汉双解词典，有助于提高中国学生在学习英语时的理解能力。同样由牛津大学出版社出版，保证了其专业性和权威性。
-
 7. **韦氏高阶英汉双解词典 (Merriam-Webster's Advanced Learner's English-Chinese Dictionary)**
-
    - **背景**：结合了美国传统词典的优点，同时加入了汉语翻译，方便中文读者更好地理解和掌握英语单词及表达方式。
-
 8. **麦克米伦高阶英汉双解词典 (Macmillan English-Chinese Dictionary for Advanced Learners)**
-
    - **背景**：麦克米伦词典注重实用性和现代感，旨在满足不同层次英语学习者的需求。此版本特别为中文使用者定制，增加了汉语解释部分。
-
 9. **剑桥高阶英汉双解词典 (Cambridge Advanced Learner's English-Chinese Dictionary)**
-
    - **背景**：剑桥大学出版社推出的英汉双解版本，既保留了原版词典的特点，又添加了中文翻译，使得中国的英语学习者能够更轻松地理解复杂的英语概念。
-
 10. **柯林斯 COBUILD 高阶英汉双解学习词典 (Collins COBUILD Advanced Learner's English-Chinese Dictionary)**
     - **背景**：继承了 COBUILD 系列一贯的高质量标准，特别为中文读者定制，通过增加汉语解释来辅助英语学习。该词典强调实际语言应用，帮助学习者更加自然地运用英语。
-
 
 ## 参考资料：
 
@@ -182,3 +205,7 @@ https://www.bilibili.com/video/BV1eY411w7bn/?spm_id_from=333.337.search-card.all
 https://www.bilibili.com/video/BV17e411z7nB/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2
 
 https://www.bilibili.com/video/BV1E44y1U7mD/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2
+
+https://www.bilibili.com/video/BV1BY4y1N7d7/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2
+
+https://www.bilibili.com/video/BV1eS4y1K7RY/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2

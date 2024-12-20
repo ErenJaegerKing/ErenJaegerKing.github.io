@@ -177,14 +177,10 @@ Java SPI 与 Spring Factories 的对比
 
 ![自动配置的流程](https://drawingbed-686.pages.dev/myblog/202412201013455.png)
 
-### 自定义starter
+### 自定义starter（正式工作之后就去手动自主实现一个）
 
-
-
-
-
-
+starter是"一站式服务"的JAR包，提供了**自动配置**的功能，开箱即用，提供了**良好的依赖管理**，避免遗漏、版本冲突等问题
 
 ### 参考资料
 
-[B站UP主：码场安员外，SPI 自动装配，starter](https://www.bilibili.com/video/BV1RY4y1v7mN?spm_id_from=333.788.videopod.sections&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+[B站UP主：码场安员外，SPI 自动配置，starter](https://www.bilibili.com/video/BV1RY4y1v7mN?spm_id_from=333.788.videopod.sections&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)

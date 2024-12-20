@@ -17,15 +17,31 @@ tag:
 
 ## 计划与目标（实时修改）
 
-长远目标是：可以无障碍的观看官方文档以及英文视频、脱离中文文档（使用英英字典）
+长远目标是：可以无障碍的观看官方文档以及T英文视频、脱离中文文档（使用英英字典），最向往的是能够无痛观看TED演讲
 
-25年目标：过英语六级，要考到500分以上
+25年应试目标：过英语六级，要考到500分以上
 
-现在的目标：精听精读，积累单词
+现阶段的主要学习方法：精听精读，积累单词
 
-## 现阶段学习方法
+听：english pod
+说：english pod
+读：
+写：英语四六级作文
+
+## ZoeLanguages的英语学习方法（学习的大致方向）
 
 [🇬🇧🇺🇸 自学英语零基础到中高级！超详细学习指南！](https://www.bilibili.com/video/BV1ZM4y1J748/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+[评论区中对博主视频进行总结](https://mubu.com/doc/3wGHFiwDTUG)
+
+- 口语（cambly）
+- 教材（我不是零基础，我不需要）
+- 音标专攻（正式工作之后）
+- 泛听
+- 语法（[Grammar in Use 剑桥语法教程](https://www.bilibili.com/video/BV1tt411w72A?p=4&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)）
+- 播客：English Pod、ESL Pod、 BBC Learning English （每日英语听力）
+- 其他英剧、美剧、有声书、口语课、视频
+- TED Talk（心之所向啊，老早之前就听说了，很想能够像母语那样听讲，加油，以后会实现的）
 
 ⚠️ 注意，这些坏习惯正在危害大脑健康！
 
@@ -36,40 +52,11 @@ tag:
 5. 自我 PUA，消极自我对话
 6. 睡眠质量差，睡眠不足
 
-[评论区中对博主视频进行总结](https://mubu.com/doc/3wGHFiwDTUG)
-
-中级进阶：大量的输入和输出练习
-
-标配版本：
-
-- 核心学习资料-30 分钟 教材、有声书、博客
-- 背单词-15 分钟 核心资料的生词和查询的单词
-- 听书训练-15 分钟 博客、有声书、视频、口语课
-
-✅ 播客：English Pod、ESL Pod、 BBC Learning English （每日英语听力）
-
-[✅《小王子》 (中英对照)](https://www.bilibili.com/video/BV1H64y1f73s?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-[✅《相约星期二》(中英对照)](https://www.bilibili.com/video/BV1k64y1f7hD/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-[✅ 夏洛特的网 Leo 老师讲解版](https://www.bilibili.com/video/BV1mA4y1U765?p=2&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-顶配版本：大量的泛读
-
-[✅【30 本英文原著】](https://www.bilibili.com/video/BV1354y1m77H/?spm_id_from=333.999.0.0&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-[✅Ali Abdaal（B 站中英对照版）](https://www.bilibili.com/video/BV1aS4y1U7JQ/?spm_id_from=333.788.recommend_more_video.3&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-[✅TED Talk （墙裂推荐！）](https://www.bilibili.com/video/BV1Dk4y1q781/?spm_id_from=333.337.search-card.all.click&vd_source=a5a65a5b8d064482e1acb163a8e30cc3)
-
-计划一：上班党混合学习法:星期一到星期五背单词+泛听、星期六星期天核心资料学习+背单词+泛听
-
-计划二：月份 1（核心资料学习+背单词+泛听 ）月份二（在计划一中穿插口语课）
-
 ## 精听的方法（找到适合自己的方法）
 
 ### [超详细！几分钟就学会的英语精听方法！考试高分不是梦！](https://www.bilibili.com/video/BV1xb411v7Xq/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-评论区对 关于精听，听力听写 的总结
+
+评论区对于此视频精听的总结如下：
 
 - 1.准备文具。ps.可以是软件，例如ABOBOO
 - 2.选择听力材料
@@ -95,7 +82,9 @@ tag:
 - 后面一些问题零零散散做了总结。
    - ①要坚持精读一到两个月。
    - ②介意边听边写。
+
 ### 精听精读五步法
+
 - 第一步，盲听材料：大概记关键词、猜测大概意思
 - 第二步，打开文本逐句学习：学习材料找适合自己水平的。巧用记号笔。学习生词、句型、语法点。
 - 第三步，逐句跟读，加深理解，训练语感。
@@ -106,7 +95,7 @@ tag:
   - shaowing 的步骤：1、先了解一下 2、listen，echo，repeat 3、listen，repeat 4、同步说
 - 第五步，原速听（可选）识别新学单词与语法。
 
-##  写
+## 英语写作提升
 
 ["五步法"提高英语写作](https://www.bilibili.com/video/BV1fv4y1N7Mf/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
@@ -118,19 +107,13 @@ tag:
 
 ![评论区中的总结笔记](https://drawingbed-686.pages.dev/myblog/202412160938278.png)
 
-## 听 + 说（部分）
-
-[English pod](https://www.bilibili.com/video/BV1w7411g7jn/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-
-摩根家庭（欣赏，听不懂能看懂也行）
-
-磨耳朵
-
 ## 学习资源
 
-###  外刊网站
+### 英语外刊
 
 [这个方法读外刊，英语进步翻一番！外刊网站丨电子笔记丨精读方法](https://www.bilibili.com/video/BV1g5411h7Vw/?spm_id_from=333.788.comment.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+
 
 ## 欧路词典（B站 Rita UP）
 

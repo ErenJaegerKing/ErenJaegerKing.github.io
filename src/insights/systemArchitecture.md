@@ -11,7 +11,11 @@ tag:
 ---
 ## 架构
 
+请你介绍一下你项目的架构，我项目前端技术是使用vuejs以及antDesign组件，并使用Nginx进行动态代理，后端访问控制使用的是spring security，调度用的是spring mvc，
+数据访问是spring data jpa，服务启动使用的是springboot，并使用java语言在jvm虚拟机上运行，数据库用的是缓存redis，关系数据库用的是mysql，非关系型数据库用的是mongodb
+以及分布式存储的是minio
 
+项目的部署图是
 
 ## 定时任务
 

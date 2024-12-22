@@ -72,6 +72,11 @@ projects:
   desc: 人生的奇思妙想
   link: /insights/
 
+- icon: kexuejishu
+  name: 技术
+  desc: 关于日常技术的积累
+  link: /tech/
+
 # - icon: link
 
 # name: 链接名称

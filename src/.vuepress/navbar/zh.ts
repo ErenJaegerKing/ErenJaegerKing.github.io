@@ -51,6 +51,11 @@ export const zhNavbar = navbar([
     link: "/notes/",
   },
   {
+    text: "技术",
+    icon: "kexuejishu",
+    link: "/tech/",
+  },
+  {
     text: "感悟",
     icon: "ganwuxianxing",
     link: "/insights/",

@@ -1,5 +1,2 @@
-
-User-agent:*
-Disallow:
-
+# Algolia-Crawler-Verif: 088414AD33B8EB59
 Sitemap: https://he9.xin/sitemap.xml

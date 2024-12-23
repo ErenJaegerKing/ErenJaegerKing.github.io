@@ -21,7 +21,7 @@ tag:
 
 25年应试目标：过英语六级，要考到500分以上
 
-现阶段的主要学习方法：精听精读，积累单词
+现阶段的主要学习方法：精听精读，积累单词（随缘刷题，不用太讲究，每天往前走一些都是成功，不要自我感动，要有切实可行的阶段性成功）
 
 听：english pod  星期一到星期五
 说：english pod  星期一到星期五
@@ -155,9 +155,27 @@ tag:
 
 六级翻译
 
-六级写作（25年之前看完这个模板，学习一下）
+六级写作（25年之前看完这个模板，学习一下，主要还是先把六级应试过掉，主要刷高分）
 
+[24下 六级作文模板 我是瑞斯拜（24年6月最新真题为例）](https://www.bilibili.com/video/BV1wKByYwEcb/?spm_id_from=333.1387.favlist.content.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
+考什么？
+
+议论文-essay（三种）
+- 现象解释（what，why，importance）
+- 观点选择（weather，choice，option，measures）
+- 问题解决（how to，solution，measure）
+
+模板公式
+
+1. 第一段
+   1. 摘抄背景
+   2. ![现象解释模板](https://drawingbed-686.pages.dev/myblog/202412231000385.png)
+   3. 过渡句（可替换的）：The following reasons and examples support this viewpoint
+2. 第二段
+![第二段的模板](https://drawingbed-686.pages.dev/myblog/202412231011400.png) 
+1. 第三段
+![第三段的模板](https://drawingbed-686.pages.dev/myblog/202412231024499.png)
 
 ## 欧路词典（B站 Rita UP）
 

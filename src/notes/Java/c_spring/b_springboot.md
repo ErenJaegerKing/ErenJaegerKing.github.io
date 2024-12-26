@@ -29,7 +29,7 @@ SPI:全称是**S**ervice **P**rovider **I**nterface
 - Service 公开的接口或抽象类，定义了一个抽象的功能模块
 - Service Provider 服务的实现类
 - ServiceLoader 是SPI机制的核心组件，负责在运行时发现并加载Service Provider
-- 
+
 #### Java SPI的运行流程
 
 Applicaiton应用程序进行加载后，ServiceLoader就会加载Provider。

@@ -1,5 +1,5 @@
 ---
-title: "思考"
+title: "一生思考"
 description: ""
 icon: ""
 date: 2024-12-14
@@ -9,11 +9,23 @@ tag:
   - 思考
 
 ---
+## 看ZoeLanguages UP的深度工作/学习
+
+[深度工作/学习：如何2小时完成8小时工作？](https://www.bilibili.com/video/BV15bCPYQEvc/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+专注力是需要后天持续培养的
+
+限制社交媒体使用，从控制开始
+
+指定每日计划，用目标驱动行动
+
 ## 如何复盘
 
 周报？
 
 [檀东东Tango](https://www.bilibili.com/video/BV1EV411R7iK/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+等正式工作后，稳定下来，我还在随缘找寻学习的方法
 
 ## 在评论区中看到的人生态度（我现阶段的想法觉得真不错啊）
 

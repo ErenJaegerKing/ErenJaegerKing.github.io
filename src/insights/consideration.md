@@ -9,6 +9,16 @@ tag:
   - 思考
 
 ---
+
+:::info
+随便看看，随心感悟，随手记录
+:::
+
+## 社交恐惧
+
+[社交恐惧焦虑,什么都怕当然这样?记忆底层影响命运深度解读【脑科学】](https://www.bilibili.com/video/BV1rV4y1q7WF?spm_id_from=333.788.videopod.sections&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+
 ## 看ZoeLanguages UP的深度工作/学习
 
 [深度工作/学习：如何2小时完成8小时工作？](https://www.bilibili.com/video/BV15bCPYQEvc/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)

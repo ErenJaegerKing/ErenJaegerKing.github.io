@@ -169,13 +169,13 @@ tag:
 模板公式
 
 1. 第一段
-   1. 摘抄背景
-   2. ![现象解释模板](https://drawingbed-686.pages.dev/myblog/202412231000385.png)
-   3. 过渡句（可替换的）：The following reasons and examples support this viewpoint
+   - 摘抄背景
+   - [现象解释模板](https://drawingbed-686.pages.dev/myblog/202412231000385.png)
+   - 过渡句（可替换的）：The following reasons and examples support this viewpoint
 2. 第二段
-![第二段的模板](https://drawingbed-686.pages.dev/myblog/202412231011400.png) 
-1. 第三段
-![第三段的模板](https://drawingbed-686.pages.dev/myblog/202412231024499.png)
+[第二段的模板](https://drawingbed-686.pages.dev/myblog/202412231011400.png) 
+3. 第三段
+[第三段的模板](https://drawingbed-686.pages.dev/myblog/202412231024499.png)
 
 ## 欧路词典（B站 Rita UP）
 

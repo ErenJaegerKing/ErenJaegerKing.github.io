@@ -110,6 +110,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
+      "/insights": ["1230"],
       // "/en/demo/encrypt.html": ["1234"],
     },
   },

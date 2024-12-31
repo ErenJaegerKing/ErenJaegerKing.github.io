@@ -1,6 +1,6 @@
 ---
 title: "技术"
-icon: "jishu"
+icon: "kexuejishu"
 date: 2024-12-22
 index: true
 timeline: false

@@ -9,13 +9,6 @@ tag:
  - intro
 ---
 
-:::INFO
-自我认识以及自我介绍
-Self-recognition and self-introduction
-:::
+不要再熬夜了
 
-## CN - 自我介绍
-
-
-## EN - Self-introduction
 

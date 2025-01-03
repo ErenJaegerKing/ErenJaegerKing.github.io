@@ -16,6 +16,16 @@ tag:
 想到哪里学哪里，加油
 :::
 
+## 如何复盘（可以开始行动了，直接行动就行，不要进行等待）
+
+周报？以及年报？主要是将平时流失掉的时间进行复盘、总结，并进行改正
+
+等正式工作后，稳定下来，我还在随缘找寻学习的方法
+
+[檀东东Tango](https://www.bilibili.com/video/BV1EV411R7iK/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+[24年我的年度最佳UP 复盘就是跟着这个UP学习的](https://www.bilibili.com/video/BV19oCNYHEhH/?spm_id_from=333.1387.homepage.video_card.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
 ## 应该要去改的陋习
 
 拖延症：晚上睡觉也要熬夜，一直拖着，就一定要拖到很晚才睡觉。开始每天任务的时候，都习惯性的打开音乐影响工作效率，纯在浪费时间，改，熬夜，改，增加效率，不要浪费时间，把任务高效的完成掉
@@ -112,14 +122,6 @@ tag:
 指定每日计划，用目标驱动行动
 
 [深度工作/学习：如何2小时完成8小时工作？](https://www.bilibili.com/video/BV15bCPYQEvc/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-
-## 如何复盘
-
-周报？
-
-等正式工作后，稳定下来，我还在随缘找寻学习的方法
-
-[檀东东Tango](https://www.bilibili.com/video/BV1EV411R7iK/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 ## 在评论区中看到的人生态度（我现阶段的想法觉得真不错啊）
 

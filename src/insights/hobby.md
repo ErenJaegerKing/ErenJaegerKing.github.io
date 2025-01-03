@@ -1,21 +1,19 @@
 ---
-title: "爱好学习"
+title: "兴趣爱好"
 description: ""
 icon: ""
 date: 2024-12-31
 category:
-  - 爱好
+  - 兴趣爱好
 tag:
-  - 爱好
+  - 兴趣爱好
 
 ---
 :::info
-平时喜欢的事情以及有关于我的爱好，就是平时学了什么东西都会输出到这里
+学习是一种能力，不要自我感动，要动脑子
 :::
 
-## blender
-
-24-12-31今天晚上浅浅的尝试一下，可以将历程写出来，不需要完美，只需要去做了就行
+## blender - 目标：建造一个属于自己的世外桃源 - DeadLine（25-06）
 
 [Blender自学路线推荐](https://www.bilibili.com/video/BV1ys421T73p/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
@@ -25,20 +23,25 @@ tag:
 - 案例巩固: 通过观看和实践案例，巩固快捷键、建模思路和工作流程。特别推荐夏明游艺老师的手搓高达教程和辣椒酱的3分钟上手布兰德雕刻教程。
 - 公开课资源: 感谢提供公开课的教师，鼓励大家根据自己的学习习惯选择适合的资源。
 
-## aseprite
+1. 建模 - [【Kurt】Blender零基础入门教程 | Blender中文区新手必刷教程(已完结)](https://www.bilibili.com/video/BV14u41147YH?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2&p=3)
 
-直接steam买一个，45.5也不贵呀，直接买一个，没关系，他值得，不用在意
+让手听话
+![让手听话](https://drawingbed-686.pages.dev/myblog/202501010024999.png)
+认识界面
+![认识界面](https://drawingbed-686.pages.dev/myblog/202501010106645.png)
 
-以后再去尝试，现在先入门
+2. 雕刻 - [【第七季】Blender雕刻功能闪耀万古（字幕重制版）](https://www.bilibili.com/video/BV1dc411f79E?spm_id_from=333.788.recommend_more_video.0&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
-## 有限状态机
+3. 雕刻工作流意识 - [上手Blender雕刻只需要3分钟](https://www.bilibili.com/video/BV1JL4y1A75k/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
-我在游戏里面听到过好多次，还是比较感兴趣的，在工作的时候听到老板讲到，我好惊喜啊，突然感觉学习都是互通的，哈哈哈哈哈
+4. 硬表面建模 - [◈原创◈Blender硬核入门教程：详细到即使初学者也能跟着完成的高达头部建模](https://www.bilibili.com/video/BV1uD4y1F7YV/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
-## 爱好
+## 爱好 - 以后想要去学习的
 
-建模：Blender（晚上回去直接开始简单的尝试一下，并且把教程贴在下面，直接全英文学习，不懂的单词直接查）
+正在学习：Blender、PS、PR、OBS
+
+建模：Blender
 录制：OBS Studio
-剪辑：必剪、剪映、PR（不是影视这一行业的，就不用惦记这些专业软件）
+剪辑：PR
 绘图：Aseprite、PS
-引擎：Godot、Unity、UE（不必使用专业软件）
+引擎：Godot、Unity、UE

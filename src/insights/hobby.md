@@ -39,6 +39,10 @@ tag:
 
 ![点线面的选择与控制](https://drawingbed-686.pages.dev/myblog/202501041138619.png)
 
+十大建模操作
+
+![十大建模操作](https://drawingbed-686.pages.dev/myblog/202501041210243.png)
+
 2. 雕刻 - [【第七季】Blender雕刻功能闪耀万古（字幕重制版）](https://www.bilibili.com/video/BV1dc411f79E?spm_id_from=333.788.recommend_more_video.0&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 3. 雕刻工作流意识 - [上手Blender雕刻只需要3分钟](https://www.bilibili.com/video/BV1JL4y1A75k/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)

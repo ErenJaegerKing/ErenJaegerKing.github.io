@@ -16,6 +16,18 @@ tag:
 想到哪里学哪里，加油
 :::
 
+## 学习方法
+
+### PDCA工作法
+
+[PDCA工作法---未经审视的工作不值得做！](https://www.bilibili.com/video/BV1LM411F7yZ/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+![PDCA工作法](https://drawingbed-686.pages.dev/myblog/202501031510377.png)
+
+### 费尔曼学习法
+
+以教代学，第一原则不要欺骗自己，简单测试的方法是写出概念，用简单的语言讲出来，发现问题再次学习，找出难点再次简化
+
 ## 如何复盘（可以开始行动了，直接行动就行，不要进行等待）
 
 周报？以及年报？主要是将平时流失掉的时间进行复盘、总结，并进行改正

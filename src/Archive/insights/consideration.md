@@ -16,7 +16,11 @@ tag:
 想到哪里学哪里，加油
 :::
 
-## 学习方法
+## 学习
+
+### 《为什么精英都是时间控》
+
+[《为什么精英都是时间控》](https://wukaipeng.com/read/time)
 
 ### PDCA工作法
 
@@ -28,15 +32,9 @@ tag:
 
 以教代学，第一原则不要欺骗自己，简单测试的方法是写出概念，用简单的语言讲出来，发现问题再次学习，找出难点再次简化
 
-## 如何复盘（可以开始行动了，直接行动就行，不要进行等待）
+## 如何复盘（太复杂了）
 
-周报？以及年报？主要是将平时流失掉的时间进行复盘、总结，并进行改正
-
-等正式工作后，稳定下来，我还在随缘找寻学习的方法
-
-[檀东东Tango](https://www.bilibili.com/video/BV1EV411R7iK/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-
-[24年我的年度最佳UP 复盘就是跟着这个UP学习的](https://www.bilibili.com/video/BV19oCNYHEhH/?spm_id_from=333.1387.homepage.video_card.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+[24年我的年度最佳UP 复盘的想法是跟着这个UP](https://www.bilibili.com/video/BV19oCNYHEhH/?spm_id_from=333.1387.homepage.video_card.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 ## 应该要去改的陋习
 

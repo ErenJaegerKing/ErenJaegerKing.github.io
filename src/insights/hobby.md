@@ -27,21 +27,30 @@ tag:
 
 1. 建模 - [【Kurt】Blender零基础入门教程 | Blender中文区新手必刷教程(已完结)](https://www.bilibili.com/video/BV14u41147YH?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2&p=3)
 
-让手听话
+**建模全流程工具与操作**
+
+![建模全流程工具与操作](https://drawingbed-686.pages.dev/myblog/202501042142731.png)
+
+**让手听话**
 
 ![让手听话](https://drawingbed-686.pages.dev/myblog/202501010024999.png)
 
-认识界面
+**认识界面**
 
 ![认识界面](https://drawingbed-686.pages.dev/myblog/202501010106645.png)
 
-点线面的选择与控制
+**点线面的选择与控制**
 
 ![点线面的选择与控制](https://drawingbed-686.pages.dev/myblog/202501041138619.png)
 
-十大建模操作
+**十大建模操作**
 
 ![十大建模操作](https://drawingbed-686.pages.dev/myblog/202501041210243.png)
+
+**使用修改器建模的优势**
+- 建模快，效率高，能快速直观地实现一个效果
+- 非破坏性，在不改变原来模型的基础上，可以很精确地控制参数
+- 灵活，可重复使用，可叠加多个效果
 
 2. 雕刻 - [【第七季】Blender雕刻功能闪耀万古（字幕重制版）](https://www.bilibili.com/video/BV1dc411f79E?spm_id_from=333.788.recommend_more_video.0&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 

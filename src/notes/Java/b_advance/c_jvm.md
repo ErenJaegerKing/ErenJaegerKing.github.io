@@ -10,14 +10,7 @@ tag:
 order: 1
 ---
 
----
-:::info
-JVM基础 学习黑马课程的笔记[转载：黑马程序员JVM视频](https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
-:::
----
-
-
-# JVM基础
+## JVM基础
 
 ### 初识jvm
 
@@ -946,3 +939,9 @@ JVM基础 学习黑马课程的笔记[转载：黑马程序员JVM视频](https:/
 			- jdk9之后
 
 				- g1默认
+
+## 参考资料
+
+[黑马程序员JVM视频](https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
+
+[JVM讲义](https://lisxpq12rl7.feishu.cn/wiki/ZaKnwhhhmiDu9ekUnRNcv2iNnof)

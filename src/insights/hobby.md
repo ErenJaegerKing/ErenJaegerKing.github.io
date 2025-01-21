@@ -60,10 +60,13 @@ tag:
 
 ## 爱好
 
-正在学习：Blender、PS、PR、OBS
+学习流：PR、OBS Studio
+
+正在学：Aseprite、Godot、Blender
 
 - 建模：Blender
 - 录制：OBS Studio
-- 剪辑：PR
+- 剪辑：PR、达芬奇、剪映
 - 绘图：Aseprite、PS
 - 引擎：Godot、Unity、UE
+- 音乐：FL Studio

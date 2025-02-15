@@ -12,17 +12,45 @@ tag:
 ---
 
 :::info
-部署博客到云服务器上面的命令以及操作
+部署博客的教程
 :::
 
 ---
-## 安装Nginx
+## 找博客模板
 
-[安装Nginx环境](https://blog.csdn.net/weixin_65644655/article/details/142861486)
+VuePress Theme Hope
+
+## 买云服务器
+
+阿里云 2核2G alibaba系统
+
+## 安装Docker
+
+[安装Docker](https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b11Pt8clX)
+
+## 安装Nginx
+### 使用Docker安装
+
+[使用Docker安装Nginx](https://blog.csdn.net/BThinker/article/details/123507820)
+
+```shell
+docker run \
+-p 80:80 \
+--name nginx \
+-v /usr/local/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /usr/local/nginx/conf/conf.d:/etc/nginx/conf.d \
+-v /usr/local/nginx/log:/var/log/nginx \
+-v /usr/local/nginx/html:/usr/share/nginx/html \
+-d nginx:latest
+```
 
 ### 编译及配置Nginx
 
-```shell
+[安装Nginx环境](https://blog.csdn.net/weixin_65644655/article/details/142861486)
+
+我的配置文件
+
+```shell 
 ./configure --prefix=/usr/local/nginx --with-http_v2_module --with-http_ssl_module \
 --pid-path=/var/run/nginx/nginx.pid \
 --lock-path=/var/lock/nginx.lock --error-log-path=/var/log/nginx/error.log \
@@ -34,7 +62,7 @@ tag:
 
 [安装Node.JS环境](https://help.aliyun.com/zh/ecs/use-cases/deploy-a-node-js-environment-on-a-centos-7-instance?spm=a2c4g.11186623.help-menu-)
 
-## 编写博客推送GitHub远程仓库和远程云服务器
+## 编写推送远程仓库和远程云服务器的脚本
 
 [编写推送脚本](https://blog.mo7.cc/)
 
@@ -48,11 +76,7 @@ tag:
 
 [Nginx安装SSL模块](https://www.cnblogs.com/ambition26/p/14077773.html)
 
-## 安装Docker
-
-[安装Docker](https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b11Pt8clX)
-
-## Docker部署Minio对象存储系统
+## Docker部署Minio对象存储系统用来存储图床
 
 [Nginx-Minio反向代理+负载均衡](https://github.com/minio/minio/blob/master/docs/orchestration/docker-compose/nginx.conf)
 

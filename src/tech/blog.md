@@ -36,12 +36,70 @@ VuePress Theme Hope
 ```shell
 docker run \
 -p 80:80 \
+-p 443:443 \
 --name nginx \
+-v /usr/local/nginx/html/blog:/usr/share/nginx/html \
 -v /usr/local/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
 -v /usr/local/nginx/conf/conf.d:/etc/nginx/conf.d \
 -v /usr/local/nginx/log:/var/log/nginx \
--v /usr/local/nginx/html:/usr/share/nginx/html \
+-v /usr/local/nginx/ssl:/etc/nginx/ssl \
+--privileged=true -d --restart=always \
 -d nginx:latest
+```
+
+Nginx配置文件
+
+```shell
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        server_name  he9.xin;
+
+        return 301 https://$host$request_uri;
+    }
+
+    server {
+        listen 443 ssl http2;
+        server_name he9.xin;
+
+        ssl_certificate  /etc/nginx/ssl/cert.pem;
+        ssl_certificate_key /etc/nginx/ssl/cert.key;
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html index.htm;
+        }
+    }
+
+}
 ```
 
 ### 编译及配置Nginx

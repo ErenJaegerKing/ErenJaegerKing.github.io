@@ -55,15 +55,4 @@ tag:
 
 4. 硬表面建模 - [◈原创◈Blender硬核入门教程：详细到即使初学者也能跟着完成的高达头部建模](https://www.bilibili.com/video/BV1uD4y1F7YV/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
-## 爱好
 
-学习流：达芬奇、OBS Studio
-
-正在学：Aseprite、Godot、Blender
-
-- 建模：Blender
-- 录制：OBS Studio
-- 剪辑：达芬奇
-- 绘图：Aseprite、PS
-- 引擎：Godot、Unity、UE
-- 音乐：FL Studio

@@ -55,11 +55,11 @@ export const zhNavbar = navbar([
     icon: "kexuejishu",
     link: "/tech/",
   },
-  {
-    text: "感悟",
-    icon: "ganwuxianxing",
-    link: "/insights/",
-  },
+  // {
+  //   text: "感悟",
+  //   icon: "ganwuxianxing",
+  //   link: "/insights/",
+  // },
   {
     text: "关于",
     icon: "guanyu",

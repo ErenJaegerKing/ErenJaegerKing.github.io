@@ -16,19 +16,19 @@ tag:
 :::
 
 ---
-## 找博客模板
+## 1、找博客模板
 
 VuePress Theme Hope
 
-## 买云服务器
+## 2、买云服务器
 
 阿里云 2核2G alibaba系统
 
-## 安装Docker
+## 3、安装Docker
 
 [安装Docker](https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b11Pt8clX)
 
-## 安装Nginx
+## 4、安装Nginx
 ### 使用Docker安装
 
 [使用Docker安装Nginx](https://blog.csdn.net/BThinker/article/details/123507820)
@@ -102,7 +102,7 @@ http {
 }
 ```
 
-### 编译及配置Nginx
+### 使用nginx源码编译以及配置
 
 [安装Nginx环境](https://blog.csdn.net/weixin_65644655/article/details/142861486)
 
@@ -120,21 +120,23 @@ http {
 
 [安装Node.JS环境](https://help.aliyun.com/zh/ecs/use-cases/deploy-a-node-js-environment-on-a-centos-7-instance?spm=a2c4g.11186623.help-menu-)
 
-## 编写推送远程仓库和远程云服务器的脚本
+## 5、编写推送远程仓库和远程云服务器的脚本
+
+自己手动将博客推送到云服务器上面去
 
 [编写推送脚本](https://blog.mo7.cc/)
 
-## 备案
+## 6、备案
 
 [备案](https://zhuanlan.zhihu.com/p/371579941)
 
-## 域名解析、SSL加密认证（Nginx相关配置）
+## 7、域名解析、SSL加密认证（Nginx相关配置）
 
 [域名解析、SSL证书的配置](https://www.bilibili.com/video/BV1E7411S75M/?spm_id_from=333.337.search-card.all.click&vd_source=834d9d69a86c55d6acbaf9e5dbe37bb2)
 
 [Nginx安装SSL模块](https://www.cnblogs.com/ambition26/p/14077773.html)
 
-## Docker部署Minio对象存储系统用来存储图床
+## 8、Docker部署Minio对象存储系统搭建图床
 
 [Nginx-Minio反向代理+负载均衡](https://github.com/minio/minio/blob/master/docs/orchestration/docker-compose/nginx.conf)
 

@@ -58,12 +58,12 @@ export const zhSidebar = sidebar({
       prefix: "/tech/",
       link: "/tech/",
     },
-    {
-      text: "感悟",
-      icon: "ganwuxianxing",
-      prefix: "/insights/",
-      link: "/insights/",
-    },
+    // {
+    //   text: "感悟",
+    //   icon: "ganwuxianxing",
+    //   prefix: "/insights/",
+    //   link: "/insights/",
+    // },
     {
       text: "关于",
       icon: "guanyu",
@@ -78,5 +78,5 @@ export const zhSidebar = sidebar({
   // "/devops/": "structure",
   "/notes/": "structure",
   "/tech/": "structure",
-  "/insights/": "structure",
+  // "/insights/": "structure",
 });

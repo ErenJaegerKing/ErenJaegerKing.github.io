@@ -67,10 +67,10 @@ projects:
   desc: 学东西记录
   link: /notes/
 
-- icon: ganwuxianxing
-  name: 感悟
-  desc: 人生的奇思妙想
-  link: /insights/
+# - icon: ganwuxianxing
+#   name: 感悟
+#   desc: 人生的奇思妙想
+#   link: /insights/
 
 - icon: kexuejishu
   name: 技术

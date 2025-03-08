@@ -50,6 +50,7 @@ grep :8080：过滤出包含 8080 端口的行。
 ### Dockerfile怎么部署Jar
 
 ```shell
+我自用的部署方式
 # 使用官方的 OpenJDK 镜像作为基础镜像
 FROM openjdk:17-jdk-alpine
 
@@ -57,13 +58,14 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # 将本地的 JAR 文件复制到容器中的 /app 目录
-COPY your-app.jar /app/your-app.jar
+COPY test.jar /app/test.jar
 
 # 暴露应用程序运行的端口（根据你的 JAR 文件配置修改）
 EXPOSE 8080
 
 # 设置启动命令
-ENTRYPOINT ["java", "-jar", "your-app.jar"]
+ENTRYPOINT ["java", "-jar", "test.jar"]
 ```
-
 ### Dockerfile常见的模块（指令）及其作用
+
+

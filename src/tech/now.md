@@ -135,14 +135,14 @@ nohup：忽略挂断信号，使进程在终端关闭后继续运行。
 和 & 在后台有什么区别
 
 3.使用系统服务（Systemd）=》长期运行服务
-4.使用 Docker 容器 =》
+4.使用 Docker 容器 怎么使用dockerfile部署Jar
 
 ```
 
 ### Dockerfile怎么部署Jar
-
+1. 准备JAR文件
+2. 创建Dockerfile
 ```shell
-我自用的部署方式
 # 使用官方的 OpenJDK 镜像作为
 # 基础镜像  
 FROM openjdk:17-jdk-alpine
@@ -163,6 +163,19 @@ EXPOSE 8080
 # 启动命令指令
 ENTRYPOINT ["java", "-jar", "test.jar"]
 ```
+3. 构建Docker镜像
+
+docker build -t my-java-app .
+
+4. 运行Docker容器
+
+docker run -d -p 8080:8080 --name my-java-container my-java-app
+
+5. 查看容器日志
+
+docker logs -f my-java-container
+
+
 ### Dockerfile常见的模块（指令）及其作用
 ```shell
 一个典型的 Dockerfile 可能包含以下模块：

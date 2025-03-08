@@ -18,5 +18,11 @@ tag:
 我在Linux常用的命令
 ps -ef | grep java 查看所有包含java的进程
 
+top 查看系统资源使用情况
 
+df -h 查看磁盘空间使用情况
+
+nohup java -jar app.jar > output.log 2>&1 & 后台启动Java应用，并将日志保存到指定文件
+
+netstat -anp | grep 8080 查看端口占用情况
 ```

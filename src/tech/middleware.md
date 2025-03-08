@@ -16,19 +16,19 @@ tag:
 ## MySQL
 
 ```bash
-docker run --name mysql_v8.4 -p 3346:3306 -e MYSQL_ROOT_PASSWORD=admin123 -v /data/mysql/8.4/data:/var/lib/mysql -v /data/mysql/8.4/conf:/etc/mysql/conf.d -d mysql:8.4
+docker run --name mysql_v8.4 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /data/mysql/8.4/data:/var/lib/mysql -v /data/mysql/8.4/conf:/etc/mysql/conf.d -d mysql:8.4
 ```
 
 ## Mariadb
 
 ```bash
-docker run --name mariadb -p 3306:3306 -e MARIADB_ROOT_PASSWORD=possword -v /data/mariadb/data:/var/lib/mysql -v /data/mariadb/conf:/etc/mysql/conf.d -d mariadb
+docker run --name mariadb -p 3306:3306 -e MARIADB_ROOT_PASSWORD=123456 -v /data/mariadb/data:/var/lib/mysql -v /data/mariadb/conf:/etc/mysql/conf.d -d mariadb
 ```
 
 ## MongoDB
 
 ```bash
-docker run -d --name mongo-server -v /data/mongodb/data:/data/db -v /data/mongodb/log:/data/log --restart=always -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password mongo
+docker run -d --name mongo-server -v /data/mongodb/data:/data/db -v /data/mongodb/log:/data/log --restart=always -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=123456 mongo
 ```
 
 ## Nacos

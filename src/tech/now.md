@@ -14,8 +14,13 @@ tag:
 
 将所有东西都在Linux中实现一遍
 :::
+### Linux包括查看特定应用命令
 
-### Linux中查看占用内存命令（包括查看特定应用命令）
+ps aux | grep 应用
+
+top -b -n 1 | grep 应用
+
+### Linux中查看占用内存命令
 ```shell
 我在Linux常用的命令
 
@@ -23,7 +28,7 @@ top 查看系统资源使用情况
 
 df -h 查看磁盘空间使用情况
 
-ps -ef | grep java 查看所有包含java的进程
+ps -ef | grep java 查看所有包含java的进程 (最主要的参数是%CPU 和 %MEM)
 
 nohup java -jar app.jar > output.log 2>&1 & 后台启动Java应用，并将日志保存到指定文件
 
@@ -117,9 +122,9 @@ grep :8080：过滤出包含 8080 端口的行。
 ### Java -jar命令可以在后台运行吗
 
 ```shell
-1.使用&在后台运行
+1.使用&在后台运行 =》简单后台运行
 java -jar your-app.jar &
-2.使用nohup防止进程被终止
+2.使用nohup防止进程被终止 =》终端关闭后继续运行
 nohup java -jar your-app.jar > output.log 2>&1 &
 
 nohup：忽略挂断信号，使进程在终端关闭后继续运行。
@@ -127,8 +132,10 @@ nohup：忽略挂断信号，使进程在终端关闭后继续运行。
 2>&1：将标准错误输出重定向到标准输出（即也写入 output.log）。
 &：将进程放到后台运行。
 
-3.使用系统服务（Systemd）
-4.使用 Docker 容器
+和 & 在后台有什么区别
+
+3.使用系统服务（Systemd）=》长期运行服务
+4.使用 Docker 容器 =》
 
 ```
 

@@ -220,7 +220,87 @@ MySQL 配置文件分为多个部分，常见的部分包括：
 ```
 
 ### Redis你是怎么配置的
+```shell
+Redis 的配置文件通常位于以下路径：
 
+Linux：/etc/redis/redis.conf
+
+Windows：redis.windows.conf
+
+基础配置
+# 绑定 IP 地址（默认只允许本地访问）
+bind 127.0.0.1
+
+# 监听端口
+port 6379
+
+# 守护进程模式（后台运行）
+daemonize yes
+
+# 日志文件路径
+logfile /var/log/redis/redis.log
+
+# 数据库数量
+databases 16
+
+内存管理
+# 最大内存限制
+maxmemory 2gb
+
+# 内存淘汰策略
+maxmemory-policy allkeys-lru  # 最近最少使用淘汰
+# 其他策略：
+# volatile-lru：只淘汰设置了过期时间的键
+# allkeys-random：随机淘汰
+# volatile-random：随机淘汰设置了过期时间的键
+# noeviction：不淘汰，返回错误
+
+持久化配置
+# 启用 RDB 持久化
+save 900 1  # 900 秒内至少 1 次修改则保存
+save 300 10 # 300 秒内至少 10 次修改则保存
+save 60 10000 # 60 秒内至少 10000 次修改则保存
+
+# RDB 文件路径
+dbfilename dump.rdb
+
+# RDB 文件存储目录
+dir /var/lib/redis
+
+# 启用 AOF 持久化
+appendonly yes
+
+# AOF 文件路径
+appendfilename "appendonly.aof"
+
+# AOF 同步策略
+appendfsync everysec  # 每秒同步一次
+# 其他策略：
+# always：每次写入都同步
+# no：由操作系统决定何时同步
+
+安全配置
+# 设置密码
+requirepass yourpassword
+
+# 重命名危险命令（防止误操作）
+rename-command FLUSHALL ""  # 禁用 FLUSHALL
+rename-command FLUSHDB ""   # 禁用 FLUSHDB
+rename-command CONFIG ""    # 禁用 CONFIG
+
+性能优化
+# 客户端连接数限制
+maxclients 10000
+
+# 超时设置（秒）
+timeout 300  # 客户端空闲 300 秒后断开连接
+
+# TCP 连接保活
+tcp-keepalive 60
+
+# 禁用 THP（透明大页）
+disable-thp yes
+```
 ### MySQL那些字段你会怎么使用，在项目中
 
 ### 线程池你有使用过吗，有几个重要的参数，你有什么了解过吗

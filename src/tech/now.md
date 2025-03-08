@@ -11,6 +11,7 @@ tag:
 
 :::info
 胜不骄，败不馁
+为什么自己明明会，老是忘掉了，没用的原因吗
 :::
 
 ### Linux中查看占用内存命令（包括查看特定应用命令）
@@ -45,3 +46,24 @@ netstat -tuln | grep 8080
 -n：以数字形式显示地址和端口号。
 grep :8080：过滤出包含 8080 端口的行。
 ```
+
+### Dockerfile怎么部署Jar
+
+```shell
+# 使用官方的 OpenJDK 镜像作为基础镜像
+FROM openjdk:17-jdk-alpine
+
+# 设置工作目录
+WORKDIR /app
+
+# 将本地的 JAR 文件复制到容器中的 /app 目录
+COPY your-app.jar /app/your-app.jar
+
+# 暴露应用程序运行的端口（根据你的 JAR 文件配置修改）
+EXPOSE 8080
+
+# 设置启动命令
+ENTRYPOINT ["java", "-jar", "your-app.jar"]
+```
+
+### Dockerfile常见的模块（指令）及其作用

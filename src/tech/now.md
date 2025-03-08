@@ -12,15 +12,11 @@ tag:
 :::info
 胜不骄，败不馁
 
-将所有东西都在Linux中实现一遍
+将所有东西都在 Linux 中实现一遍
 :::
-### Linux包括查看特定应用命令
 
-ps aux | grep 应用
+### Linux 中查看占用内存命令
 
-top -b -n 1 | grep 应用
-
-### Linux中查看占用内存命令
 ```shell
 我在Linux常用的命令
 
@@ -53,20 +49,20 @@ MiB Swap:   2000.0 total,   1500.0 free,    500.0 used.   4000.0 avail Mem
  1234 user      20   0   12345   6789   1234 S   1.0   0.1   0:00.10 java
  5678 user      20   0   23456   7890   2345 S   0.5   0.2   0:01.20 python
 
-1. **第一行**：
+1. 第一行：
    - `14:32:01`：当前时间。
    - `up 2:15`：系统已运行 2 小时 15 分钟。
    - `2 users`：当前有 2 个用户登录。
    - `load average`：系统的平均负载（1 分钟、5 分钟、15 分钟）。
 
-2. **第二行（Tasks）**：
+2. 第二行（Tasks）：
    - `120 total`：总进程数。
    - `1 running`：正在运行的进程数。
    - `119 sleeping`：休眠的进程数。
    - `0 stopped`：停止的进程数。
    - `0 zombie`：僵尸进程数。
 
-3. **第三行（%Cpu(s)）**：
+3. 第三行（%Cpu(s)）：
    - `us`：用户空间占用 CPU 百分比。
    - `sy`：内核空间占用 CPU 百分比。
    - `id`：空闲 CPU 百分比。
@@ -75,19 +71,19 @@ MiB Swap:   2000.0 total,   1500.0 free,    500.0 used.   4000.0 avail Mem
    - `si`：软件中断占用 CPU 百分比。
    - `st`：虚拟机偷取的 CPU 百分比。
 
-4. **第四行（MiB Mem）**：
+4. 第四行（MiB Mem）：
    - `total`：总内存。
    - `free`：空闲内存。
    - `used`：已用内存。
    - `buff/cache`：缓存和缓冲区内存。
 
-5. **第五行（MiB Swap）**：
+5. 第五行（MiB Swap）：
    - `total`：总交换分区大小。
    - `free`：空闲交换分区大小。
    - `used`：已用交换分区大小。
    - `avail Mem`：可用内存。
 
-6. **进程列表**：
+6. 进程列表：
    - `PID`：进程 ID。
    - `USER`：进程所有者。
    - `PR`：进程优先级。
@@ -101,13 +97,20 @@ MiB Swap:   2000.0 total,   1500.0 free,    500.0 used.   4000.0 avail Mem
    - `TIME+`：进程占用 CPU 的总时间。
    - `COMMAND`：进程名称或命令。
 ```
+
 我的看法是重点关注：%Cpu(s)（特别是 us 和 sy）、MiB Mem（特别是 used 和 avail Mem）、Swap（特别是 used）、进程列表中的 %CPU 和 %MEM。
 
 为什么要重要关注 %CPU 和 %MEM？
 
 %CPU：用于识别占用 CPU 最多的进程，帮助定位 CPU 密集型任务或性能瓶颈。%MEM：用于识别占用内存最多的进程，帮助定位内存泄漏或内存密集型任务。结合使用：通过 %CPU 和 %MEM 可以快速定位系统中的资源瓶颈，并采取相应的优化措施。
 
-### Linux中查看8080端口是否被占用
+### Linux 包括查看特定应用命令
+
+ps aux | grep 应用
+
+top -b -n 1 | grep 应用
+
+### Linux 中查看 8080 端口是否被占用
 
 ```shell
 唉，敲了那么多遍，你怎么还能忘记的啊？
@@ -119,7 +122,7 @@ netstat -tuln | grep 8080
 grep :8080：过滤出包含 8080 端口的行。
 ```
 
-### Java -jar命令可以在后台运行吗
+### Java -jar 命令可以在后台运行吗
 
 ```shell
 1.使用&在后台运行 =》简单后台运行
@@ -139,12 +142,14 @@ nohup：忽略挂断信号，使进程在终端关闭后继续运行。
 
 ```
 
-### Dockerfile怎么部署Jar
-1. 准备JAR文件
-2. 创建Dockerfile
+### Dockerfile 怎么部署 Jar
+
+1. 准备 JAR 文件
+2. 创建 Dockerfile
+
 ```shell
 # 使用官方的 OpenJDK 镜像作为
-# 基础镜像  
+# 基础镜像
 FROM openjdk:17-jdk-alpine
 
 # 设置工作目录
@@ -163,11 +168,12 @@ EXPOSE 8080
 # 启动命令指令
 ENTRYPOINT ["java", "-jar", "test.jar"]
 ```
-3. 构建Docker镜像
+
+3. 构建 Docker 镜像
 
 docker build -t my-java-app .
 
-4. 运行Docker容器
+4. 运行 Docker 容器
 
 docker run -d -p 8080:8080 --name my-java-container my-java-app
 
@@ -175,8 +181,8 @@ docker run -d -p 8080:8080 --name my-java-container my-java-app
 
 docker logs -f my-java-container
 
+### Dockerfile 常见的模块（指令）及其作用
 
-### Dockerfile常见的模块（指令）及其作用
 ```shell
 一个典型的 Dockerfile 可能包含以下模块：
 
@@ -207,7 +213,7 @@ ARG：构建参数。
 多阶段构建：优化镜像大小。
 ```
 
-### MySQL你是怎么配置的
+### MySQL 你是怎么配置的
 
 ```shell
 MySQL 的配置文件通常位于以下路径：
@@ -228,7 +234,8 @@ MySQL 配置文件分为多个部分，常见的部分包括：
 
 ```
 
-### Redis你是怎么配置的
+### Redis 你是怎么配置的
+
 ```shell
 我的常见配置文件
 
@@ -312,16 +319,49 @@ tcp-keepalive 60
 # 禁用 THP（透明大页）
 disable-thp yes
 ```
-### MySQL那些字段你会怎么使用，在项目中
 
 ### 线程池你有使用过吗，有几个重要的参数，你有什么了解过吗
 
-### RabbitMQ的三大交换机
+```shell
+    /**
+     * 用给定的初始参数创建一个新的ThreadPoolExecutor。
+     */
+    public ThreadPoolExecutor(int corePoolSize,//线程池的核心线程数量
+                              int maximumPoolSize,//线程池的最大线程数
+                              BlockingQueue<Runnable> workQueue,//任务队列，用来储存等待执行任务的队列
+                              long keepAliveTime,//当线程数大于核心线程数时，多余的空闲线程存活的最长时间
+                              TimeUnit unit,//时间单位
+                              ThreadFactory threadFactory,//线程工厂，用来创建线程，一般默认即可
+                              RejectedExecutionHandler handler//拒绝策略，当提交的任务过多而不能及时处理时，我们可以定制策略来处理任务
+                               ) {
+        if (corePoolSize < 0 ||
+            maximumPoolSize <= 0 ||
+            maximumPoolSize < corePoolSize ||
+            keepAliveTime < 0)
+            throw new IllegalArgumentException();
+        if (workQueue == null || threadFactory == null || handler == null)
+            throw new NullPointerException();
+        this.corePoolSize = corePoolSize;
+        this.maximumPoolSize = maximumPoolSize;
+        this.workQueue = workQueue;
+        this.keepAliveTime = unit.toNanos(keepAliveTime);
+        this.threadFactory = threadFactory;
+        this.handler = handler;
+    }
+    3个最重要的参数和4个其他常见参数
+```
 
-### Redis搭建主从复制（还有没有其他高可用的架构）
+个人理解，有核心线程数（任务队列未到达列表容量时，最大可以同时运行的线程数量）、最大线程数（任务队列到达列表容量时，当前可以同时运行的线程数量变为最大线程数）、任务队列（新任务来临时先判断当前运行的线程数量是否达到核心线程数，如果到达的话，新任务就会被存放在队列中）、存活时间（当线程池中的线程数量大于核心线程数时，即有非核心线程时，这些非核心线程空闲后不会立即销毁，而是会等待，直到等到存活时间超过为止，才会被回收销毁）、时间单位（存活时间的单位）、线程工厂（excutor创建新线程的时候就会用到）、拒绝策略
 
-### MySQL索引失效的问题你有了解过吗
 
-### Varchar和Char之间的关系你有了解过吗
+### Varchar 和 Char 之间的关系你有了解过吗
 
-### Redis有几种默认的过期时间，你用过哪几种
+### MySQL 那些字段你会怎么使用，在项目中
+
+### RabbitMQ 的三大交换机
+
+### Redis 搭建主从复制（还有没有其他高可用的架构）
+
+### MySQL 索引失效的问题你有了解过吗
+
+### Redis 有几种默认的过期时间，你用过哪几种

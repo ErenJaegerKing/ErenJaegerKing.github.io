@@ -11,8 +11,6 @@ tag:
 
 :::info
 胜不骄，败不馁
-
-为什么自己明明会，老是忘掉了，没用的原因吗
 :::
 
 ### Linux中查看占用内存命令（包括查看特定应用命令）
@@ -34,12 +32,72 @@ netstat -anp | grep 8080 查看端口占用情况
 free -h
 2.查看各个进程的内存占用
 top(按 Shift + M 可以按内存使用排序。)
-3.查看特定应用的内存占用
-ps aux | grep 应用名
 
+`top` 命令用于实时显示系统的资源使用情况，包括 CPU、内存、进程等。
+
+top - 14:32:01 up  2:15,  2 users,  load average: 0.15, 0.10, 0.05
+Tasks: 120 total,   1 running, 119 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.5 us,  0.5 sy,  0.0 ni, 97.5 id,  0.5 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   8000.0 total,   2000.0 free,   3000.0 used,   3000.0 buff/cache
+MiB Swap:   2000.0 total,   1500.0 free,    500.0 used.   4000.0 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 1234 user      20   0   12345   6789   1234 S   1.0   0.1   0:00.10 java
+ 5678 user      20   0   23456   7890   2345 S   0.5   0.2   0:01.20 python
+
+1. **第一行**：
+   - `14:32:01`：当前时间。
+   - `up 2:15`：系统已运行 2 小时 15 分钟。
+   - `2 users`：当前有 2 个用户登录。
+   - `load average`：系统的平均负载（1 分钟、5 分钟、15 分钟）。
+
+2. **第二行（Tasks）**：
+   - `120 total`：总进程数。
+   - `1 running`：正在运行的进程数。
+   - `119 sleeping`：休眠的进程数。
+   - `0 stopped`：停止的进程数。
+   - `0 zombie`：僵尸进程数。
+
+3. **第三行（%Cpu(s)）**：
+   - `us`：用户空间占用 CPU 百分比。
+   - `sy`：内核空间占用 CPU 百分比。
+   - `id`：空闲 CPU 百分比。
+   - `wa`：等待 I/O 操作的 CPU 百分比。
+   - `hi`：硬件中断占用 CPU 百分比。
+   - `si`：软件中断占用 CPU 百分比。
+   - `st`：虚拟机偷取的 CPU 百分比。
+
+4. **第四行（MiB Mem）**：
+   - `total`：总内存。
+   - `free`：空闲内存。
+   - `used`：已用内存。
+   - `buff/cache`：缓存和缓冲区内存。
+
+5. **第五行（MiB Swap）**：
+   - `total`：总交换分区大小。
+   - `free`：空闲交换分区大小。
+   - `used`：已用交换分区大小。
+   - `avail Mem`：可用内存。
+
+6. **进程列表**：
+   - `PID`：进程 ID。
+   - `USER`：进程所有者。
+   - `PR`：进程优先级。
+   - `NI`：进程的 nice 值。
+   - `VIRT`：虚拟内存使用量。
+   - `RES`：物理内存使用量。
+   - `SHR`：共享内存使用量。
+   - `S`：进程状态（S=休眠，R=运行，Z=僵尸）。
+   - `%CPU`：CPU 使用率。
+   - `%MEM`：内存使用率。
+   - `TIME+`：进程占用 CPU 的总时间。
+   - `COMMAND`：进程名称或命令。
 ```
+
 ### Linux中查看8080端口是否被占用
+
 ```shell
+唉，敲了那么多遍，你怎么还能忘记的啊？
 netstat -tuln | grep 8080
 -t：显示TCP端口。
 -u：显示UDP端口。
@@ -136,8 +194,6 @@ ARG：构建参数。
 ### MySQL你是怎么配置的
 
 ### Redis你是怎么配置的
-
-
 
 ### MySQL那些字段你会怎么使用，在项目中
 

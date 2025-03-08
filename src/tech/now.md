@@ -11,22 +11,23 @@ tag:
 
 :::info
 胜不骄，败不馁
+
+将所有东西都在Linux中实现一遍
 :::
 
 ### Linux中查看占用内存命令（包括查看特定应用命令）
 ```shell
 我在Linux常用的命令
 
-ps -ef | grep java 查看所有包含java的进程
-
 top 查看系统资源使用情况
 
 df -h 查看磁盘空间使用情况
 
+ps -ef | grep java 查看所有包含java的进程
+
 nohup java -jar app.jar > output.log 2>&1 & 后台启动Java应用，并将日志保存到指定文件
 
 netstat -anp | grep 8080 查看端口占用情况
-
 
 1.查看系统整体内存使用情况
 free -h
@@ -93,6 +94,12 @@ MiB Swap:   2000.0 total,   1500.0 free,    500.0 used.   4000.0 avail Mem
    - `TIME+`：进程占用 CPU 的总时间。
    - `COMMAND`：进程名称或命令。
 ```
+我的看法是重点关注：%Cpu(s)（特别是 us 和 sy）、MiB Mem（特别是 used 和 avail Mem）、Swap（特别是 used）、进程列表中的 %CPU 和 %MEM。
+
+# TODO
+为什么要重要关注 %CPU 和 %MEM？
+
+%CPU：用于识别占用 CPU 最多的进程，帮助定位 CPU 密集型任务或性能瓶颈。%MEM：用于识别占用内存最多的进程，帮助定位内存泄漏或内存密集型任务。结合使用：通过 %CPU 和 %MEM 可以快速定位系统中的资源瓶颈，并采取相应的优化措施。
 
 ### Linux中查看8080端口是否被占用
 
@@ -192,6 +199,25 @@ ARG：构建参数。
 ### Redis有几种默认的过期时间，你用过哪几种
 
 ### MySQL你是怎么配置的
+
+```shell
+MySQL 的配置文件通常位于以下路径：
+
+Linux：/etc/my.cnf 或 /etc/mysql/my.cnf
+
+Windows：C:\ProgramData\MySQL\MySQL Server X.X\my.ini
+
+MySQL 配置文件分为多个部分，常见的部分包括：
+
+[mysqld]：MySQL 服务器的配置。
+
+[client]：MySQL 客户端的配置。
+
+[mysql]：MySQL 命令行工具的配置。
+
+[mysqldump]：MySQL 备份工具的配置。
+
+```
 
 ### Redis你是怎么配置的
 

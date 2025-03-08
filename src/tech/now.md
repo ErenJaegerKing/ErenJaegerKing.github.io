@@ -11,6 +11,7 @@ tag:
 
 :::info
 胜不骄，败不馁
+
 为什么自己明明会，老是忘掉了，没用的原因吗
 :::
 
@@ -47,6 +48,26 @@ netstat -tuln | grep 8080
 grep :8080：过滤出包含 8080 端口的行。
 ```
 
+### Java -jar命令可以在后台运行吗
+
+```shell
+1.使用&在后台运行
+java -jar your-app.jar &
+2.使用nohup防止进程被终止
+nohup java -jar your-app.jar > output.log 2>&1 &
+
+nohup：忽略挂断信号，使进程在终端关闭后继续运行。
+> output.log：将标准输出重定向到 output.log 文件。
+2>&1：将标准错误输出重定向到标准输出（即也写入 output.log）。
+&：将进程放到后台运行。
+
+3.使用系统服务（Systemd）
+4.使用 Docker 容器
+
+
+
+```
+
 ### Dockerfile怎么部署Jar
 
 ```shell
@@ -72,10 +93,39 @@ EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "test.jar"]
 ```
 ### Dockerfile常见的模块（指令）及其作用
+```shell
+一个典型的 Dockerfile 可能包含以下模块：
 
+FROM：基础镜像。
+
+LABEL：元数据。
+
+WORKDIR：工作目录。
+
+COPY/ADD：复制文件。
+
+RUN：执行命令。
+
+ENV：设置环境变量。
+
+EXPOSE：暴露端口。
+
+CMD/ENTRYPOINT：启动命令。
+
+USER：指定用户。
+
+HEALTHCHECK：健康检查。
+
+VOLUME：定义卷。
+
+ARG：构建参数。
+
+多阶段构建：优化镜像大小。
+```
 ### RabbitMQ的三大交换机
 
 ### Redis搭建主从复制（还有没有其他高可用的架构）
+
 
 ### MySQL索引失效的问题你有了解过吗
 
@@ -87,7 +137,7 @@ ENTRYPOINT ["java", "-jar", "test.jar"]
 
 ### Redis你是怎么配置的
 
-### Java -jar命令可以在后台运行吗
+
 
 ### MySQL那些字段你会怎么使用，在项目中
 

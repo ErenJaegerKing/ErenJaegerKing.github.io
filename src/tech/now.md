@@ -544,8 +544,71 @@ Select * 不会导致失效 降低效率
 
 ### MySQL执行计划分析
 
+1. 什么是执行计划？
 
+用于SQL性能分析、优化等场景。
 
+执行计划是指一条SQL语句在经过MySQL查询优化器的优化后，具体的执行方式
+
+2. 如何获取执行计划？
+
+Explain + 语句
+
+```shell
+id SELECT 查询的序列标识符
+select_type SELECT 关键字对应的查询类型
+table 用到的表名
+partitions 匹配的分区，对于未分区的表，值为 NULL
+type 表的访问方法
+possible_keys 可能用到的索引
+key 实际用到的索引
+key_len 所选索引的长度
+ref 当使用索引等值查询时，与索引作比较的列或常量
+rows 预计要读取的行数
+filtered 按表条件过滤后，留存的记录数的百分比
+Extra 附加信息如何分析 
+```
+
+1. 如何分析EXPLAIN结果？三个比较重要的参数
+```shell
++----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+----------------+
+| id | select_type | table     | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra          |
++----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+----------------+
+|  1 | SIMPLE      | leftaffix | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    7 |   100.00 | Using filesort |
++----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+----------------+
+
+id:？SELECT标识符，用于标识每个SELECT语句的执行顺序。
+
+select_type:主要用于区分普通查询、联合查询、子查询等复杂的查询。
+SIMPLE：简单查询，不包含 UNION 或者子查询。
+PRIMARY：查询中如果包含子查询或其他部分，外层的 SELECT 将被标记为 PRIMARY。
+SUBQUERY：子查询中的第一个 SELECT。
+UNION：在 UNION 语句中，UNION 之后出现的 SELECT。
+DERIVED：在 FROM 中出现的子查询将被标记为 DERIVED。
+UNION RESULT：UNION 查询的结果。
+
+table：表名
+
+type（非常重要）：查询执行的类型，描述了查询是如何执行的。system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
+system：如果表使用的引擎对于表行数统计是精确的（如：MyISAM），且表中只有一行记录的情况下，访问方法是 system ，是 const 的一种特例。
+const：表中最多只有一行匹配的记录，一次查询就可以找到，常用于使用主键或唯一索引的所有字段作为查询条件。
+eq_ref：当连表查询时，前一张表的行在当前这张表中只有一行与之对应。是除了 system 与 const 之外最好的 join 方式，常用于使用主键或唯一索引的所有字段作为连表条件。
+ref：使用普通索引作为查询条件，查询结果可能找到多个符合条件的行。
+index_merge：当查询条件使用了多个索引时，表示开启了 Index Merge 优化，此时执行计划中的 key 列列出了使用到的索引。
+range：对索引列进行范围查询，执行计划中的 key 列表示哪个索引被使用了。
+index：查询遍历了整棵索引树，与 ALL 类似，只不过扫描的是索引，而索引一般在内存中，速度更快。
+ALL：全表扫描。
+
+possible_keys：表示 MySQL 执行查询时可能用到的索引
+
+key（重要）：表示 MySQL 实际使用到的索引。如果为 NULL，则表示未用到索引
+
+key_len：key_len 列表示 MySQL 实际使用的索引的最大长度；
+
+rows：表示根据表统计信息及选用情况，大致估算出找到所需的记录或所需读取的行数
+
+Extra（重要）：这列包含了 MySQL 解析查询的额外信息，通过这些信息，可以更准确的理解 MySQL 到底是如何执行查询的。
+```
 ### Redis 搭建主从复制（还有没有其他高可用的架构）
 
 ### Redis 有几种默认的过期时间，你用过哪几种

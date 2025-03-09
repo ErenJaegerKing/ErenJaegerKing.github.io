@@ -10,13 +10,34 @@ tag:
 ---
 
 :::info
-这里是常用的中间件部署，当然全部都使用Docker进行部署了
+这里是常用的中间件部署
 :::
 
 ## MySQL
 
 ```bash
-docker run --name mysql_v8.4 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /data/mysql/8.4/data:/var/lib/mysql -v /data/mysql/8.4/conf:/etc/mysql/conf.d -d mysql:8.4
+docker run --name mysql_v8.4 --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /data/mysql/8.4/data:/var/lib/mysql -v /data/mysql/8.4/conf:/etc/mysql/conf.d -d mysql:8.4
+
+--restart 参数详解
+Docker 提供了几种重启策略，可以通过 --restart 参数指定：
+
+no
+默认值，不会自动重启容器。
+
+on-failure
+仅在容器退出状态码非 0 时重启容器。可以指定最大重启次数，例如 on-failure:5 表示最多重启 5 次。
+
+always
+无论退出状态码是什么，都会重启容器。如果容器被手动停止（例如通过 docker stop），它也会在 Docker 守护进程启动时重启。
+
+unless-stopped
+类似于 always，但如果容器被手动停止（例如通过 docker stop），则不会在 Docker 守护进程启动时重启。
+
+推荐使用 unless-stopped
+unless-stopped 是最常用的策略，因为它既保证了容器在机器重启后自动启动，又允许你手动停止容器时不会自动重启。
+
+如果你希望容器无论如何都要重启（即使手动停止），可以使用 always。
+
 ```
 
 ## Mariadb
@@ -65,7 +86,7 @@ minio/minio server /data \
 --console-address ":9090" --address ":9000"
 ```
 
-## Duplicati
+## Duplicati（自用）
 
 ```bash
 version: '3'
@@ -100,7 +121,7 @@ docker run -d \
    linuxserver/duplicati:latest
 ```
 
-## File Browser
+## File Browser（自用）
 
 ```bash
 docker run \
@@ -120,7 +141,7 @@ docker run -d --name filebrowser --restart always \
 
 ```
 
-## Homepage
+## Homepage（自用）
 
 ```bash
 docker run --name homepage \

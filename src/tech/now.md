@@ -11,13 +11,9 @@ tag:
 
 :::info
 胜不骄，败不馁
-
 我最大的敌人就是我自己
-
 心比天高，眼高手低
-
 菜就是菜，不要给自己找借口
-
 将所有相关的场景都自己去实现一遍
 :::
 
@@ -384,8 +380,42 @@ VARCHAR: 可变长度，适合长度不固定的字符串。
 
 ### MySQL 索引失效的问题你有了解过吗
 
+最左匹配原则
+
+
+
 ### Redis 搭建主从复制（还有没有其他高可用的架构）
 
 ### Redis 有几种默认的过期时间，你用过哪几种
 
 ### RabbitMQ 的三大交换机
+
+### Docker-Compose
+
+Spring和SpringBoot不熟悉
+SpringBoot的自动装配原理
+SpringBoot Starter
+为什么要用Redis作为缓存而不用map或者gouva
+MySQL的索引数据结构，你知道多少？
+BIO,NIO,AIO,Netty的区别
+
+Dokcer的命令
+Linux基本命令
+线程池有两种，你讲一下第二种
+MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
+RabbitMQ的工作原理是什么
+Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
+Redis中的常见数据结构
+JVM的基础知识
+
+1、布隆过滤器实现的原理，里面用的是什么数据结构
+2、缓存穿透、缓存击穿、缓存雪崩的问题以及解决方法
+3、介绍一下雪花算法，和实现的原理
+4、JWT令牌技术和ThreadLocal配合拦截器的意义是什么
+5、SpringCache + Redis的技术介绍一下
+6、SpringTask定时任务处理
+7、HashMap的详细原理和介绍
+8、JUC并发编程知道哪些
+9、JVM基础知识了解吗
+10、Spring和SpringBoot的区别和优点是什么 Spring MVC和他们的关系是什么
+11、了解微服务的基本框架吗，简单介绍一下微服务架构

@@ -9,7 +9,7 @@ tag:
   - RabbitMQ
 ---
 ::: info
-本页面来自黑马程序员的公开课程:Spring微服务入门的RabbitMQ
+消息队列
 :::
 
 
@@ -18,6 +18,7 @@ tag:
 
 [RabbitMQ镜像地址](https://hub.docker.com/_/rabbitmq)
 >带management是有图形界面插件的
+
 ##### 安装MQ
 ```
 docker run \

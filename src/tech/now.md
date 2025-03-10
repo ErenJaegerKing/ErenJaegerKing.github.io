@@ -609,38 +609,46 @@ rows：表示根据表统计信息及选用情况，大致估算出找到所需�
 
 Extra（重要）：这列包含了 MySQL 解析查询的额外信息，通过这些信息，可以更准确的理解 MySQL 到底是如何执行查询的。
 ```
-### Redis 搭建主从复制（还有没有其他高可用的架构）
+### Redis 过期删除策略
 
-### Redis 有几种默认的过期时间，你用过哪几种
+这是Redis功能篇中的，使用的是[惰性删除 + 定期删除]，删除的对象是已过期的Key。
 
-### RabbitMQ 的三大交换机
+1. 不主动删除过期键，每次从数据库访问key时，都检测key是否过期，如果过期则删除该key
+2. 定期删除，每隔一段时间随机从数据库中取出一定数量的key进行筛查，并删除其中过期key
+
+### RabbitMQ 的原理
+
+
+
+### RabbitMQ有什么交换机
+
+RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
+
+### @SpringBootAplication注解有了解过吗
+
+### SpringBoot启动项你有了解过吗
 
 ### Docker-Compose
-
-Spring和SpringBoot不熟悉
-SpringBoot的自动装配原理
-SpringBoot Starter
-为什么要用Redis作为缓存而不用map或者gouva
-MySQL的索引数据结构，你知道多少？
-BIO,NIO,AIO,Netty的区别
-
-Dokcer的命令
-Linux基本命令
-线程池有两种，你讲一下第二种
-MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
-RabbitMQ的工作原理是什么
-Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
-Redis中的常见数据结构
-JVM的基础知识
-
-布隆过滤器实现的原理，里面用的是什么数据结构
-缓存穿透、缓存击穿、缓存雪崩的问题以及解决方法
-介绍一下雪花算法，和实现的原理
-JWT令牌技术和ThreadLocal配合拦截器的意义是什么
-SpringCache + Redis的技术介绍一下
-SpringTask定时任务处理
-HashMap的详细原理和介绍
-JUC并发编程知道哪些
-JVM基础知识了解吗
-Spring和SpringBoot的区别和优点是什么 Spring MVC和他们的关系是什么
-了解微服务的基本框架吗，简单介绍一下微服务架构
+### Spring和SpringBoot不熟悉
+### SpringBoot的自动装配原理
+### SpringBoot Starter
+### 为什么要用Redis作为缓存而不用map或者gouva
+### MySQL的索引数据结构，你知道多少？
+### BIO,NIO,AIO,Netty的区别
+### 线程池有两种，你讲一下第二种
+### MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
+### RabbitMQ的工作原理是什么
+### Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
+### Redis中的常见数据结构
+### JVM的基础知识
+### 布隆过滤器实现的原理，里面用的是什么数据结构
+### 缓存穿透、缓存击穿、缓存雪崩的问题以及解决方法
+### 介绍一下雪花算法，和实现的原理
+### JWT令牌技术和ThreadLocal配合拦截器的意义是什么
+### SpringCache + Redis的技术介绍一下
+### SpringTask定时任务处理
+### HashMap的详细原理和介绍
+### JUC并发编程知道哪些
+### JVM基础知识了解吗
+### Spring和SpringBoot的区别和优点是什么 Spring MVC和他们的关系是什么
+### 了解微服务的基本框架吗，简单介绍一下微服务架构

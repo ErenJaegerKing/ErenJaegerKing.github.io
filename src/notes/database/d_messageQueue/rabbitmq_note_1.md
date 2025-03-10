@@ -20,7 +20,7 @@ tag:
 >带management是有图形界面插件的
 
 ##### 安装MQ
-```
+```java
 docker run \
  -e RABBITMQ_DEFAULT_USER=root \
  -e RABBITMQ_DEFAULT_PASS=123456 \
@@ -37,7 +37,7 @@ docker run \
 http://localhost:15672/
 ##### SpringAMQP
 >SpringAMQP是基于RabbitMQ封装的一套模板，并且还利用SpringBoot对其实现了自动装配，使用起来非常方便[SpringAmqp的官方地址](<https://spring.io/projects/spring-amqp>)
-```
+```java
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -46,7 +46,7 @@ http://localhost:15672/
 </dependency>
 ```
 ##### 配置MQ地址
-```
+```java
 spring:
   rabbitmq:
     host: localhost# 主机名
@@ -61,7 +61,7 @@ spring:
 ##### WorkQueue
 >Work queues，也被称为（Task queues），任务模型。简单来说就是让多个消费者绑定到一个队列，共同消费队列中的消息。
 
-```
+```java
 //发送消息
 rabbitTemplate.convertAndSend(queueName, msg);
 
@@ -82,7 +82,7 @@ public void listener(String msg) {
 -   Queue：消息队列也与以前一样，接收消息、缓存消息。
 >Exchange（交换机）只负责转发消息，不具备存储消息的能力
 ##### Fanout
-```
+```java
 //接收信息
 @Configuration
 public class FanoutConfig {
@@ -137,7 +137,7 @@ rabbitTemplate.convertAndSend(exchangeName, "", msg);
 ```
 ##### Direct
 
-```
+```java
 //接收消息
 @RabbitListener(bindings = @QueueBinding(
     value = @Queue(name = "direct.queue1"),
@@ -151,7 +151,7 @@ public void listener(String msg){
 rabbitTemplate.convertAndSend(exchangeName, key, message);
 ```
 ##### Topic
-```
+```java
 //接收消息
 @RabbitListener(bindings = @QueueBinding(
     value = @Queue(name = "topic.queue1"),
@@ -167,14 +167,14 @@ rabbitTemplate.convertAndSend(exchangeName, key, message);
 
 ##### 配置JSON转换器
 
-```
+```java
 <dependency>
      <groupId>com.fasterxml.jackson.dataformat</groupId>
      <artifactId>jackson-dataformat-xml</artifactId>
      <version>2.9.10</version>
  </dependency>
 ```
-```
+```java
 @Bean
 public MessageConverter jsonMessageConverter(){
     return new Jackson2JsonMessageConverter();
@@ -192,7 +192,7 @@ public MessageConverter jsonMessageConverter(){
     -   消息投递到交换机了，但是没有路由到队列。返回ACK，及路由失败原因。
 ###### 生产者消息确认
 添加配置
-```
+```java
 spring:
   rabbitmq:
     publisher-confirm-type: correlated
@@ -211,7 +211,7 @@ spring:
 
 定义Return回调
 
-```
+```java
 @Slf4j
 @Configuration
 public class CommonConfig implements ApplicationContextAware {
@@ -227,7 +227,7 @@ public class CommonConfig implements ApplicationContextAware {
 ```
 定义ConfirmCallback
 
-```
+```java
     CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString())	
     correlationData.getFuture().addCallback(
         result -> {
@@ -244,7 +244,8 @@ public class CommonConfig implements ApplicationContextAware {
 ##### MQ持久化
 交换机持久化
 
-```@Bean
+```java
+@Bean
 public DirectExchange simpleExchange(){
     // 三个参数：交换机名称、是否持久化、当没有queue与其绑定时是否自动删除
     return new DirectExchange("simple.direct", true, false);
@@ -252,7 +253,8 @@ public DirectExchange simpleExchange(){
 ```
 队列持久化
 
-```@Bean
+```java
+@Bean
 public Queue simpleQueue(){
     // 使用QueueBuilder构建队列，durable就是持久化的
     return QueueBuilder.durable("simple.queue").build();
@@ -260,7 +262,7 @@ public Queue simpleQueue(){
 ```
 消息持久化
 
-```
+```java
 Message message = MessageBuilder
         .withBody("hello".getBytes(StandardCharsets.UTF_8))
         .setDeliveryMode(MessageDeliveryMode.PERSISTENT)
@@ -273,7 +275,7 @@ Message message = MessageBuilder
 - auto：自动ack，由spring监测listener代码是否出现异常，没有异常则返回ack；抛出异常则返回nack
 - none：关闭ack，MQ假定消费者获取消息后会成功处理，因此消息投递后立即被删除
 
-```
+```java
 spring:
   rabbitmq:
     listener:
@@ -282,7 +284,7 @@ spring:
 ```
 ##### 失败重试机制
 本地重试
-```
+```java
 spring:
   rabbitmq:
     listener:
@@ -303,7 +305,7 @@ spring:
 -   RepublishMessageRecoverer：重试耗尽后，将失败消息投递到指定的交换机
 
 
-```
+```java
 @Configuration
 public class ErrorMessageConfig {
     @Bean
@@ -334,7 +336,7 @@ public class ErrorMessageConfig {
 >如果这个包含死信的队列配置了`dead-letter-exchange`属性，指定了一个交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机称为**死信交换机**（Dead Letter Exchange，检查DLX）。
 
 
-```
+```java
 // 声明普通的 simple.queue队列，并且为其指定死信交换机：dl.direct
 @Bean
 public Queue simpleQueue2(){
@@ -371,7 +373,7 @@ public Binding dlBinding(){
 ##### 延迟队列
 消费者
 
-```
+```java
 @RabbitListener(bindings = @QueueBinding(
     value = @Queue(name = "dl.ttl.queue", durable = "true"),
     exchange = @Exchange(name = "dl.ttl.direct"),
@@ -383,7 +385,7 @@ public void listenDlQueue(String msg){
 ```
 创建交换机队列，并绑定，设置TTL
 
-```
+```java
 @Bean
 public Queue ttlQueue(){
     return QueueBuilder.durable("ttl.queue") // 指定队列名称，并持久化
@@ -402,7 +404,7 @@ public Binding ttlBinding(){
 ```
  生产者
  
-```
+```java
 // 创建消息
     String message = "hello, ttl queue";
     // 消息ID，需要封装到CorrelationData中
@@ -414,7 +416,7 @@ public Binding ttlBinding(){
 ```
 在生产者中设置TTL
 
-```
+```java
 @Test
 public void testTTLMsg() {
     // 创建消息
@@ -456,7 +458,7 @@ public void testTTLMsg() {
 
 消费者
 
-```
+```java
 @RabbitListener(bindings = @QueueBinding(
     value = @Queue(name = "delay.queue", delayed = "true"),
     exchange = @Exchange(name = "dl.ttl.direct"),
@@ -468,7 +470,7 @@ public void listenDlQueue(String msg){
 ```
 创建交换机队列，并绑定
 
-```
+```java
 @Bean
 public Queue delayedQueue() {
         return new Queue("delay.queue");
@@ -487,7 +489,7 @@ public Binding delayedBinding(){
 ```
  生产者
  
-```
+```java
     // 创建消息
     Message message = MessageBuilder
         .withBody("hello, dalyed message".getBytes(StandardCharsets.UTF_8))
@@ -501,6 +503,6 @@ public Binding delayedBinding(){
 ```
 延迟队列插件的使用步骤包括哪些？
 
-•声明一个交换机，添加delayed属性为true
+- 声明一个交换机，添加delayed属性为true
 
-•发送消息时，添加x-delay头，值为超时时间
+- 发送消息时，添加x-delay头，值为超时时间

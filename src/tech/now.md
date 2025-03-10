@@ -637,20 +637,110 @@ Extra（重要）：这列包含了 MySQL 解析查询的额外信息，通过�
 
 RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
 
-### @SpringBootAplication注解有了解过吗
+广播交换器：将消息交给所有绑定到交换器的队列 将消息发送到所有绑定到该交换器的队列，忽略Routing key。
+
+定向交换器：将消息交给符合指定Routing key的队列 将消息发送到与Routing key完全匹配的队列。
+
+主题交换器：通配符，把消息交给符合Routing pattern（路由模式）的队列 根据Routing pattern（路由模式）将消息发送到匹配的队列，支持通配符。
+
+### @SpringBootApplication注解有了解过吗
+
+@SpringBootApplication看作是 @Configuration、@EnableAutoConfiguration、@ComponentScan注解的集合
+- @EnableAutoConfiguration 启动SpringBoot的自动配置机制
+- @ComponentScan 扫描被@Component（@Repository,@Service,@Controller）注解的Bean，注解默认会扫描该类所在的包下的所有类
+- @Configuration 允许在Spring上下文中注册额外的bean或导入其他配置类
+
+### @ComponentScan默认扫描位置
+
+默认扫描当前配置类所在的包及其子包。
+
+可以通过 basePackages 或 basePackageClasses 指定扫描路径。
+
+可以通过 excludeFilters 或 includeFilters 排除或包含特定组件。
+
+在多模块或复杂项目中，显式配置 @ComponentScan 可以提高代码的可读性和可维护性。
 
 ### SpringBoot启动项你有了解过吗
 
-### Docker-Compose
+
+
 ### Spring和SpringBoot不熟悉
+
+
+
 ### SpringBoot的自动装配原理
+
+
+
 ### SpringBoot Starter
+
+
+
 ### 为什么要用Redis作为缓存而不用map或者gouva
+
+
+
 ### MySQL的索引数据结构，你知道多少？
+
+
+
 ### BIO,NIO,AIO,Netty的区别
+
+1. BIO (Blocking I/O)
+特点：同步阻塞 I/O。
+
+工作方式：每个连接创建一个线程，线程在读写操作时会被阻塞，直到数据准备好。
+
+优点：编程简单，适合连接数较少的场景。
+
+缺点：线程开销大，不适合高并发场景。
+
+适用场景：低并发、连接数较少的应用。
+
+2. NIO (Non-blocking I/O)
+特点：同步非阻塞 I/O。
+
+工作方式：使用单线程或少量线程处理多个连接，通过 Selector 监控多个 Channel 的 I/O 事件，避免线程阻塞。
+
+优点：适合高并发，资源利用率高。
+
+缺点：编程复杂，调试难度大。
+
+适用场景：高并发、连接数多的应用。
+
+3. AIO (Asynchronous I/O)
+特点：异步非阻塞 I/O。
+
+工作方式：通过回调机制处理 I/O 操作，数据准备好后系统通知应用程序。
+
+优点：适合高并发，编程相对简单。
+
+缺点：实现复杂，某些平台支持有限。
+
+适用场景：高并发、连接数多且需要异步处理的应用。
+
+4. Netty
+特点：基于 NIO 的高性能网络框架。
+
+工作方式：封装了 NIO 的复杂性，提供简单易用的 API，支持多种协议和高性能的网络通信。
+
+优点：高性能、易用、社区活跃，支持多种协议和编解码器。
+
+缺点：学习曲线较陡。
+
+适用场景：高并发、高性能的网络应用，如 RPC、即时通讯等。
+
+总结
+BIO：简单但性能差，适合低并发。
+
+NIO：高性能但复杂，适合高并发。
+
+AIO：异步处理，适合高并发异步场景。
+
+Netty：基于 NIO 的高性能框架，适合复杂的高并发网络应用。
+
 ### 线程池有两种，你讲一下第二种
 ### MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
-### RabbitMQ的工作原理是什么
 ### Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
 ### Redis中的常见数据结构
 ### JVM的基础知识
@@ -663,5 +753,5 @@ RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
 ### HashMap的详细原理和介绍
 ### JUC并发编程知道哪些
 ### JVM基础知识了解吗
-### Spring和SpringBoot的区别和优点是什么 Spring MVC和他们的关系是什么
+### Spring和SpringBoot的区别和优点是什么，Spring MVC和他们的关系是什么
 ### 了解微服务的基本框架吗，简单介绍一下微服务架构

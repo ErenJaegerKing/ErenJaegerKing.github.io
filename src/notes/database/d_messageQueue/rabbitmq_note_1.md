@@ -11,7 +11,17 @@ tag:
 ::: info
 消息队列
 :::
+##### RabbitMQ是什么？
 
+消息队列就是一个使用队列来通信的组件
+
+##### RabbitMQ 核心概念？
+
+1. Producer(生产者) 和 Consumer(消费者)
+2. Exchange(交换器)
+3. Queue(消息队列)
+4. Broker（消息中间件的服务节点）
+5. Exchange Types(交换器类型)
 
 ##### 下载镜像
 `docker pull rabbitmq:3.13-management`
@@ -20,7 +30,7 @@ tag:
 >带management是有图形界面插件的
 
 ##### 安装MQ
-```java
+```shell
 docker run \
  -e RABBITMQ_DEFAULT_USER=root \
  -e RABBITMQ_DEFAULT_PASS=123456 \
@@ -31,10 +41,15 @@ docker run \
  -p 5672:5672 \
  -d \
  rabbitmq:3.13-management
+
+docker run -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=123456 -v mq-plugins:/plugins --name mq --hostname mq1 -p 15672:15672 -p 5672:5672 -d rabbitmq:3.13-management
+
 ```
 [参数的意义文档](https://www.rabbitmq.com/docs)
 ##### 打开控制台界面
-http://localhost:15672/
+
+[http://localhost:15672](http://localhost:15672)
+
 ##### SpringAMQP
 >SpringAMQP是基于RabbitMQ封装的一套模板，并且还利用SpringBoot对其实现了自动装配，使用起来非常方便[SpringAmqp的官方地址](<https://spring.io/projects/spring-amqp>)
 ```java
@@ -72,15 +87,16 @@ public void listener(String msg) {
 }
 ```
 ##### 发布/订阅
->-   Publisher：生产者，也就是要发送消息的程序，但是不再发送到队列中，而是发给X（交换机）
 
+>Exchange（交换机）只负责转发消息，不具备存储消息的能力
+
+-   Publisher：生产者，也就是要发送消息的程序，但是不再发送到队列中，而是发给X（交换机）
 -   Exchange：交换机。一方面，接收生产者发送的消息。另一方面，知道如何处理消息，例如递交给某个特别队列、递交给所有队列、或是将消息丢弃。到底如何操作，取决于Exchange的类型。Exchange有以下3种类型：
     -   Fanout：广播，将消息交给所有绑定到交换机的队列
     -   Direct：定向，把消息交给符合指定routing key 的队列
     -   Topic：通配符，把消息交给符合routing pattern（路由模式） 的队列
 -   Consumer：消费者，与以前一样，订阅队列，没有变化
 -   Queue：消息队列也与以前一样，接收消息、缓存消息。
->Exchange（交换机）只负责转发消息，不具备存储消息的能力
 ##### Fanout
 ```java
 //接收信息
@@ -332,6 +348,7 @@ public class ErrorMessageConfig {
 -   开启持久化功能，确保消息未消费前在队列中不会丢失
 -   开启消费者确认机制为auto，由spring确认消息处理成功后完成ack
 -   开启消费者失败重试机制，并设置MessageRecoverer，多次重试失败后将消息投递到异常交换机，交由人工处理
+
 ##### 死信交换机
 >如果这个包含死信的队列配置了`dead-letter-exchange`属性，指定了一个交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机称为**死信交换机**（Dead Letter Exchange，检查DLX）。
 

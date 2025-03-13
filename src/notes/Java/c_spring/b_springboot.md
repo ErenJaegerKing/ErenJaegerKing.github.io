@@ -10,6 +10,93 @@ tag:
 order: 2
 ---
 
+## SpringBoot 自动装配原理详解
+
+1. 什么是 SpringBoot 自动装配？
+2. SpringBoot 是如何实现自动装配的？如何实现按需加载？
+3. 如何实现一个 Starter？
+
+### 什么是 SpringBoot 自动装配？
+
+通过注解或者一些简单的配置就能在Spring Boot的帮助下实现某块功能
+
+就比如说没有Spring Boot的时候，如果我们需要引入第三方依赖，需要手动配置，非常麻烦。但是，Spring Boot中，我们直接引入一个Starter即可。比如说你想要在项目中使用Redis的话，直接在项目中引入对应的starter即可。引入 starter 之后，我们通过少量注解和一些简单的配置就能使用第三方组件提供的功能了。
+
+### SpringBoot 是如何实现自动装配的？
+
+SpringBoot的核心注解SpringBootApplication
+
+@SpringBootApplication看作是@Configuration、@EnableAutoConfiguration、@ComponentScan注解的集合。
+- @EnableAutoConfiguration：启动SpringBoot的自动配置机制
+- @Configuration：允许在上下文中注册额外的bean或导入其他配置类
+- @ComponentScan：扫描被@Component注解的Bean，注解默认会扫描启动类所在的包下所有的类，可以自定义不扫描某些bean。如下图所示，容器中将排除TypeExcludeFilter和AutoConfigurationExcludeFilter。
+
+@EnableAutoConfiguration 是实现自动装配的重要注解，我们以这个注解入手。
+
+### @EnableAutoConfiguration:实现自动装配的核心注解
+
+EnableAutoConfiguration 只是一个简单地注解，自动装配核心功能的实现实际是通过 AutoConfigurationImportSelector类。
+
+```java
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+@AutoConfigurationPackage //作用：将main包下的所有组件注册到容器中
+@Import({AutoConfigurationImportSelector.class}) //加载自动装配类 xxxAutoconfiguration
+public @interface EnableAutoConfiguration {
+    String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+
+    Class<?>[] exclude() default {};
+
+    String[] excludeName() default {};
+}
+```
+### AutoConfigurationImportSelector:加载自动装配类
+
+可以看出，AutoConfigurationImportSelector 类实现了 ImportSelector接口，也就实现了这个接口中的 selectImports方法，该方法主要用于获取所有符合条件的类的全限定类名，这些类需要被加载到 IoC 容器中。
+
+```java
+private static final String[] NO_IMPORTS = new String[0];
+
+public String[] selectImports(AnnotationMetadata annotationMetadata) {
+        // <1>.判断自动装配开关是否打开
+        if (!this.isEnabled(annotationMetadata)) {
+            return NO_IMPORTS;
+        } else {
+          //<2>.获取所有需要装配的bean
+            AutoConfigurationMetadata autoConfigurationMetadata = AutoConfigurationMetadataLoader.loadMetadata(this.beanClassLoader);
+            AutoConfigurationImportSelector.AutoConfigurationEntry autoConfigurationEntry = this.getAutoConfigurationEntry(autoConfigurationMetadata, annotationMetadata);
+            return StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());
+        }
+    }
+```
+这里我们需要重点关注一下getAutoConfigurationEntry()方法，这个方法主要负责加载自动配置类的。
+
+- 第 1 步:判断自动装配开关是否打开。默认spring.boot.enableautoconfiguration=true，可在 application.properties 或 application.yml 中设置
+- 第 2 步：用于获取EnableAutoConfiguration注解中的 exclude 和 excludeName。
+- 第 3 步：获取需要自动装配的所有配置类，读取META-INF/spring.factories
+- 第 4 步：会进行筛选，@ConditionalOnXXX 中的所有条件都满足，该类才会生效。
+
+### 如何实现一个 Starter
+
+现在就来撸一个 starter，实现自定义线程池
+
+1. 创建一个threadpool-spring-boot-starter工程
+2. 引入Spring Boot相关依赖 引入Spring Boot Starter 基础库
+3. 创建ThreadPoolAutoConfiguration
+4. 在threadpool-spring-boot-starter下的resources包下创建META-INF/spring.factories文件
+org.springframwork.boot.autoconfigure.EnableAutoConfiguration=\
+org.example.ThreadPoolAutoConfiguration
+5. 测试，新建一个工程，引入threadpool starter。将写好的通过@autowired注解进行依赖注入，然后调用一下进行测试‘
+
+### 总结
+
+- Spring Boot 通过@EnableAutoConfiguration开启自动装配
+- 通过 SpringFactoriesLoader 最终加载META-INF/spring.factories中的自动配置类实现自动装配
+- 自动配置类其实就是通过@Conditional按需加载的配置类
+- 想要其生效必须引入spring-boot-starter-xxx包实现起步依赖
+
 ### SPI机制？
 
 灵魂三问：
@@ -50,6 +137,7 @@ Applicaiton应用程序进行加载后，ServiceLoader就会加载Provider。
 使用JDBC的使用导入JAR就可以了，再也不用class.forName
 
 #### Java SPI的三大规范要素（以MYSQL的JDBC为主）
+
 - 规范的配置文件
   - 文件路径：必须是JAR包中的META-INF/service目录下
   - 文件名称：Service接口的全限定名
@@ -59,6 +147,7 @@ Applicaiton应用程序进行加载后，ServiceLoader就会加载Provider。
   - method1：将Service Provider的JAR包放在classpath中（最常用的）
   - method2：将JAR包安装到JRE的扩展目录中
   - method3：自定义一个ClassLoader
+
 #### 手撕一个SPI应用实例
 
 准备一个api项目为Service功能抽象类
@@ -87,7 +176,7 @@ springboot自动装配案例：MyBatis？
 
 ![springboot自动装配案例mybatis](https://drawingbed-686.pages.dev/myblog/202412192052282.png)
 
-**springboot自动装配的核心流程**：
+springboot自动装配的核心流程：
 - 1. SpringBoot应用程序启动
 - 2. 通过SpringFactories机制加载配置文件
   - 即通过ClassLoader去获取classpath中的配置文件META-INF/spring.factories

@@ -117,17 +117,19 @@ tinyint(1)类型可以存储0或1，分别对应false或true
 
 ## MySQL基础架构
 
-不了解
-
-## MySQL基础架构
+以后来收你，先等着
 
 ### MySQL支持哪些存储引擎？默认使用哪个？
 
 MyISAM InnoDB 5.5.5 之前是使用前者作为默认引擎的，5.5.5 之后是使用后者作为默认引擎的
 
+使用select version()来查看你的MySQL版本
+
+使用show variables like '%storage_engine%'命令直接查看MySQL当前默认的存储引擎
+
 ### MySQL 存储引擎架构了解吗？
 
-不了解
+以后来收你，先等着
 
 ### MyISAM 和 InnoDB 有什么区别？
 
@@ -230,7 +232,7 @@ MySQL 5.6 开始，查询缓存已默认禁用。MySQL 8.0 开始，已经不再
 
 一个事务多次读取同一个数据。
 
-一个事务访问该数据获取到了数据，然后另一个事务也访问该数据并对这个数据进行修改，此时第一个事务又读取了一次这个数据，结果就发生了两次读取不一样的情况，就发生了这些事情。
+一个事务访问该数据获取到了数据，然后另一个事务也访问该数据并对这个数据进行修改，此时第一个事务又读取了一次这个数据，结果就发生了两次读取不一样的情况，就发生了不可重复读。
 
 #### 幻读（Phantom read）
 
@@ -245,7 +247,7 @@ MySQL 5.6 开始，查询缓存已默认禁用。MySQL 8.0 开始，已经不再
 
 ### 并发事务的控制方式有哪些？
 
-锁 + MVCC
+锁 + MVCC 重点 以后来了解
 
 ### SQL标准定义了哪些事务隔离级别？
 
@@ -274,6 +276,8 @@ MySQL InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可
 
 数据库只存储文件地址信息，文件由文件存储服务负责存储。
 
+优先选择存储文件路径或 URL 的方式，以提高性能和可维护性。
+
 ### MySQL 如何存储 IP 地址？
 
 - inet_aton：将ip转为无符号整型（4-8位）
@@ -281,6 +285,18 @@ MySQL InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可
 
 插入数据前，先用inet_aton把ip地址转为整型，显示数据时，使用inet_ntoa将整型的ip转换未地址显示就行
 
+```sql
+CREATE TABLE example (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address INT UNSIGNED
+);
+
+-- 插入数据
+INSERT INTO example (ip_address) VALUES (INET_ATON('192.168.1.1'));
+
+-- 查询数据
+SELECT id, INET_NTOA(ip_address) AS ip_address FROM example;
+```
 ### 有哪些常见的 SQL 优化手段？
 
 重点
@@ -290,6 +306,29 @@ MySQL InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可
 使用explain命令来分析SQL的执行计划
 
 执行计划就是指一条SQL语句经过mysql查询优化器优化后，具体的执行方式
+
+type：表的访问方法
+- system
+- const：表中最多只有一行匹配的记录，一次查询就可以找到
+- eq_ref：当连表查询时，前一张表的行在当前这张表中只有一行与之对应。
+- ref：使用普通索引作为查询条件，查询结果可能找到多个符合条件的行。
+- index_merge：当查询条件使用了多个索引时，表示开启了 Index Merge 优化，此时执行计划中的 key 列列出了使用到的索引。
+- range：对索引列进行范围查询，执行计划中的 key 列表示哪个索引被使用了。
+- index：查询遍历了整棵索引树，与 ALL 类似，只不过扫描的是索引，而索引一般在内存中，速度更快。
+- ALL：全表扫描
+
+key：实际用到的索引
+- key 列表示 MySQL 实际使用到的索引。如果为 NULL，则表示未用到索引。
+
+extra：这列包含了 MySQL 解析查询的额外信息，通过这些信息，可以更准确的理解 MySQL 到底是如何执行查询的。
+- Using filesort：在排序时使用了外部的索引排序，没有用到表内索引进行排序。
+- Using temporary：MySQL 需要创建临时表来存储查询的结果，常见于 ORDER BY 和 GROUP BY。
+- Using index：表明查询使用了覆盖索引，不用回表，查询效率非常高。
+- Using index condition:表示查询优化器选择使用了索引条件下推这个特性。
+- Using where:表明查询使用了 WHERE 子句进行条件过滤。一般在没有使用到索引的时候会出现。
+- Using join buffer (Block Nested Loop):连表查询的方式，表示当被驱动表的没有使用索引的时候，MySQL 会先将驱动表读出来放到 join buffer 中，再遍历被驱动表与驱动表进行查询。
+
+这是explain命令分析性能最重要的三个参数
 
 ### 读写分离和分库分表了解吗？
 
@@ -306,6 +345,8 @@ MySQL InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可
 ### MySQL 性能怎么优化？
 
 点 - 线 - 面
+
+现阶段最重要的是前两个去实践一下
 
 1. 慢SQL定位与分析
 - 监控工具：mysql慢查询日志

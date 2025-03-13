@@ -9,11 +9,6 @@ tag:
   - MySQL
 ---
 
-:::info
-我是按着小林coding学习后的笔记，我记录一下学习的笔记。
-:::
-
-[转载：小林coding](https://xiaolincoding.com/mysql/)
 # 基础篇
 ## MySQL 执行一条 select 查询语句，在 MySQL 中期间发生了什么？
 连接器：建立连接，管理连接，校验用户身份

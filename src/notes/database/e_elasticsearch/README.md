@@ -2,7 +2,7 @@
 title: Elasticsearch
 index: false
 dir:
-  order: 5
+  order: 4
 ---
 
 <Catalog />

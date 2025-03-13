@@ -362,6 +362,43 @@ Exception 分为运行时异常 RuntimeException 和非运行时异常。
 
 审计功能主要是帮助我们记录数据库操作的具体行为比如某条记录是谁创建的、什么时间创建的、最后修改人是谁、最后修改时间是什么时候。
 
+### 实体之间的关联关系注解有哪些？
+
+- @OneToOne : 一对一。
+- @ManyToMany：多对多。
+- @OneToMany : 一对多。
+- @ManyToOne：多对一。
+
+## Spring Security
+
+有哪些控制请求访问权限的方法？
+- permitAll()：无条件允许任何形式访问，不管你登录还是没有登录。
+- anonymous()：允许匿名访问，也就是没有登录才可以访问。
+- denyAll()：无条件决绝任何形式的访问。
+- authenticated()：只允许已认证的用户访问。
+- fullyAuthenticated()：只允许已经登录或者通过 remember-me 登录的用户访问。
+- hasRole(String) : 只允许指定的角色访问。
+- hasAnyRole(String) : 指定一个或者多个角色，满足其一的用户即可访问。
+- hasAuthority(String)：只允许具有指定权限的用户访问
+- hasAnyAuthority(String)：指定一个或者多个权限，满足其一的用户即可访问。
+- hasIpAddress(String) : 只允许指定 ip 的用户访问。
+
+### hasRole 和 hasAuthority 有区别吗？
+
+hasRole(String) : 只允许指定的角色访问。
+
+hasAuthority(String)：只允许具有指定权限的用户访问
+
+### 如何对密码进行加密？
+
+Spring Security 提供了多种加密算法的实现，开箱即用，非常方便。这些加密算法实现类的接口是 PasswordEncoder ，如果你想要自己实现一个加密算法的话，也需要实现 PasswordEncoder 接口。
+
+官方推荐使用基于 bcrypt 强哈希函数的加密算法实现类。
+
+### 如何优雅更换系统使用的加密算法？
+
+推荐的做法是通过 DelegatingPasswordEncoder 兼容多种不同的密码加密方案，以适应不同的业务需求。从名字也能看出来，DelegatingPasswordEncoder 其实就是一个代理类，并非是一种全新的加密算法，它做的事情就是代理上面提到的加密算法实现类。在 Spring Security 5.0 之后，默认就是基于 DelegatingPasswordEncoder 进行密码加密的。
+
 ## Spring Framework 5 基础
 
 ![](https://drawingbed-686.pages.dev/myblog/202412151903547.png)

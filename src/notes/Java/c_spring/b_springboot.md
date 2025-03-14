@@ -97,6 +97,30 @@ org.example.ThreadPoolAutoConfiguration
 - 自动配置类其实就是通过@Conditional按需加载的配置类
 - 想要其生效必须引入spring-boot-starter-xxx包实现起步依赖
 
+## SpringBoot
+
+### 为什么使用springboot？
+
+### SpringBoot比Spring好在哪里？
+
+### SpringBoot用到哪些设计模式？
+
+### 怎么理解SpringBoot中的约定大于配置？
+
+### SpringBoot的项目结构是怎么样的？
+
+### SpringBoot自动装配原理是什么？
+
+### 说几个启动器（starter)？
+
+### 写过SpringBoot starter吗?
+
+### SpringBoot里面有哪些重要的注解？还有一个配置相关的注解是哪个？
+
+### springboot怎么开启事务？
+
+## b站up教学
+
 ### SPI机制？
 
 灵魂三问：

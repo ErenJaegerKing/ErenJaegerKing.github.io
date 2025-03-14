@@ -261,3 +261,14 @@ Redis 的内存淘汰策略只有在运行内存达到了配置的最大内存�
 6. allkeys-random：从数据集中移除最近最少使用的数据淘汰。
 7. allkeys-lfu（least frequently used）:从数据集中移除最不经常使用的数据淘汰。
 8. no-eviction（默认内存淘汰策略）：禁止驱逐数据，当内存不足以容纳新写入数据时，新写入操作会报错。
+
+## Redis事务
+
+## Redis性能优化（重要）
+
+## Redis生产问题（重要）
+
+## Redis集群
+
+## Redis 使用规范
+

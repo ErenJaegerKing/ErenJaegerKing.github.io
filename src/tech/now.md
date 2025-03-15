@@ -17,6 +17,8 @@ tag:
 将所有相关的场景都自己去实现一遍
 :::
 
+## zh
+
 ### Linux 中查看占用内存命令
 
 ```shell
@@ -660,105 +662,336 @@ RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
 
 在多模块或复杂项目中，显式配置 @ComponentScan 可以提高代码的可读性和可维护性。
 
+## bedl
+
+### 请你先介绍一下你的项目经历和业务
+
+单独开一篇，使用STAR法则
+
+### RabbitMQ的核心原理是什么？
+
+如上
+
+### 项目代码管理是用的什么?
+
+Git
+
+### 你学过数据结构吗？有哪些算法，你可以介绍一下吗？
+
+- 排序算法：快速排序、归并排序、堆排序等
+- 搜索算法：二分查找、深度优先搜索、广度优先搜索
+- 图算法：不了解，以后一定突击
+- 动态规划：背包问题、最长公共子序列、最短路径问题
+
+### Linux中的ubuntn你使用过哪些命令？
+
+ls、cd、pwd、cp、mv、rm、cat、grep、chmod、ps、top
+
+### 你使用过Docker吗，知道哪些命令？你能说说怎么部署Nginx容器的吗
+
+```shell
+docker run \
+-p 80:80 \
+-p 443:443 \
+--name nginx \
+-v /usr/local/nginx/html/blog:/usr/share/nginx/html \
+-v /usr/local/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /usr/local/nginx/conf/conf.d:/etc/nginx/conf.d \
+-v /usr/local/nginx/log:/var/log/nginx \
+-v /usr/local/nginx/ssl:/etc/nginx/ssl \
+--privileged=true -d --restart=always \
+-d nginx:latest
+```
+
+### 你前端数据发送给后端，这个前端是怎么发送的?
+
+Axios
+```javascript
+axios({
+  method: 'get',
+  url: 'https://jsonplaceholder.typicode.com/posts/1',
+  params: {
+    id: 123
+  },
+  headers: {
+    'X-Custom-Header': 'foobar'
+  }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+```
+
+### 如果发生代码冲突了，你会怎么进行解决?
+
+我回答的没有问吧，我真厉害，哈哈哈哈哈
+
+1. git pull拉取远程代码或者git merge合并分支，如果发生冲突，Git会提示冲突信息。冲突文件会被标记为unmerged状态
+2. 打开冲突文件 你写的代码和其他人写的代码
+3. 解决冲突
+   1. 手动解决，仔细阅读冲突部分，决定保留哪些代码
+   2. 使用工具解决，使用Idea自带的冲突解决工具
+4. 标记冲突已解决 git add 冲突文件
+5. 完成合并
+   1. 如果在合并分支时发生的冲突，完成冲突解决后，继续合并：git commit
+   2. 如果在拉取代码时发生的冲突，完成冲突解决后，继续拉去：git
+   rebase --continue
+6. 测试一下
+7. 提交代码 git push origin 分支名
+
+### 数据库中的外键是什么意思，请你讲一下?
+
+外键是用于建立和强制表与表之间关系的一种约束。
+
+外键指向另一个表的主键，确保数据的完整性和一致性。
+
+例如，订单表中的用户ID可以是外键，指向用户表的主键，确保每个订单都对应一个有效的用户。
+
+### Linux是怎么查看路径下的硬盘大小?
+
+```shell
+df -h /path/to/directory
+```
+
+### 你给哪些数据库备份过，请你说一下你是如何给mysql进行备份的，是用的什么命令还是工具
+
+我使用过MySQL的备份工具，常用的方法包括：
+- **mysqldump**：使用`mysqldump`命令备份数据库。例如：
+  ```bash
+  mysqldump -u username -p database_name > backup.sql
+  ```
+- **自动化备份**：使用cron定时任务定期执行备份脚本。
+- **工具**：使用数据库连接工具Navicat将其导出
+
+### Git中的git stash命令有没有用过，是干什么的?你是怎么使用的？
+
+有时候我们需要切换到其他的分支，但是我现在的分支上有代码修改了，无法进行切换，所以我希望将这段代码临时保存一下
+
+1. 临时切换分支
+```bash
+git stash
+
+git checkout main
+
+git commit -m "Fix Bug"
+
+git checkout feature-branch
+
+git stash pop
+```
+
+2. 保存未完成的更改
+```bash
+git stash save "feature a"
+
+git checkout other-branch 
+
+git checkout feature-branch
+
+git stash apply
+```
+3. 清理存储条目
+```bash
+git stash list
+
+git stash drop stash@{1}
+
+git stash clear
+```
+
+### MongoDB你在项目中是怎么使用的？简单的讲一下?
+
+MongoDB是一种NoSQL数据库，通常用于存储非结构化或半结构化数据
+
+- 存储文档型数据：MongoDB以BSON格式存储数据，适合存储JSON类似的文档类型
+- 高并发读写：MongoDB支持水平扩展，适合高并发读写的场景
+- 灵活的模式设计：MongoDB不需要预先定义表结构，适合需要变化频繁的场景
+
+### Docker容器的部署的几种方式，你知道哪些？
+
+1. 单机部署
+2. Docker Compose：通过docker-compse.yml文件定义多个容器的部署方式，适合本地开发和测试
+
+### 设计数据库表的时候，有没有什么办法可以只查询一条数据，或者说剔除重复的数据
+
+1. 只查询一条数据
+   - limit 1限制查询结果只返回一条数据
+   - distinct去除重复的数据
+2. 剔除重复数据
+   - group by对某个字段进行分组，去除重复数据
+   - distinct去除重复的行
+   - row_number()窗口函数，配合partition by去除重复数据
+
+### 你对我们公司的业务有什么相关的了解吗？
+
+我觉得提前了解公司的业务领域、产品和服务，结合自己的经验和技能，来说明我如何能够为公司业务带来价值
+
+### 你知道哪些东西可以当作是缓存
+
+1. 内存缓存：如 Redis、Memcached。
+2. 浏览器缓存：如 HTTP 缓存头（Cache-Control、ETag 等）。
+3. CDN 缓存：用于加速静态资源的访问。
+4. 数据库缓存：如 MySQL 的查询缓存（已废弃）、InnoDB 缓冲池。
+5. 应用级缓存：如 Spring Cache、Guava Cache。
+6. 分布式缓存：如 Redis Cluster、Hazelcast。
+
+### 数据库的索引是怎么设计的或者说是怎么使用的?
+
+1. 索引设计：
+ - 单列索引
+ - 复合索引
+ - 唯一索引
+ - 全文索引
+2. 索引使用
+ - 在查询条件中使用索引字段，避免全表扫描
+ - 避免在索引列上使用函数或表达式，否则索引会失效
+ - 定期维护索引，删除不必要的索引以减少写操作的开销
+
+### 在项目中你是怎么设计数据表的？
+
+1. 需求分析：明确业务需求，确定表的字段和关系
+2. 范式设计：遵循数据库设计范式（1NF、2NF、3NF）,避免数据冗余
+3. 主键设计：选择合适的字段作为主键
+4. 索引设计：根据查询需求创建合适的索引
+
 ### SpringBoot启动项你有了解过吗
 
+SpringApplication类，它是Spring Boot应用的入口
 
+1. 加载配置：读取application.yml文件
+2. 初始化上下文，创建ApplicationContext，加载Bean定义
+3. 执行Runner：执行 CommandLineRunner 或 ApplicationRunner。
+4. 启动内嵌服务器：如Tomcat、Jetty
+
+## tj
 
 ### Spring和SpringBoot不熟悉
 
-
+Spring 是一个轻量级的 Java 开发框架，提供了依赖注入、AOP、事务管理等功能。Spring Boot 是 Spring 的扩展，简化了 Spring 应用的开发和部署，提供了自动配置、内嵌服务器等功能。
 
 ### SpringBoot的自动装配原理
 
+Spring Boot 的自动装配通过 @EnableAutoConfiguration 注解实现。它通过 spring.factories 文件加载自动配置类，根据类路径下的依赖自动配置 Bean。
 
+### SpringBoot Starter的原理以及怎么实现
 
-### SpringBoot Starter
-
-
+### Redis当作缓存为什么如此快？
 
 ### 为什么要用Redis作为缓存而不用map或者gouva
-
-
-
 ### MySQL的索引数据结构，你知道多少？
 
-B+树是什么？
-- 叶子节点（最底部的节点）才会存放实际数据（索引+记录），非叶子节点只会存放索引；
-- 所有索引都会在叶子节点出现，叶子节点之间构成一个有序链表；
-- 非叶子节点的索引也会同时存在在子节点中，并且是在子节点中所有索引的最大（或最小）。
-- 非叶子节点中有多少个子节点，就有多少个索引；
-
-
-B+树的叶子节点是用双向链表进行链接，这样的好处是既能向右遍历，也能向左遍历。
+1. B+Tree：InnoDB的默认索引结构，适合范围查询
+2. Hash：适合等值查询，但不支持范围查询
+3. 全文索引
 
 ### BIO,NIO,AIO,Netty的区别
 
-1. BIO (Blocking I/O)
-特点：同步阻塞 I/O。
+- BIO:同步阻塞I/O，每一个连接需要一个线程处理
+- NIO:同步非阻塞I/O,使用多路复用器处理多个连接
+- AIO:异常非阻塞I/O,基于时间回调
+- Netty:基于NIO的高性能网络框架，简化了NIO的编程
 
-工作方式：每个连接创建一个线程，线程在读写操作时会被阻塞，直到数据准备好。
-
-优点：编程简单，适合连接数较少的场景。
-
-缺点：线程开销大，不适合高并发场景。
-
-适用场景：低并发、连接数较少的应用。
-
-2. NIO (Non-blocking I/O)
-特点：同步非阻塞 I/O。
-
-工作方式：使用单线程或少量线程处理多个连接，通过 Selector 监控多个 Channel 的 I/O 事件，避免线程阻塞。
-
-优点：适合高并发，资源利用率高。
-
-缺点：编程复杂，调试难度大。
-
-适用场景：高并发、连接数多的应用。
-
-3. AIO (Asynchronous I/O)
-特点：异步非阻塞 I/O。
-
-工作方式：通过回调机制处理 I/O 操作，数据准备好后系统通知应用程序。
-
-优点：适合高并发，编程相对简单。
-
-缺点：实现复杂，某些平台支持有限。
-
-适用场景：高并发、连接数多且需要异步处理的应用。
-
-4. Netty
-特点：基于 NIO 的高性能网络框架。
-
-工作方式：封装了 NIO 的复杂性，提供简单易用的 API，支持多种协议和高性能的网络通信。
-
-优点：高性能、易用、社区活跃，支持多种协议和编解码器。
-
-缺点：学习曲线较陡。
-
-适用场景：高并发、高性能的网络应用，如 RPC、即时通讯等。
-
-总结
-BIO：简单但性能差，适合低并发。
-
-NIO：高性能但复杂，适合高并发。
-
-AIO：异步处理，适合高并发异步场景。
-
-Netty：基于 NIO 的高性能框架，适合复杂的高并发网络应用。
+## tzsr
 
 ### 线程池有两种，你讲一下第二种
+
+ThreadPoolExecutor：Java 提供的线程池实现，支持自定义核心线程数、最大线程数、队列等。
+
+ForkJoinPool：适合处理分治任务的线程池，支持工作窃取算法。
+
 ### MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
+
+事务：通过 BEGIN、COMMIT、ROLLBACK 控制事务的原子性、一致性、隔离性、持久性。
+
+索引：通过创建合适的索引提高查询性能。
+
+锁机制：包括行锁、表锁、乐观锁、悲观锁。
+
+SQL 优化：
+
+避免使用 SELECT *。
+
+使用 EXPLAIN 分析查询计划。
+
+避免在 WHERE 子句中使用函数。
+
 ### Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
+
+Nacos 通过长轮询或 WebSocket 实时推送配置变更，应用可以通过监听配置变化动态更新配置，无需重启。
+
 ### Redis中的常见数据结构
+
+String、List、Set、Hash、ZSet
+
 ### JVM的基础知识
+
+内存结构：包括堆、栈、方法区、本地方法栈、程序计数器。
+
+垃圾回收：包括新生代、老年代、GC 算法（如标记-清除、复制、标记-整理）。
+
+类加载机制：包括加载、验证、准备、解析、初始化。
+
 ### 布隆过滤器实现的原理，里面用的是什么数据结构
+
+布隆过滤器通过多个哈希函数将元素映射到位数组中，用于判断元素是否存在。
+
+它使用位数组和哈希函数实现。
+
 ### 缓存穿透、缓存击穿、缓存雪崩的问题以及解决方法
+
+- 缓存穿透：查询不存在的数据，解决方法：使用布隆过滤器或缓存空值。
+- 缓存击穿：热点数据失效，解决方法：使用互斥锁或永不过期。
+- 缓存雪崩：大量缓存同时失效，解决方法：设置不同的过期时间或使用高可用缓存集群。
+
 ### 介绍一下雪花算法，和实现的原理
+
+雪花算法（Snowflake）是 Twitter 开源的分布式 ID 生成算法，生成 64 位的 ID，包含时间戳、机器 ID、序列号等部分。
+
 ### JWT令牌技术和ThreadLocal配合拦截器的意义是什么
+
+JWT（JSON Web Token）用于无状态认证，ThreadLocal 用于在同一个线程中共享数据。拦截器可以在请求处理前后进行身份验证和数据传递。
+
 ### SpringCache + Redis的技术介绍一下
+
+Spring Cache 提供了缓存抽象，支持多种缓存实现（如 Redis）。通过注解（如 @Cacheable、@CacheEvict）可以方便地管理缓存。
+
 ### SpringTask定时任务处理
+
+Spring Task 提供了简单的定时任务支持，通过 @Scheduled 注解可以定义任务的执行时间。
+
 ### HashMap的详细原理和介绍
+
+HashMap 是基于哈希表实现的键值对存储结构，通过哈希函数计算键的存储位置，支持快速的插入、删除、查找操作。
+
 ### JUC并发编程知道哪些
+
+JUC（Java Util Concurrent）提供了并发编程的工具类，包括：
+
+线程池：如 ThreadPoolExecutor。
+
+锁：如 ReentrantLock。
+
+并发集合：如 ConcurrentHashMap。
+
+原子类：如 AtomicInteger。
+
 ### JVM基础知识了解吗
+
+JVM 是 Java 虚拟机，负责执行 Java 字节码。其核心组件包括类加载器、运行时数据区、执行引擎、垃圾回收器等。
+
 ### Spring和SpringBoot的区别和优点是什么，Spring MVC和他们的关系是什么
+
+Spring：是一个轻量级的 Java 开发框架，提供了依赖注入、AOP 等功能。
+
+Spring Boot：是 Spring 的扩展，简化了 Spring 应用的开发和部署，提供了自动配置、内嵌服务器等功能。
+
+Spring MVC：是 Spring 的一个模块，用于开发 Web 应用。
+
 ### 了解微服务的基本框架吗，简单介绍一下微服务架构
+
+Spring Cloud：提供了服务发现、配置管理、负载均衡等功能。
+
+Dubbo：阿里巴巴开源的 RPC 框架。

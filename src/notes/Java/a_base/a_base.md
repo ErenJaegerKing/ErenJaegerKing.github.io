@@ -381,14 +381,183 @@ Exception 程序本身可以处理的异常
 
 Error 程序无法处理的错误
 
-### 
+### Checked Exception 和 Unchecked Exception 有什么区别？
+
+Checked Exception 即 受检查异常 ，Java 代码在编译过程中，如果受检查异常没有被 catch或者throws 关键字处理的话，就没办法通过编译。
+
+Unchecked Exception 即 不受检查异常 ，Java 代码在编译过程中 ，我们即使不处理不受检查异常也可以正常通过编译。
+
+### Throwable 类常用方法有哪些？
+
+toString
+
+getMessage
+
+getLocalizedMessage
+
+printStackTrace
+
+### try-catch-finally 如何使用？
+
+try 用于捕获异常
+
+catch 用于处理try捕获到的异常
+
+finally 在return之前执行这段代码
+
+### finally 中的代码一定会执行吗？
+
+不一定，在finally之前虚拟机被终止运行的话，finally中的代码就不会别执行
+
+### 如何使用 try-with-resources 代替try-catch-finally？
+
+```java
+try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(new File("test.txt")));
+     BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(new File("out.txt")))) {
+    int b;
+    while ((b = bin.read()) != -1) {
+        bout.write(b);
+    }
+}
+catch (IOException e) {
+    e.printStackTrace();
+}
+```
+### 异常使用有哪些需要注意的地方？
+
+- 抛出的异常信息一定要有意义。
 
 ## 泛型
 
+### 什么是泛型？有什么作用？
+
+Java 泛型（Generics） 是 JDK 5 中引入的一个新特性。使用泛型参数，可以增强代码的可读性以及稳定性。
+
+举个例子 ArrayList<Person>,这段代码指明了只能传入Person对象，如果传入其他对象就会发生错误
+
+### 泛型的使用方式有哪几种？
+
+1. 泛型类
+2. 泛型接口
+3. 泛型方法
+
+### 项目中哪里用到了泛型？
+
+- 自定义接口通用返回结果 CommonResult<T> 通过参数 T 可根据具体的返回类型动态指定结果的数据类型
+- 定义Excel处理类ExcelUtil<T>用于动态指定Excel导出的数据类型
+- 构建集合工具类（比如说Collections中的sort）
+
 ## 反射
+
+### 何谓反射？
+
+在运行时分析类以及执行类中方法的能力。
+
+通过反射你可以获取任意一个类的所有属性和方法，你还可以调用这些方法和属性。
+
+### 反射的优缺点？
+
+反射可以让我们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利。
+
+### 反射的应用场景？
+
+这些框架中也大量使用了动态代理，而动态代理的实现也依赖反射。
 
 ## 注解
 
+### 何谓注解？
+
+主要用于修饰类、方法或者变量，提供某些信息供程序在编译或者运行时使用。
+
+### 注解的解析方法有哪几种？
+
+- 编译期直接扫描：@Override
+- 运行期通过反射处理：比如说Spring框架自带的注解@Value、@Component都是通过反射来进行处理的
+
 ## SPI
 
+### 何谓 SPI?
+
+SPI service provider interface 服务提供者的接口
+
+将服务接口和具体的服务实现分离开来，将服务调用方和服务实现者解耦，能够提升程序的扩展性、可维护性。
+
+很多框架都使用了Java的SPI机制，比如：Spring框架、数据库加载驱动、日志接口、以及Dubbo的扩展
+
+### SPI 和 API 有什么区别？
+
+当实现方提供了接口和实现，我们可以通过调用实现方的接口从而拥有实现方给我们提供的能力，这就是API
+
+当接口存在与调用方这边时，这就是SPI
+
+### SPI 的优缺点？
+
+提高接口的设计的灵活性
+
+- 并发问题
+- 不能按需加载，需要全部遍历 
+
 ## 序列化和反序列化
+
+### 什么是序列化?什么是反序列化?
+
+序列化：将数据结构或对象转换成可以存储或传输的形式，通常是二进制字节流，也就是JSON,XML等文本格式
+
+反序列化：将在序列化过程中所生成的数据转换为原始数据结构或者对象的过程
+
+### 如果有些字段不想进行序列化怎么办？
+
+对于不想进行序列化的变量，使用 transient 关键字修饰。
+
+### 常见序列化协议有哪些？
+
+Hessian、Kryo、Protobuf、ProtoStuff，这些都是基于二进制的序列化协议。
+
+### 为什么不推荐使用 JDK 自带的序列化？
+
+- 不支持跨语言调用
+- 性能差
+- 存在安全问题
+
+## I/O
+
+### Java IO 流了解吗？
+
+java io即输入和输出。
+
+数据输入到计算机内存的过程即输入，反之输出到外部存储的过程即输出。
+
+数据传输过程类似于水流，因此称为io流。
+
+### I/O 流为什么要分为字节流和字符流呢?
+
+- 字符流是由java虚拟机将字节转换得到的，这个过程还算是比较耗时
+- 如果我们不知道编码类型的话，使用字节流的过程很容易出现乱码问题
+
+### Java IO 中的设计模式有哪些？
+
+装饰器
+
+适配器
+
+工厂
+
+观察者模式
+
+### BIO、NIO 和 AIO 的区别？
+
+BIO 阻塞直到处理完成
+
+NIO Selector监听多个Channel非阻塞
+
+AIO 通知回调
+
+## 语法糖
+
+### 什么是语法糖？
+
+实现相同的功能，基于语法糖写出来的代码往往更简单简洁且更易阅读。
+
+### Java 中有哪些常见的语法糖？
+
+Java 中最常用的语法糖主要有泛型、自动拆装箱、变长参数、枚举、内部类、增强 for 循环、try-with-resources 语法、lambda 表达式等。

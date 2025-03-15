@@ -433,7 +433,7 @@ catch (IOException e) {
 
 Java 泛型（Generics） 是 JDK 5 中引入的一个新特性。使用泛型参数，可以增强代码的可读性以及稳定性。
 
-举个例子 ArrayList<Person>,这段代码指明了只能传入Person对象，如果传入其他对象就会发生错误
+举个例子 ArrayList Person,这段代码指明了只能传入Person对象，如果传入其他对象就会发生错误
 
 ### 泛型的使用方式有哪几种？
 

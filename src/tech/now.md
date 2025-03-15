@@ -878,9 +878,83 @@ Spring Boot 的自动装配通过 @EnableAutoConfiguration 注解实现。它通
 
 ### SpringBoot Starter的原理以及怎么实现
 
+Spring Boot Starter 的核心原理是基于 Spring Boot 的自动装配机制。
+1. 依赖管理：Starter 是一个 Maven/Gradle 依赖，它封装了一组相关的依赖库。例如，spring-boot-starter-web 包含了 Spring MVC、Tomcat 等依赖。
+2. 自动配置：Spring Boot 通过 spring.factories 文件加载自动配置类。这些自动配置类会根据类路径下的依赖自动配置 Bean。
+3. 条件化配置：自动配置类使用 @Conditional 注解（如 @ConditionalOnClass、@ConditionalOnMissingBean）来决定是否创建某个 Bean。
+
+如何实现
+1. 创建 Starter 项目：
+   - 创建一个 Maven 项目，定义 pom.xml 文件，添加必要的依赖。
+   - 在 src/main/resources/META-INF 目录下创建 spring.factories 文件，指定自动配置类。
+2. 编写自动配置类：
+   - 创建一个配置类，使用 @Configuration 注解。
+   - 使用 @Conditional 注解控制 Bean 的创建。
+   - 通过 @EnableConfigurationProperties 加载配置属性。
+3. 打包发布：
+   - 将项目打包成 JAR 文件，发布到 Maven 仓库。
+
 ### Redis当作缓存为什么如此快？
 
-### 为什么要用Redis作为缓存而不用map或者gouva
+1. 基于内存：
+- Redis 数据存储在内存中，内存的读写速度远高于磁盘。
+- 内存访问延迟通常在纳秒级别，而磁盘访问延迟在毫秒级别。
+2. 单线程模型：
+- Redis 使用单线程处理命令，避免了多线程的上下文切换和锁竞争。
+- 单线程模型简化了数据结构的实现，提高了性能。
+3. 高效的数据结构：
+- Redis 提供了丰富的数据结构（如字符串、哈希、列表、集合、有序集合），这些数据结构经过高度优化，适合各种场景。
+4. 非阻塞 I/O：
+- Redis 使用非阻塞 I/O 模型，通过事件驱动机制处理多个客户端请求。
+5. 持久化机制：
+- Redis 支持 RDB 和 AOF 两种持久化方式，可以在不影响性能的情况下将数据持久化到磁盘。
+6. 分布式支持：
+- Redis 支持主从复制、哨兵模式和集群模式，适合高可用和高并发的场景。
+
+### Redis和Guava的区别
+
+```java
+
+
+特性	Redis	Guava Cache
+存储位置	内存 + 磁盘（支持持久化）	内存（仅限 JVM 内部）
+分布式支持	支持（通过 Redis Cluster）	不支持（仅限于单机）
+数据结构	支持字符串、哈希、列表、集合、有序集合等	支持简单的键值对
+性能	极高（基于内存 + 非阻塞 I/O）	高（基于内存，但受 JVM 限制）
+持久化	支持 RDB 和 AOF	不支持
+适用场景	分布式缓存、高并发场景	单机缓存、本地缓存
+内存管理	支持 LRU、LFU 等淘汰策略	支持 LRU、最大容量限制
+复杂度	需要部署和维护	无需额外部署，直接集成到应用中
+
+// 使用 RedisTemplate 操作 Redis
+@Autowired
+private RedisTemplate<String, String> redisTemplate;
+
+public void setValue(String key, String value) {
+    redisTemplate.opsForValue().set(key, value);
+}
+
+public String getValue(String key) {
+    return redisTemplate.opsForValue().get(key);
+}
+
+// 创建 Guava Cache
+Cache<String, String> cache = CacheBuilder.newBuilder()
+    .maximumSize(1000)
+    .expireAfterWrite(10, TimeUnit.MINUTES)
+    .build();
+
+// 存入缓存
+cache.put("key", "value");
+
+// 获取缓存
+String value = cache.getIfPresent("key");
+```
+
+Redis 适合分布式、高并发、大数据量的场景。
+
+Guava Cache 适合单机、本地缓存、数据量较小的场景。
+
 ### MySQL的索引数据结构，你知道多少？
 
 1. B+Tree：InnoDB的默认索引结构，适合范围查询

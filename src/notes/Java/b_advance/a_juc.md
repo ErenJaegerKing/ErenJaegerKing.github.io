@@ -55,10 +55,10 @@ terminated终止状态 线程已经运行完毕
 共同点：两者都可以暂停线程的执行。
 
 区别：
-- wait方法释放了锁 sleep方法没有释放锁
-- wait通常用于线程间交互/通信 sleep暂停执行
-- wait被调用后，线程不会自动苏醒，需要别的线程调用同一个对象的notify或notifyAll sleep执行完成后，线程自动苏醒，或者wait（long timeout）超时后线程会自动苏醒
-- wait是object本地方法，sleep是thread类的静态本地方法
+- 有没有释放锁：wait方法释放了锁，sleep方法没有释放锁
+- 用途是：通常用于线程间交互/通信，sleep通常用于暂停执行
+- 会不会自动苏醒，wait是需要别的线程调用同一个对象上的notify或者notifyall方法才会苏醒，sleep方法执行后，线程会自动苏醒，也可以使用wait（long timeout）超时后线程会自动苏醒。
+- sleep是thread类的静态本地方法，wait则是object类的本地方法
 
 ### 为什么 wait() 方法不定义在 Thread 中？
 

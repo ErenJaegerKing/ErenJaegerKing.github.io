@@ -39,6 +39,59 @@ unless-stopped 是最常用的策略，因为它既保证了容器在机器重�
 如果你希望容器无论如何都要重启（即使手动停止），可以使用 always。
 
 ```
+Docker-compose部署mysql
+```bash
+基础配置文件
+[mysqld]
+# MySQL 数据存储路径
+datadir=/var/lib/mysql
+
+# MySQL 错误日志路径
+log-error=/var/log/mysql/error.log
+
+# 启用远程连接
+bind-address=0.0.0.0
+
+# 设置字符集为 utf8mb4
+character-set-server=utf8mb4
+
+# 默认排序规则为 utf8mb4_0900_ai_ci，若需兼容 MySQL 5.7 可使用 utf8mb4_unicode_ci
+collation-server=utf8mb4_0900_ai_ci
+Docker-compose.yml使用docker-compose启动
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql_v8.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - /data/mysql/8.4/data:/var/lib/mysql
+      - /data/mysql/8.4/conf/my.cnf:/etc/mysql/my.cnf
+      - /data/mysql/8.4/logs:/var/log/mysql
+    ports:
+      - "3306:3306"
+```
+
+配置MySQL远程连接权限
+```bash
+docker exec -it container bash
+mysql -u root -p
+
+-- 允许 root 用户从任何 IP 地址连接
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+-- 刷新权限
+FLUSH PRIVILEGES;
+```
+
+备份和恢复
+```bash
+备份
+docker exec mysql8 mysqldump -u root -p123456 --all-databases > /data/mysql/8.4/all_databases_backup.sql
+恢复
+docker exec -i mysql8 mysql -u root -p123456 < /data/mysql/8.4/all_databases_backup.sql
+```
 
 ## Mariadb
 

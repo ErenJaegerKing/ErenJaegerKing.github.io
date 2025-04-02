@@ -155,3 +155,13 @@ RandomAcces是一个标记接口，用来表明实现该接口的类支持随机
 - 线程是否安全
 - 效率
 - 对null key和null value的支持
+- 初试容量大小和每次扩容大小的不同
+- 底层数据结构
+- 哈希函数的实现
+
+### HashMap 和 HashSet 区别
+
+- 都实现了map接口
+- hashmap存储键值对，hashset存储对象
+- hashmap调用put向map中添加元素，调用add方法向set中添加元素
+- hashmap使用键计算hashcode，HashSet 使用成员对象来计算 hashcode 值，对于两个对象来说 hashcode 可能相同，所以equals()方法用来判断对象的相等性

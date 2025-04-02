@@ -12,6 +12,22 @@ tag:
 :::info
 这里是常用的中间件部署
 :::
+## Redis
+
+Docker-compose部署redis
+```bash
+services:
+  redis:
+    image: redis:latest
+    container_name: redis_container
+    restart: always
+    volumes:
+      - /data/redis/data:/data
+      - /data/redis/conf/redis.cnf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    command: redis-server /usr/local/etc/redis/redis.conf
+```
 
 ## MySQL
 

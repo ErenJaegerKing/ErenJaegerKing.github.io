@@ -355,18 +355,17 @@ disable-thp yes
     3个最重要的参数和4个其他常见参数
 ```
 
-个人理解，有核心线程数（任务队列未到达列表容量时，最大可以同时运行的线程数量）、最大线程数（任务队列到达列表容量时，当前可以同时运行的线程数量变为最大线程数）、任务队列（新任务来临时先判断当前运行的线程数量是否达到核心线程数，如果到达的话，新任务就会被存放在队列中）、存活时间（当线程池中的线程数量大于核心线程数时，即有非核心线程时，这些非核心线程空闲后不会立即销毁，而是会等待，直到等到存活时间超过为止，才会被回收销毁）、时间单位（存活时间的单位）、线程工厂（excutor创建新线程的时候就会用到）、拒绝策略
-
+个人理解，有核心线程数（任务队列未到达列表容量时，最大可以同时运行的线程数量）、最大线程数（任务队列到达列表容量时，当前可以同时运行的线程数量变为最大线程数）、任务队列（新任务来临时先判断当前运行的线程数量是否达到核心线程数，如果到达的话，新任务就会被存放在队列中）、存活时间（当线程池中的线程数量大于核心线程数时，即有非核心线程时，这些非核心线程空闲后不会立即销毁，而是会等待，直到等到存活时间超过为止，才会被回收销毁）、时间单位（存活时间的单位）、线程工厂（excutor 创建新线程的时候就会用到）、拒绝策略
 
 ### Varchar 和 Char 之间的关系你有了解过吗
 
-CHAR是定长字符串 VARCHAR是变长字符串
+CHAR 是定长字符串 VARCHAR 是变长字符串
 
-1. 存储方式 CHAR是固定长度，未使用部分用空格填充 VARCHAR可变长度，只存储实际内容
-2. 存储空间 CHAR固定，占用指定长度空间 VARCHAR根据实际内容动态分配空间
-3. 性能 CHAR查询速度通常更快（固定长度） VARCHAR查询速度可能稍慢（可变长度）
-4. 适用场景 CHAR适合长度固定的字符串（如国家代码、性别） VARCHAR适合长度不固定的字符串（如姓名、地址）
-5. 最大长度 CHAR通常为255字符 VARCHAR通常为65535字符（取决于数据库）
+1. 存储方式 CHAR 是固定长度，未使用部分用空格填充 VARCHAR 可变长度，只存储实际内容
+2. 存储空间 CHAR 固定，占用指定长度空间 VARCHAR 根据实际内容动态分配空间
+3. 性能 CHAR 查询速度通常更快（固定长度） VARCHAR 查询速度可能稍慢（可变长度）
+4. 适用场景 CHAR 适合长度固定的字符串（如国家代码、性别） VARCHAR 适合长度不固定的字符串（如姓名、地址）
+5. 最大长度 CHAR 通常为 255 字符 VARCHAR 通常为 65535 字符（取决于数据库）
 
 CHAR: 固定长度，适合短且长度固定的字符串。
 
@@ -389,34 +388,36 @@ VARCHAR: 可变长度，适合长度不固定的字符串。
 那为什么遇到范围查询就停止了呢，因为它是范围查询啊，哈哈哈哈哈哈
 
 如果 INDEX `联合索引`(`sname`, `s_code`, `address`) USING BTREE
+
 ```shell
 select create_time from student where address = "上海" and sname = "变成派大星"
-select create_time from student where sname = "变成派大星" and address = "上海" 
+select create_time from student where sname = "变成派大星" and address = "上海"
 ```
-那么上面这两句都走了ref索引，因为优化器会自动调整sname，s_code的顺序
+
+那么上面这两句都走了 ref 索引，因为优化器会自动调整 sname，s_code 的顺序
 
 我的思考：首先它是发生在联合索引，是闯关游戏的设计，过了第一关才可以开始第二关，过了第二关才可以第三关
 
 底层原理：索引的底层是一颗 B+树，那么联合索引的底层也就是一颗 B+树，只不过联合索引的 B+树节点中存储的是键值。由于构建一棵 B+树只能根据一个值来确定索引关系，所以数据库依赖联合索引最左的字段来构建
 
-MySQL8.0版本开始增加了索引跳跃扫描的功能，当第一列索引的唯一值较少时，即使 where 条件没有第一列索引，查询的时候也可以用到联合索引。比如我们使用的联合索引是 bcd 但是 b 中字段比较少 我们在使用联合索引的时候没有 使用 b 但是依然可以使用联合索引 MySQL 联合索引有时候遵循最左前缀匹配原则，有时候不遵循。
+MySQL8.0 版本开始增加了索引跳跃扫描的功能，当第一列索引的唯一值较少时，即使 where 条件没有第一列索引，查询的时候也可以用到联合索引。比如我们使用的联合索引是 bcd 但是 b 中字段比较少 我们在使用联合索引的时候没有 使用 b 但是依然可以使用联合索引 MySQL 联合索引有时候遵循最左前缀匹配原则，有时候不遵循。
 
 总结：前提 如果创建 b,c,d 联合索引面
 
-- 如果 我 where 后面的条件是c = 1 and d = 1为什么不能走索引呢 如果没有 b 的话 你查询的值相当于*11 我们都知道*是所有的意思也就是我能匹配到所有的数据
-- 如果 我 where 后面是b = 1 and d =1 为什么会走索引呢？你等于查询的数据是 1*1我可以通过前面 1 进行索引匹配 所以就可以走索引
+- 如果 我 where 后面的条件是 c = 1 and d = 1 为什么不能走索引呢 如果没有 b 的话 你查询的值相当于*11 我们都知道*是所有的意思也就是我能匹配到所有的数据
+- 如果 我 where 后面是 b = 1 and d =1 为什么会走索引呢？你等于查询的数据是 1\*1 我可以通过前面 1 进行索引匹配 所以就可以走索引
 - 最左缀匹配原则的最重要的就是 第一个字段
 
-2. select *
+2. select \*
 
 ```shell
 explain select * from leftaffix where b > 1
 ```
 
-- select * 会走索引
+- select \* 会走索引
 - 范围查找有概率索引失效但是在特定的情况下会生效 范围小就会使用 也可以理解为 返回结果集小就会使用索引
 - mysql 中连接查询的原理是先对驱动表进行查询操作，然后再用从驱动表得到的数据作为条件，逐条的到被驱动表进行查询。
-- 每次驱动表加载一条数据到内存中，然后被驱动表所有的数据都需要往内存中加载一遍进行比较。效率很低，所以 mysql 中可以指定一个缓冲池的大小，缓冲池大的话可以同时加载多条驱动表的数据进行比较，放的数据条数越多性能 io 操作就越少，性能也就越好。所以，如果此时使用select * 放一些无用的列，只会白白的占用缓冲空间。浪费本可以提高性能的机会。
+- 每次驱动表加载一条数据到内存中，然后被驱动表所有的数据都需要往内存中加载一遍进行比较。效率很低，所以 mysql 中可以指定一个缓冲池的大小，缓冲池大的话可以同时加载多条驱动表的数据进行比较，放的数据条数越多性能 io 操作就越少，性能也就越好。所以，如果此时使用 select \* 放一些无用的列，只会白白的占用缓冲空间。浪费本可以提高性能的机会。
 - select _ 不是造成索引失效的直接原因 大部分原因是 where 后边条件的问题 但是还是尽量少去使用 select _ 多少还是会有影响的
 
 3. 使用函数
@@ -444,7 +445,7 @@ explain select e from leftaffix where b - 1 = 6
 5. Like %
 
 - %百分号通配符: 表示任何字符出现任意次数(可以是 0 次).
-- _下划线通配符: 表示只能匹配单个字符,不能多也不能少,就是一个字符.
+- \_下划线通配符: 表示只能匹配单个字符,不能多也不能少,就是一个字符.
 - like 操作符: LIKE 作用是指示 mysql 后面的搜索模式是利用通配符而不是直接相等匹配进行比较.
 
 ```shell
@@ -474,7 +475,8 @@ explain select e from leftaffix where b = 1 or e = 1;
 |  1 | SIMPLE      | leftaffix | NULL       | ALL  | 联合索引      | NULL | NULL    | NULL |    7 |    57.14 | Using where |
 +----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+-------------+
 ```
-在where子句，如果在or前的条件列是索引列，而在or后的条件列不是索引列，那么索引会失效。
+
+在 where 子句，如果在 or 前的条件列是索引列，而在 or 后的条件列不是索引列，那么索引会失效。
 
 怎么优化？
 
@@ -486,7 +488,8 @@ explain select e from leftaffix where b = 1 or a = 1;
 |  1 | SIMPLE      | leftaffix | NULL       | index_merge | PRIMARY,联合索引 | 联合索引,PRIMARY | 5,4     | NULL |    2 |   100.00 | Using sort_union(联合索引,PRIMARY); Using where |
 +----+-------------+-----------+------------+-------------+------------------+------------------+---------+------+------+----------+-------------------------------------------------+
 ```
-这个优化方式就是在Or的时候两边都加上索引，就会使用索引，避免全表扫描
+
+这个优化方式就是在 Or 的时候两边都加上索引，就会使用索引，避免全表扫描
 
 7. in 使用不当
 
@@ -522,35 +525,38 @@ mysql> explain select e from leftaffix order by b;
 |  1 | SIMPLE      | leftaffix | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    7 |   100.00 | Using filesort |
 +----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+----------------+
 ```
+
 这一个主要是 Mysql 自身优化的问题 我们都知道 OrderBy 是排序 那就代表我需要对数据进行排序 如果我走索引 索引是排好序的 但是我需要回表 消耗时间 另一种 我直接全表扫描排序 不用回表 也就是
+
 - 走索引 + 回表
 - 不走索引 直接全表扫描
-Mysql 认为直接全表扫面的速度比 回表的速度快所以就直接走索引了 在 Order By 的情况下 走全表扫描反而是更好的选择
+  Mysql 认为直接全表扫面的速度比 回表的速度快所以就直接走索引了 在 Order By 的情况下 走全表扫描反而是更好的选择
 
 10. 总结
 
 查询范围过大导致失效
+
 - Like %
 - Not in
 - In
-更改字段造成失效
+  更改字段造成失效
 - 使用函数
 - 计算操作
-字段使用不确定导致索引失效
+  字段使用不确定导致索引失效
 - or
-最优选择导致索引失效
+  最优选择导致索引失效
 - order By
-未遵循最左缀匹配原则
-Select * 不会导致失效 降低效率
+  未遵循最左缀匹配原则
+  Select \* 不会导致失效 降低效率
 - 不会直接导致索引失效，因为回表的原因，会有查询效率上面的折扣
 
-### MySQL执行计划分析
+### MySQL 执行计划分析
 
 1. 什么是执行计划？
 
-用于SQL性能分析、优化等场景。
+用于 SQL 性能分析、优化等场景。
 
-执行计划是指一条SQL语句在经过MySQL查询优化器的优化后，具体的执行方式
+执行计划是指一条 SQL 语句在经过 MySQL 查询优化器的优化后，具体的执行方式
 
 2. 如何获取执行计划？
 
@@ -568,10 +574,11 @@ key_len 所选索引的长度
 ref 当使用索引等值查询时，与索引作比较的列或常量
 rows 预计要读取的行数
 filtered 按表条件过滤后，留存的记录数的百分比
-Extra 附加信息如何分析 
+Extra 附加信息如何分析
 ```
 
-1. 如何分析EXPLAIN结果？三个比较重要的参数
+1. 如何分析 EXPLAIN 结果？三个比较重要的参数
+
 ```shell
 +----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+----------------+
 | id | select_type | table     | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra          |
@@ -611,16 +618,17 @@ rows：表示根据表统计信息及选用情况，大致估算出找到所需�
 
 Extra（重要）：这列包含了 MySQL 解析查询的额外信息，通过这些信息，可以更准确的理解 MySQL 到底是如何执行查询的。
 ```
+
 ### Redis 过期删除策略
 
-这是Redis功能篇中的，使用的是[惰性删除 + 定期删除]，删除的对象是已过期的Key。
+这是 Redis 功能篇中的，使用的是[惰性删除 + 定期删除]，删除的对象是已过期的 Key。
 
-1. 不主动删除过期键，每次从数据库访问key时，都检测key是否过期，如果过期则删除该key
-2. 定期删除，每隔一段时间随机从数据库中取出一定数量的key进行筛查，并删除其中过期key
+1. 不主动删除过期键，每次从数据库访问 key 时，都检测 key 是否过期，如果过期则删除该 key
+2. 定期删除，每隔一段时间随机从数据库中取出一定数量的 key 进行筛查，并删除其中过期 key
 
 ### RabbitMQ 的原理
 
-1. 核心是消息队列，生产者将消息发送到队列，消费者从队列中接收并处理消息。队列遵循FIFO（先进先出）原则，确保消息按顺序处理。
+1. 核心是消息队列，生产者将消息发送到队列，消费者从队列中接收并处理消息。队列遵循 FIFO（先进先出）原则，确保消息按顺序处理。
 2. 生产者与消费者（负责创建并发送消息到队列 | 从队列中接收并处理消息）。
 3. 交换器：生产者不直接将消息发送到队列，而是通过交换器。交换器根据规则将消息路由到一个或多个队列。
    - Direct Exchange：基于路由键精确匹配。
@@ -630,29 +638,30 @@ Extra（重要）：这列包含了 MySQL 解析查询的额外信息，通过�
 4. 绑定（Binding）：绑定是交换器和队列之间的连接，定义了消息如何从交换器路由到队列。
 5. 消息确认：
    - 生产者确认：生产者收到消息已到达交换器的确认。
-   - 消费者确认：消费者处理完消息后发送确认，RabbitMQ才会从队列中移除消息。
+   - 消费者确认：消费者处理完消息后发送确认，RabbitMQ 才会从队列中移除消息。
 6. 持久化：为防止消息丢失，RabbitMQ 支持消息和队列的持久化，即使服务器重启，消息也不会丢失。
 7. 集群与高可用：RabbitMQ 支持集群模式，多个节点共享队列和交换器信息，提供高可用性和负载均衡。
 8. 插件机制：RabbitMQ 支持插件扩展，如管理界面、消息追踪等，增强其功能。
 
-### RabbitMQ有什么交换机
+### RabbitMQ 有什么交换机
 
 RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
 
-广播交换器：将消息交给所有绑定到交换器的队列 将消息发送到所有绑定到该交换器的队列，忽略Routing key。
+广播交换器：将消息交给所有绑定到交换器的队列 将消息发送到所有绑定到该交换器的队列，忽略 Routing key。
 
-定向交换器：将消息交给符合指定Routing key的队列 将消息发送到与Routing key完全匹配的队列。
+定向交换器：将消息交给符合指定 Routing key 的队列 将消息发送到与 Routing key 完全匹配的队列。
 
-主题交换器：通配符，把消息交给符合Routing pattern（路由模式）的队列 根据Routing pattern（路由模式）将消息发送到匹配的队列，支持通配符。
+主题交换器：通配符，把消息交给符合 Routing pattern（路由模式）的队列 根据 Routing pattern（路由模式）将消息发送到匹配的队列，支持通配符。
 
-### @SpringBootApplication注解有了解过吗
+### @SpringBootApplication 注解有了解过吗
 
-@SpringBootApplication看作是 @Configuration、@EnableAutoConfiguration、@ComponentScan注解的集合
-- @EnableAutoConfiguration 启动SpringBoot的自动配置机制
-- @ComponentScan 扫描被@Component（@Repository,@Service,@Controller）注解的Bean，注解默认会扫描该类所在的包下的所有类
-- @Configuration 允许在Spring上下文中注册额外的bean或导入其他配置类
+@SpringBootApplication 看作是 @Configuration、@EnableAutoConfiguration、@ComponentScan 注解的集合
 
-### @ComponentScan默认扫描位置
+- @EnableAutoConfiguration 启动 SpringBoot 的自动配置机制
+- @ComponentScan 扫描被@Component（@Repository,@Service,@Controller）注解的 Bean，注解默认会扫描该类所在的包下的所有类
+- @Configuration 允许在 Spring 上下文中注册额外的 bean 或导入其他配置类
+
+### @ComponentScan 默认扫描位置
 
 默认扫描当前配置类所在的包及其子包。
 
@@ -666,9 +675,9 @@ RabbitMQ 常用的 Exchange Type 有 fanout、direct、topic、headers 这四种
 
 ### 请你先介绍一下你的项目经历和业务
 
-单独开一篇，使用STAR法则
+单独开一篇，使用 STAR 法则
 
-### RabbitMQ的核心原理是什么？
+### RabbitMQ 的核心原理是什么？
 
 如上
 
@@ -683,11 +692,11 @@ Git
 - 图算法：不了解，以后一定突击
 - 动态规划：背包问题、最长公共子序列、最短路径问题
 
-### Linux中的ubuntn你使用过哪些命令？
+### Linux 中的 ubuntn 你使用过哪些命令？
 
 ls、cd、pwd、cp、mv、rm、cat、grep、chmod、ps、top
 
-### 你使用过Docker吗，知道哪些命令？你能说说怎么部署Nginx容器的吗
+### 你使用过 Docker 吗，知道哪些命令？你能说说怎么部署 Nginx 容器的吗
 
 ```shell
 docker run \
@@ -706,39 +715,40 @@ docker run \
 ### 你前端数据发送给后端，这个前端是怎么发送的?
 
 Axios
+
 ```javascript
 axios({
-  method: 'get',
-  url: 'https://jsonplaceholder.typicode.com/posts/1',
+  method: "get",
+  url: "https://jsonplaceholder.typicode.com/posts/1",
   params: {
-    id: 123
+    id: 123,
   },
   headers: {
-    'X-Custom-Header': 'foobar'
-  }
+    "X-Custom-Header": "foobar",
+  },
 })
-.then(response => {
-  console.log(response.data);
-})
-.catch(error => {
-  console.error('Error:', error);
-});
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 ```
 
 ### 如果发生代码冲突了，你会怎么进行解决?
 
 我回答的没有问吧，我真厉害，哈哈哈哈哈
 
-1. git pull拉取远程代码或者git merge合并分支，如果发生冲突，Git会提示冲突信息。冲突文件会被标记为unmerged状态
+1. git pull 拉取远程代码或者 git merge 合并分支，如果发生冲突，Git 会提示冲突信息。冲突文件会被标记为 unmerged 状态
 2. 打开冲突文件 你写的代码和其他人写的代码
 3. 解决冲突
    1. 手动解决，仔细阅读冲突部分，决定保留哪些代码
-   2. 使用工具解决，使用Idea自带的冲突解决工具
+   2. 使用工具解决，使用 Idea 自带的冲突解决工具
 4. 标记冲突已解决 git add 冲突文件
 5. 完成合并
    1. 如果在合并分支时发生的冲突，完成冲突解决后，继续合并：git commit
    2. 如果在拉取代码时发生的冲突，完成冲突解决后，继续拉去：git
-   rebase --continue
+      rebase --continue
 6. 测试一下
 7. 提交代码 git push origin 分支名
 
@@ -748,29 +758,31 @@ axios({
 
 外键指向另一个表的主键，确保数据的完整性和一致性。
 
-例如，订单表中的用户ID可以是外键，指向用户表的主键，确保每个订单都对应一个有效的用户。
+例如，订单表中的用户 ID 可以是外键，指向用户表的主键，确保每个订单都对应一个有效的用户。
 
-### Linux是怎么查看路径下的硬盘大小?
+### Linux 是怎么查看路径下的硬盘大小?
 
 ```shell
 df -h /path/to/directory
 ```
 
-### 你给哪些数据库备份过，请你说一下你是如何给mysql进行备份的，是用的什么命令还是工具
+### 你给哪些数据库备份过，请你说一下你是如何给 mysql 进行备份的，是用的什么命令还是工具
 
-我使用过MySQL的备份工具，常用的方法包括：
+我使用过 MySQL 的备份工具，常用的方法包括：
+
 - **mysqldump**：使用`mysqldump`命令备份数据库。例如：
   ```bash
   mysqldump -u username -p database_name > backup.sql
   ```
-- **自动化备份**：使用cron定时任务定期执行备份脚本。
-- **工具**：使用数据库连接工具Navicat将其导出
+- **自动化备份**：使用 cron 定时任务定期执行备份脚本。
+- **工具**：使用数据库连接工具 Navicat 将其导出
 
-### Git中的git stash命令有没有用过，是干什么的?你是怎么使用的？
+### Git 中的 git stash 命令有没有用过，是干什么的?你是怎么使用的？
 
 有时候我们需要切换到其他的分支，但是我现在的分支上有代码修改了，无法进行切换，所以我希望将这段代码临时保存一下
 
 1. 临时切换分支
+
 ```bash
 git stash
 
@@ -784,16 +796,19 @@ git stash pop
 ```
 
 2. 保存未完成的更改
+
 ```bash
 git stash save "feature a"
 
-git checkout other-branch 
+git checkout other-branch
 
 git checkout feature-branch
 
 git stash apply
 ```
+
 3. 清理存储条目
+
 ```bash
 git stash list
 
@@ -802,28 +817,28 @@ git stash drop stash@{1}
 git stash clear
 ```
 
-### MongoDB你在项目中是怎么使用的？简单的讲一下?
+### MongoDB 你在项目中是怎么使用的？简单的讲一下?
 
-MongoDB是一种NoSQL数据库，通常用于存储非结构化或半结构化数据
+MongoDB 是一种 NoSQL 数据库，通常用于存储非结构化或半结构化数据
 
-- 存储文档型数据：MongoDB以BSON格式存储数据，适合存储JSON类似的文档类型
-- 高并发读写：MongoDB支持水平扩展，适合高并发读写的场景
-- 灵活的模式设计：MongoDB不需要预先定义表结构，适合需要变化频繁的场景
+- 存储文档型数据：MongoDB 以 BSON 格式存储数据，适合存储 JSON 类似的文档类型
+- 高并发读写：MongoDB 支持水平扩展，适合高并发读写的场景
+- 灵活的模式设计：MongoDB 不需要预先定义表结构，适合需要变化频繁的场景
 
-### Docker容器的部署的几种方式，你知道哪些？
+### Docker 容器的部署的几种方式，你知道哪些？
 
 1. 单机部署
-2. Docker Compose：通过docker-compse.yml文件定义多个容器的部署方式，适合本地开发和测试
+2. Docker Compose：通过 docker-compse.yml 文件定义多个容器的部署方式，适合本地开发和测试
 
 ### 设计数据库表的时候，有没有什么办法可以只查询一条数据，或者说剔除重复的数据
 
 1. 只查询一条数据
-   - limit 1限制查询结果只返回一条数据
-   - distinct去除重复的数据
+   - limit 1 限制查询结果只返回一条数据
+   - distinct 去除重复的数据
 2. 剔除重复数据
-   - group by对某个字段进行分组，去除重复数据
-   - distinct去除重复的行
-   - row_number()窗口函数，配合partition by去除重复数据
+   - group by 对某个字段进行分组，去除重复数据
+   - distinct 去除重复的行
+   - row_number()窗口函数，配合 partition by 去除重复数据
 
 ### 你对我们公司的业务有什么相关的了解吗？
 
@@ -841,14 +856,17 @@ MongoDB是一种NoSQL数据库，通常用于存储非结构化或半结构化�
 ### 数据库的索引是怎么设计的或者说是怎么使用的?
 
 1. 索引设计：
- - 单列索引
- - 复合索引
- - 唯一索引
- - 全文索引
+
+- 单列索引
+- 复合索引
+- 唯一索引
+- 全文索引
+
 2. 索引使用
- - 在查询条件中使用索引字段，避免全表扫描
- - 避免在索引列上使用函数或表达式，否则索引会失效
- - 定期维护索引，删除不必要的索引以减少写操作的开销
+
+- 在查询条件中使用索引字段，避免全表扫描
+- 避免在索引列上使用函数或表达式，否则索引会失效
+- 定期维护索引，删除不必要的索引以减少写操作的开销
 
 ### 在项目中你是怎么设计数据表的？
 
@@ -857,33 +875,35 @@ MongoDB是一种NoSQL数据库，通常用于存储非结构化或半结构化�
 3. 主键设计：选择合适的字段作为主键
 4. 索引设计：根据查询需求创建合适的索引
 
-### SpringBoot启动项你有了解过吗
+### SpringBoot 启动项你有了解过吗
 
-SpringApplication类，它是Spring Boot应用的入口
+SpringApplication 类，它是 Spring Boot 应用的入口
 
-1. 加载配置：读取application.yml文件
-2. 初始化上下文，创建ApplicationContext，加载Bean定义
-3. 执行Runner：执行 CommandLineRunner 或 ApplicationRunner。
-4. 启动内嵌服务器：如Tomcat、Jetty
+1. 加载配置：读取 application.yml 文件
+2. 初始化上下文，创建 ApplicationContext，加载 Bean 定义
+3. 执行 Runner：执行 CommandLineRunner 或 ApplicationRunner。
+4. 启动内嵌服务器：如 Tomcat、Jetty
 
 ## tj
 
-### Spring和SpringBoot不熟悉
+### Spring 和 SpringBoot 不熟悉
 
 Spring 是一个轻量级的 Java 开发框架，提供了依赖注入、AOP、事务管理等功能。Spring Boot 是 Spring 的扩展，简化了 Spring 应用的开发和部署，提供了自动配置、内嵌服务器等功能。
 
-### SpringBoot的自动装配原理
+### SpringBoot 的自动装配原理
 
 Spring Boot 的自动装配通过 @EnableAutoConfiguration 注解实现。它通过 spring.factories 文件加载自动配置类，根据类路径下的依赖自动配置 Bean。
 
-### SpringBoot Starter的原理以及怎么实现
+### SpringBoot Starter 的原理以及怎么实现
 
 Spring Boot Starter 的核心原理是基于 Spring Boot 的自动装配机制。
+
 1. 依赖管理：Starter 是一个 Maven/Gradle 依赖，它封装了一组相关的依赖库。例如，spring-boot-starter-web 包含了 Spring MVC、Tomcat 等依赖。
 2. 自动配置：Spring Boot 通过 spring.factories 文件加载自动配置类。这些自动配置类会根据类路径下的依赖自动配置 Bean。
 3. 条件化配置：自动配置类使用 @Conditional 注解（如 @ConditionalOnClass、@ConditionalOnMissingBean）来决定是否创建某个 Bean。
 
 如何实现
+
 1. 创建 Starter 项目：
    - 创建一个 Maven 项目，定义 pom.xml 文件，添加必要的依赖。
    - 在 src/main/resources/META-INF 目录下创建 spring.factories 文件，指定自动配置类。
@@ -894,24 +914,35 @@ Spring Boot Starter 的核心原理是基于 Spring Boot 的自动装配机制�
 3. 打包发布：
    - 将项目打包成 JAR 文件，发布到 Maven 仓库。
 
-### Redis当作缓存为什么如此快？
+### Redis 当作缓存为什么如此快？
 
 1. 基于内存：
+
 - Redis 数据存储在内存中，内存的读写速度远高于磁盘。
 - 内存访问延迟通常在纳秒级别，而磁盘访问延迟在毫秒级别。
+
 2. 单线程模型：
+
 - Redis 使用单线程处理命令，避免了多线程的上下文切换和锁竞争。
 - 单线程模型简化了数据结构的实现，提高了性能。
+
 3. 高效的数据结构：
+
 - Redis 提供了丰富的数据结构（如字符串、哈希、列表、集合、有序集合），这些数据结构经过高度优化，适合各种场景。
+
 4. 非阻塞 I/O：
+
 - Redis 使用非阻塞 I/O 模型，通过事件驱动机制处理多个客户端请求。
+
 5. 持久化机制：
+
 - Redis 支持 RDB 和 AOF 两种持久化方式，可以在不影响性能的情况下将数据持久化到磁盘。
+
 6. 分布式支持：
+
 - Redis 支持主从复制、哨兵模式和集群模式，适合高可用和高并发的场景。
 
-### Redis和Guava的区别
+### Redis 和 Guava 的区别
 
 ```java
 
@@ -955,18 +986,18 @@ Redis 适合分布式、高并发、大数据量的场景。
 
 Guava Cache 适合单机、本地缓存、数据量较小的场景。
 
-### MySQL的索引数据结构，你知道多少？
+### MySQL 的索引数据结构，你知道多少？
 
-1. B+Tree：InnoDB的默认索引结构，适合范围查询
+1. B+Tree：InnoDB 的默认索引结构，适合范围查询
 2. Hash：适合等值查询，但不支持范围查询
 3. 全文索引
 
-### BIO,NIO,AIO,Netty的区别
+### BIO,NIO,AIO,Netty 的区别
 
-- BIO:同步阻塞I/O，每一个连接需要一个线程处理
-- NIO:同步非阻塞I/O,使用多路复用器处理多个连接
-- AIO:异常非阻塞I/O,基于时间回调
-- Netty:基于NIO的高性能网络框架，简化了NIO的编程
+- BIO:同步阻塞 I/O，每一个连接需要一个线程处理
+- NIO:同步非阻塞 I/O,使用多路复用器处理多个连接
+- AIO:异常非阻塞 I/O,基于时间回调
+- Netty:基于 NIO 的高性能网络框架，简化了 NIO 的编程
 
 ### 如何从 5 亿个数中找出中位数？
 
@@ -978,54 +1009,59 @@ Guava Cache 适合单机、本地缓存、数据量较小的场景。
 
 ### transformer
 
-Transformer 是一种在自然语言处理（NLP）领域中广泛使用的深度学习模型架构，它最早由 Vaswani 等人在2017年的论文《Attention is All You Need》中提出。这个架构引入了一种全新的机制——自注意力机制（self-attention mechanism），用于处理序列数据，尤其是文本数据。与之前主要依赖于循环神经网络（RNN）或卷积神经网络（CNN）的模型相比，Transformer 模型能够更高效地并行处理序列信息，并且在多种任务上取得了当时最佳的表现。
+Transformer 是一种在自然语言处理（NLP）领域中广泛使用的深度学习模型架构，它最早由 Vaswani 等人在 2017 年的论文《Attention is All You Need》中提出。这个架构引入了一种全新的机制——自注意力机制（self-attention mechanism），用于处理序列数据，尤其是文本数据。与之前主要依赖于循环神经网络（RNN）或卷积神经网络（CNN）的模型相比，Transformer 模型能够更高效地并行处理序列信息，并且在多种任务上取得了当时最佳的表现。
 
 关键特性
 
 - 自注意力机制：允许模型在处理一个位置上的词语时，可以考虑到句子中的所有其他词语。这有助于捕捉长距离依赖关系。
-- 位置编码：由于Transformer不包含递归和卷积结构，为了利用序列中元素的顺序信息，输入嵌入被加上了位置编码。
+- 位置编码：由于 Transformer 不包含递归和卷积结构，为了利用序列中元素的顺序信息，输入嵌入被加上了位置编码。
 - 多头注意力（Multi-head Attention）：不是只计算一次注意力，而是并行地执行多次注意力计算，每个都使用不同的学习参数集。这样可以让模型关注到不同子空间下的信息。
 - 前馈神经网络：每个位置的输出通过相同的前馈网络，但这些网络之间没有交互。
 
 应用场景
 
-Transformer 架构及其变体（如 BERT, GPT 系列等）已经成为了许多NLP任务的基础，包括但不限于机器翻译、文本摘要、问答系统、情感分析等。此外，Transformer 的概念也被扩展到了计算机视觉等领域，显示了其广泛的适用性。
+Transformer 架构及其变体（如 BERT, GPT 系列等）已经成为了许多 NLP 任务的基础，包括但不限于机器翻译、文本摘要、问答系统、情感分析等。此外，Transformer 的概念也被扩展到了计算机视觉等领域，显示了其广泛的适用性。
 
 总的来说，Transformer 通过提供一种强大的方式来理解和生成人类语言，极大地推动了人工智能领域的进步。
 
 ### cookie session token
 
-1. Cookie 
+1. Cookie
+
 - 定义：由服务器生成发送到客户端（浏览器）的小型数据键值对片段，存储再客户端本地。
-- 特点：自动携带（浏览器每次请求时都会自动附加Cookie） 生命周期（可设置过期时间或会话结束后失效）
+- 特点：自动携带（浏览器每次请求时都会自动附加 Cookie） 生命周期（可设置过期时间或会话结束后失效）
 - 用途：会话管理，用户偏好记录
+
 2. Seesion
-- 定义：服务器存储的用户会话数据，与客户端的唯一标识绑定，通常通过Cookie传递
-- 特点：服务器存储  依赖Cookie 无状态Http
-- 流程：1.用户登录->服务器创建Session->返回SessionID给客户端（通过Cookie）。2.客户端后续请求都会请求携带Session ID服务器校验并关联用户数据
-3. Token（如JWT）
+
+- 定义：服务器存储的用户会话数据，与客户端的唯一标识绑定，通常通过 Cookie 传递
+- 特点：服务器存储 依赖 Cookie 无状态 Http
+- 流程：1.用户登录->服务器创建 Session->返回 SessionID 给客户端（通过 Cookie）。2.客户端后续请求都会请求携带 Session ID 服务器校验并关联用户数据
+
+3. Token（如 JWT）
+
 - 定义：一种自包含的令牌，如将用户信息、签名、过期时间等编码为字符串，由客户端存储并请求时发送
 - 特点：无状态 跨域支持 客户端存储
-- 流程：1.用户登录->服务器生成Token（如JWT）返回给客户端2.客户端后续请求在Authorization头携带Token（如Bearer Token）3.服务器验证Token签名及有效期
+- 流程：1.用户登录->服务器生成 Token（如 JWT）返回给客户端 2.客户端后续请求在 Authorization 头携带 Token（如 Bearer Token）3.服务器验证 Token 签名及有效期
 
 - 传统 Web 应用：Cookie + Session（简单且安全）。
 - 单页应用（SPA）/移动端：Token（如 JWT）更灵活。
 - 跨域/微服务：Token（避免 Cookie 跨域限制）。
 - 高安全性场景：Session + Cookie（HttpOnly + Secure）。
 
-### http是哪一层
+### http 是哪一层
 
 属于计算机网络协议中的应用层
 
 HTTP 作为应用层协议，负责定义客户端与服务器之间的通信规则（如请求方法、状态码），而底层协议（如 TCP/IP）负责确保数据可靠传输到目标地址。
 
-### arp是干什么的
+### arp 是干什么的
 
-地址解析协议，用于将ip地址解析为mac地址，以便在局域网中实现设备之间的通信。
+地址解析协议，用于将 ip 地址解析为 mac 地址，以便在局域网中实现设备之间的通信。
 
-### dns是干什么的
+### dns 是干什么的
 
-域名系统，用于将域名解析为ip地址，方便用户通过易记的域名访问网络资源
+域名系统，用于将域名解析为 ip 地址，方便用户通过易记的域名访问网络资源
 
 ### 多线程如何保证顺序运行或者说共享进程不受影响
 
@@ -1046,7 +1082,7 @@ ThreadPoolExecutor：Java 提供的线程池实现，支持自定义核心线程
 
 ForkJoinPool：适合处理分治任务的线程池，支持工作窃取算法。
 
-### MySQL中事务、索引、锁机制的了解 和一些SQL优化语句
+### MySQL 中事务、索引、锁机制的了解 和一些 SQL 优化语句
 
 事务：通过 BEGIN、COMMIT、ROLLBACK 控制事务的原子性、一致性、隔离性、持久性。
 
@@ -1056,21 +1092,21 @@ ForkJoinPool：适合处理分治任务的线程池，支持工作窃取算法�
 
 SQL 优化：
 
-避免使用 SELECT *。
+避免使用 SELECT \*。
 
 使用 EXPLAIN 分析查询计划。
 
 避免在 WHERE 子句中使用函数。
 
-### Nacos为什么修改配置之后不用重启服务器就可以更改配置了 
+### Nacos 为什么修改配置之后不用重启服务器就可以更改配置了
 
 Nacos 通过长轮询或 WebSocket 实时推送配置变更，应用可以通过监听配置变化动态更新配置，无需重启。
 
-### Redis中的常见数据结构
+### Redis 中的常见数据结构
 
 String、List、Set、Hash、ZSet
 
-### JVM的基础知识
+### JVM 的基础知识
 
 内存结构：包括堆、栈、方法区、本地方法栈、程序计数器。
 
@@ -1094,23 +1130,23 @@ String、List、Set、Hash、ZSet
 
 雪花算法（Snowflake）是 Twitter 开源的分布式 ID 生成算法，生成 64 位的 ID，包含时间戳、机器 ID、序列号等部分。
 
-### JWT令牌技术和ThreadLocal配合拦截器的意义是什么
+### JWT 令牌技术和 ThreadLocal 配合拦截器的意义是什么
 
 JWT（JSON Web Token）用于无状态认证，ThreadLocal 用于在同一个线程中共享数据。拦截器可以在请求处理前后进行身份验证和数据传递。
 
-### SpringCache + Redis的技术介绍一下
+### SpringCache + Redis 的技术介绍一下
 
 Spring Cache 提供了缓存抽象，支持多种缓存实现（如 Redis）。通过注解（如 @Cacheable、@CacheEvict）可以方便地管理缓存。
 
-### SpringTask定时任务处理
+### SpringTask 定时任务处理
 
 Spring Task 提供了简单的定时任务支持，通过 @Scheduled 注解可以定义任务的执行时间。
 
-### HashMap的详细原理和介绍
+### HashMap 的详细原理和介绍
 
 HashMap 是基于哈希表实现的键值对存储结构，通过哈希函数计算键的存储位置，支持快速的插入、删除、查找操作。
 
-### JUC并发编程知道哪些
+### JUC 并发编程知道哪些
 
 JUC（Java Util Concurrent）提供了并发编程的工具类，包括：
 
@@ -1122,11 +1158,11 @@ JUC（Java Util Concurrent）提供了并发编程的工具类，包括：
 
 原子类：如 AtomicInteger。
 
-### JVM基础知识了解吗
+### JVM 基础知识了解吗
 
 JVM 是 Java 虚拟机，负责执行 Java 字节码。其核心组件包括类加载器、运行时数据区、执行引擎、垃圾回收器等。
 
-### Spring和SpringBoot的区别和优点是什么，Spring MVC和他们的关系是什么
+### Spring 和 SpringBoot 的区别和优点是什么，Spring MVC 和他们的关系是什么
 
 Spring：是一个轻量级的 Java 开发框架，提供了依赖注入、AOP 等功能。
 
@@ -1140,7 +1176,7 @@ Spring Cloud：提供了服务发现、配置管理、负载均衡等功能。
 
 Dubbo：阿里巴巴开源的 RPC 框架。
 
-## 顺丰-Java岗
+## 顺丰-Java 岗
 
 ### 自我介绍
 
@@ -1156,17 +1192,17 @@ Dubbo：阿里巴巴开源的 RPC 框架。
 
 根据业务需求进行规范化设计，通常包含主键、外键、索引等。
 
-数据库查询，使用SQL语句进行查询。
+数据库查询，使用 SQL 语句进行查询。
 
-查看数据库引擎，MySQL的命令show engines;
+查看数据库引擎，MySQL 的命令 show engines;
 
 ### 怎么查看数据库日志，日志类型有哪些，简述一下？怎么优化数据库性能
 
-查看数据库日志，MySQL有show variables like 'log_error',也可以直接在linux上面直接tail 和 cat 命令直接查看MySQL的日志文件
+查看数据库日志，MySQL 有 show variables like 'log_error',也可以直接在 linux 上面直接 tail 和 cat 命令直接查看 MySQL 的日志文件
 
 日志类型有错误日志、查询日志、事务日志、慢查询日志
 
-优化数据库性能：使用索引、优化SQL查询、分区表、缓存常用数据、定期维护和清理数据库
+优化数据库性能：使用索引、优化 SQL 查询、分区表、缓存常用数据、定期维护和清理数据库
 
 ### 数据库索引有了解吗？为什么要用索引？你的项目什么地方用了索引？怎么保证线程安全？
 
@@ -1174,60 +1210,61 @@ Dubbo：阿里巴巴开源的 RPC 框架。
 
 为什么用索引：提高查询效率，减少全表扫描
 
-项目中使用索引：在经常查询的字段上创建索引，如用户表的user_id
+项目中使用索引：在经常查询的字段上创建索引，如用户表的 user_id
 
 保证线程安全：使用事务、锁机制（如行锁、表锁）和并发控制
 
 ### 谈谈数据库索引的底层结构？
 
-MySQL InnoDB使用的是B+树，最常用的索引数据，适用于范围查询和排序
+MySQL InnoDB 使用的是 B+树，最常用的索引数据，适用于范围查询和排序
 
 哈希索引：适用于等值查询，但不支持范围查询
 
 全文索引：用于文本搜索
 
-### 你说你项目是基于SpringBoot实现的，那你说说SpringBoot自动装配原理
+### 你说你项目是基于 SpringBoot 实现的，那你说说 SpringBoot 自动装配原理
 
-SpringBoot通过@EnableAutoConfiguration注解和spring.factories文件实现自动装配。它根据类路径下的依赖自动配置Bean
+SpringBoot 通过@EnableAutoConfiguration 注解和 spring.factories 文件实现自动装配。它根据类路径下的依赖自动配置 Bean
 
-### SpringBoot的Starter有了解过吗？如何理解Starter？
+### SpringBoot 的 Starter 有了解过吗？如何理解 Starter？
 
-SpirngBoot提供的依赖描述符，简化依赖管理和配置。例如spring-boot-starter-web包含了开发Web应用所需要的依赖
+SpirngBoot 提供的依赖描述符，简化依赖管理和配置。例如 spring-boot-starter-web 包含了开发 Web 应用所需要的依赖
 
-### 你用过SpringBoot？那你肯定了解Spring了，那来谈谈Spring的核心
+### 你用过 SpringBoot？那你肯定了解 Spring 了，那来谈谈 Spring 的核心
 
-Spring核心：
+Spring 核心：
+
 - IOC(控制反转)：通过依赖注入管理对象生命周期
 - AOP(面向切面编程)：通过代理实现横切关注点的模块化
 
-### Spring中有哪些设计模式？
+### Spring 中有哪些设计模式？
 
-- 单例模式：Bean默认是单例的
+- 单例模式：Bean 默认是单例的
 - 工厂模式：BeanFactory
 - 代理模式：AOP
 - 模板方法模式：JDBCTemplate
 
-### Spring中所有对象都是单例的吗？
+### Spring 中所有对象都是单例的吗？
 
-不是，Spring的Bean默认是单例的，但可以通过@Scope注解配置为原型（prototype）等作用域。
+不是，Spring 的 Bean 默认是单例的，但可以通过@Scope 注解配置为原型（prototype）等作用域。
 
-### 你使用Spring的时候有没有想过它是怎么运行的？
+### 你使用 Spring 的时候有没有想过它是怎么运行的？
 
-运行机制：Spring通过IOC容器管理Bean的生命周期，通过AOP实现横切关注点，通过配置文件或注解进行配置
+运行机制：Spring 通过 IOC 容器管理 Bean 的生命周期，通过 AOP 实现横切关注点，通过配置文件或注解进行配置
 
-### 你熟悉jvm是吧？来描述一下jvm的垃圾回收机制？
+### 你熟悉 jvm 是吧？来描述一下 jvm 的垃圾回收机制？
 
-JVM通过垃圾回收期（GC）自动管理内存，常见的GC算法有标记-清除、标记-整理、复制算法等
+JVM 通过垃圾回收期（GC）自动管理内存，常见的 GC 算法有标记-清除、标记-整理、复制算法等
 
-### 既然看你这么会，那我问你什么jvm进行垃圾回收的时候会不会影响到我们的业务
+### 既然看你这么会，那我问你什么 jvm 进行垃圾回收的时候会不会影响到我们的业务
 
-垃圾回收会暂停应用线程，影响业务性能。可以通过调优GC参数减少影响
+垃圾回收会暂停应用线程，影响业务性能。可以通过调优 GC 参数减少影响
 
-### 你知道java中有哪些工具类吗？
+### 你知道 java 中有哪些工具类吗？
 
 工具类：Collections、Arrays、StringUtils、DateUtils
 
-### 那你说说java集合有哪些？他们有什么用？
+### 那你说说 java 集合有哪些？他们有什么用？
 
 集合：
 
@@ -1241,7 +1278,7 @@ Map：键值对，如 HashMap, TreeMap。
 
 最熟悉的集合：ArrayList，基于动态数组实现，支持快速随机访问。
 
-### 那你知道LinkedList创建的时候，初试的容量是多少吗？
+### 那你知道 LinkedList 创建的时候，初试的容量是多少吗？
 
 初始容量：LinkedList 没有初始容量概念，它是基于链表实现的，动态增长。
 
@@ -1252,3 +1289,176 @@ Map：键值对，如 HashMap, TreeMap。
 快速排序：通过选择一个基准元素，将数组分为两部分，递归排序。
 
 其他算法：如动态规划、分治法、回溯算法等。
+
+## zbyjy
+
+### keySet
+
+keySet 是 Java 中 Map 接口的一个方法，返回一个包含所有键的 Set 集合。
+
+### Linux 查看内存
+
+free -h：以易读格式（GB/MB）显示内存使用情况。
+
+top 或 htop：动态查看内存和 CPU 使用情况。
+
+vmstat：显示虚拟内存统计信息。
+
+cat /proc/meminfo：查看详细内存信息。
+
+### sdf，关于时间格式化的用法，在 java 中
+
+日期格式化和解析的类，属于 java.text 包，它可以将 Date 对象格式化为字符串，或将字符串解析为 Date 对象
+
+- 格式化日期 → 字符串
+
+```java
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+String formattedDate = sdf.format(new Date());
+```
+
+- 解析字符串 → 日期
+
+```java
+String dateStr = "2023-10-25 14:30:45";
+Date date = sdf.parse(dateStr);
+```
+
+- 推荐: Java 8+
+
+```java
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+String formattedDate = LocalDateTime.now().format(formatter);
+```
+
+### Linux 启动信息查看命令
+
+dmesg：查看内核启动日志。
+
+journalctl -b（Systemd 系统）：查看本次启动日志。
+
+cat /var/log/boot.log：部分系统会记录启动日志到这里。
+
+### JVM 监控各进程 CPU 说明情况
+
+jps：列出所有 Java 进程的 PID。
+
+jstat -gcutil <pid>：查看 GC 和内存使用情况。
+
+jstack <pid>：查看线程堆栈，分析 CPU 高占用问题。
+
+top -H -p <pid>：查看某 Java 进程的线程 CPU 占用。
+
+### 线程和进程
+
+进程：独立的内存空间，资源分配的基本单位。
+
+线程：进程内的执行单元，共享进程资源，切换开销更小。
+
+区别：线程更轻量级，进程更隔离。
+
+### 快速排序
+
+分治算法，步骤：
+
+选择基准（pivot）。
+
+将数组分为小于基准和大于基准的两部分。
+
+递归排序两部分。
+
+```java
+void quickSort(int[] arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+```
+
+### 内存分配运算符
+
+C/C++：new 和 delete（动态内存分配）。
+
+```C
+int *p = new int[10];
+delete[] p;
+```
+
+Java：new 自动管理内存（由 JVM 回收）。
+
+```java
+int[] arr = new int[5];
+```
+
+### 最重要的代码质量是什么
+
+可维护性（关键点）：
+
+- 可读性（命名、注释、结构清晰）。
+- 可扩展性（易于修改和扩展）。
+- 可靠性（少 Bug，健壮性）。
+- 高效性（性能优化）。
+
+### 线程创建的几种方法
+
+- 继承 Thread 类：
+
+```java
+class MyThread extends Thread { public void run() { ... } }
+```
+
+- 实现 Runnable 接口：
+
+```java
+new Thread(() -> { ... }).start();
+```
+
+- 实现 Callable + FutureTask（带返回值）。
+- 线程池（如 ExecutorService）。
+
+### int arr[] = new int[5]，直接打印 arr[0]会怎么样，在编译的时候就报错，还是运行的时候报错
+
+java 中创建一个长度为 5 的整型数组，默认初始化为 0：
+
+所以arr[0] = 0 
+
+不会报错
+
+### 将 temp 表名改为 temple,有几种方式
+
+```sql
+ALTER TABLE temp RENAME TO temple;
+```
+
+### JVM 回收的方法，在java程序中写出来的回收的方法叫什么
+
+垃圾回收算法：
+
+- 标记-清除（Mark-Sweep）。
+- 复制算法（Copying，用于新生代）。
+- 标记-整理（Mark-Compact，用于老年代）。
+- 分代收集（结合以上，分新生代和老年代）。
+
+1.System.gc()
+
+2.Runtime.getRuntime().gc()
+
+
+### 极限编程 CP
+
+敏捷开发方法，核心实践：
+
+- 持续集成。
+- 测试驱动开发（TDD）。
+- 结对编程。
+- 小版本迭代。
+
+有空去了解
+
+### [] {} () 算法
+
+### X+Y+Z=0 算法
+
+### 十六进制转化 算法

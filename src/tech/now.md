@@ -1343,11 +1343,11 @@ cat /var/log/boot.log：部分系统会记录启动日志到这里。
 
 jps：列出所有 Java 进程的 PID。
 
-jstat -gcutil <pid>：查看 GC 和内存使用情况。
+jstat -gcutil pid：查看 GC 和内存使用情况。
 
-jstack <pid>：查看线程堆栈，分析 CPU 高占用问题。
+jstack pid：查看线程堆栈，分析 CPU 高占用问题。
 
-top -H -p <pid>：查看某 Java 进程的线程 CPU 占用。
+top -H -p pid：查看某 Java 进程的线程 CPU 占用。
 
 ### 线程和进程
 
